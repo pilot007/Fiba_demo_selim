@@ -94,7 +94,7 @@ var app = {
 		app.url="http://10.0.0.31:8080/fiba_group_webservices/";
 		app.total_points=0;
 		app.url="http://85.97.120.30:9090/fiba_group_webservices/";
-		//app.first_init();
+		app.first_init();
 	},
 	// Bind Event Listeners
 	//
@@ -106,10 +106,10 @@ var app = {
                             
 	},
 	onDeviceReady : function() {
-		console.log("ondevice ready");
-		initPushwoosh();
+		console.log("ondevice ready");		
 		app.receivedEvent('deviceready');
 		app.first_init();
+		initPushwoosh();
 		
 	//new Chart(document.getElementById("line").getContext("2d")).Line(lineChartData);
 	  
@@ -149,6 +149,13 @@ var app = {
 				console.log("puanlarım 3");
 				 
 				
+				html ="<table style='width:100%'>";
+					html += '<tr><td width="50%">Şirket Adı</td>';
+					html += '<td width="30%">İşlem Tarihi</td>';
+					html += '<td width="20%">Kazanılan Puan</td></tr>';
+				    html+="</table>";
+				listItems.append('<li id="prj_header">' + html + '</li>');
+								
 				for (var i = 0; i < a.length; i++) {
 				html ="<table style='width:100%'>";
 					console.log("puanlarım 4");
@@ -186,6 +193,59 @@ var app = {
 	fnc_Mesajlar : function() {
 				$("#un_mesajlar").empty();
 		        $("#un_mesajlar").append(app.user_name + "("+app.total_points+")");
+		        
+$.ajax({
+			url : app.url+"GetCampains?member_id="+app.id,
+			dataType : "json",
+			success : function(a, b, c) {
+				console.log("kampanyalar");
+				$('#div_mesajlar ul').remove();
+				$('#div_mesajlar').append('<ul data-role="listview"></ul>');
+				listItems = $('#div_mesajlar').find('ul');
+				console.log("div_mesajlar 3");
+				 
+				html ="<table style='width:100%'>";
+					html += '<tr><td width="25%"> Şirket Adı </td>';
+					html += '<td width="30%"> Kampanya </td>';
+					html += '<td width="15%">İndirim Oranı</td>';
+					//html += '<td width="15%">' + a[i].startdate + '</td>';
+					html += '<td width="15%"> Kampanya Bitiş Tarihi</td></tr>';
+				    html+="</table>";
+				listItems.append('<li id="prj_header">' + html + '</li>');
+				for (var i = 0; i < a.length; i++) {
+				html ="<table style='width:100%'>";
+					console.log("div_mesajlar 4");
+					html += '<tr><td width="25%">'+ a[i].company_name+ '</td>';
+					html += '<td width="30%">' + a[i].campain_name + '</td>';
+					html += '<td width="15%">' + a[i].discount + '</td>';
+					//html += '<td width="15%">' + a[i].startdate + '</td>';
+					html += '<td width="15%">' + a[i].expiredate + '</td></tr>';
+				    html+="</table>";
+					listItems.append('<li id="prj_' + a[i].campain_id + '">' + html + '</li>');
+				};
+				
+				$('#div_mesajlar ul').listview();
+				console.log("div_mesajlar 5");
+				for (var i = 0; i < a.length; i++) {
+					console.log("div_mesajlar 6");
+					$('#prj_' + a[i].campain_id).bind('tap',
+					function(event, ui) {
+						var strID = $(this).attr('id').replace('prj_','');
+						app.getProductsDetay(strID);
+					});
+				}
+
+		    },
+			error : function(a, b, c) {
+				$("#device_info").append('hata aldı '+ '<br />');
+				element2.innerHTML = "hata username:";
+
+				console.log("err a ", a);
+				console.log("err b ", b);
+				console.log("err c ", c);
+				console.log("err c ", c);
+			}
+		});		        
 	},	
     fnc_Profil : function() {
 				$("#un_profil").empty();
@@ -303,6 +363,12 @@ var app = {
 			}
 		});
 		}
+
+
+	app.setbadge('#m1 a#msj span.badge', 0);
+	
+	console.log($("#img_msg").attr('src'));
+	$("#img_msg").attr("src","img/menu_icons/3_Message_y.png");
 
 
 	},
@@ -529,5 +595,16 @@ detectCurrentLocation : function() {
     mapLoaded : function() {
         console.log("mapLoaded");
         app.detectCurrentLocation();
-    }        
+    },
+    
+	setbadge : function(selector, value) {
+		var el = $(selector);
+		if (value > 0) {
+			el.show();
+		} else {
+			el.hide();
+		}
+		el.text(value);
+	} 
+    
 };
