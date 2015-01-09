@@ -338,7 +338,7 @@ var app = {
 			dataType : "json",
 			success : function(a, b, c) {
 				console.log("kampanyalar");
-				isThereNewCampain=false;
+				//isThereNewCampain=false;
 				for (var i = 0; i < a.length; i++) {
 					if ((a[i].isread=="0") || (a[i].isread=="null"))
 					{
