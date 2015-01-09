@@ -121,11 +121,7 @@ var app = {
 		console.log("ondevice ready");		
 		app.first_init();
 		initPushwoosh();
-
-		
 	//new Chart(document.getElementById("line").getContext("2d")).Line(lineChartData);
-	  
-		
 	},
 	// Update DOM on a Received Event
 	receivedEvent : function(id) {
