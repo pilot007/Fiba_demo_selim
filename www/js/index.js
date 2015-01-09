@@ -102,7 +102,7 @@ var app = {
 		console.log("init");
 		google.load("maps", "3.8", {"callback": map, other_params: "sensor=true&language=en"});
 		this.bindEvents();
-		app.url="http://10.0.0.31:8080/fiba_group_webservices/";
+		//app.url="http://10.0.0.31:8080/fiba_group_webservices/";
 		app.total_points=0;
 		app.url="http://85.97.120.30:9090/fiba_group_webservices/";
 		//app.first_init();
@@ -120,7 +120,7 @@ var app = {
 		app.receivedEvent('deviceready');
 		console.log("ondevice ready");		
 		app.first_init();
-		initPushwoosh();
+		//initPushwoosh();
 	//new Chart(document.getElementById("line").getContext("2d")).Line(lineChartData);
 	},
 	// Update DOM on a Received Event
