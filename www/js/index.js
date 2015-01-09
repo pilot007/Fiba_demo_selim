@@ -117,10 +117,12 @@ var app = {
                             
 	},
 	onDeviceReady : function() {
-		console.log("ondevice ready");		
-		initPushwoosh();
 		app.receivedEvent('deviceready');
+		console.log("ondevice ready");		
 		app.first_init();
+		initPushwoosh();
+
+		
 	//new Chart(document.getElementById("line").getContext("2d")).Line(lineChartData);
 	  
 		
