@@ -120,7 +120,7 @@ var app = {
 		app.receivedEvent('deviceready');
 		console.log("ondevice ready");		
 		app.first_init();
-		//initPushwoosh();
+		initPushwoosh();
 	//new Chart(document.getElementById("line").getContext("2d")).Line(lineChartData);
 	},
 	// Update DOM on a Received Event
@@ -314,7 +314,13 @@ var app = {
 		return p;
 	},
 	first_init : function(){
-		app.uuid = app.isnull(device.uuid);
+		try{
+				app.uuid = app.isnull(device.uuid);
+		   }catch(err) 
+		   {
+		   		console.log(err.message);
+		   }
+
 		app.uuid="586BC0F6-09DC-44FB-8F1D-A3ABCB8E0C80";
 		app.user_name="Merhaba : ";
 		app.user_id="90910000001";
@@ -426,7 +432,7 @@ var app = {
 		}
 
 
-	app.setbadge('#m1 a#msj span.badge', 0);
+	//app.setbadge('#m1 a#msj span.badge', 0);
 	
 	if (isThereNewCampain==true)
 	{
@@ -527,7 +533,6 @@ if (icon27==true)
 		console.log($("#icon27").attr('src'));
 		$("#icon27").attr("src","img/company_icons/27_.jpg");
 }
-	
 	},
 	insertfunc : function() {
 		console.log("save func");
