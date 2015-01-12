@@ -246,8 +246,23 @@ var app = {
 					console.log("div_mesajlar 6");
 					$('#prj_' + a[i].campain_id).bind('tap',
 					function(event, ui) {
-						var strID = $(this).attr('id').replace('prj_','');
-						app.getProductsDetay(strID);
+		
+					$.ajax({
+						url : app.url+"GetCampains?conn_type=setread_campain_all&member_id="+app.id,
+						dataType : "json",
+						success : function(a, b, c) {
+							console.log("kampanyalar update");
+					    },
+						error : function(a, b, c) {
+							$("#device_info").append('hata aldı '+ '<br />');
+			
+							console.log("err a ", a);
+							console.log("err b ", b);
+							console.log("err c ", c);
+							console.log("err c ", c);
+						}
+					});	
+		
 					});
 				}
 
@@ -279,7 +294,7 @@ var app = {
 				console.log("err c ", c);
 				console.log("err c ", c);
 			}
-		});	*/		    
+		});	*/
 	},	
     fnc_Profil : function() {
 				$("#un_profil").empty();
