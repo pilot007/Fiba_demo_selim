@@ -339,6 +339,12 @@ var app = {
 	fnc_Enyakin : function() {
 				$("#un_enyakin").empty();
 		        $("#un_enyakin").append(app.user_name+ "("+app.total_points+")");
+		        
+		        if(device.platform == "iPad")
+		        	$('mapContent').attr('style','padding:0;position:absolute;top:170px;right:0px;bottom:0px;left:0px;');
+				else
+					$('mapContent').attr('style','padding:0;position:absolute;top:90px;right:0px;bottom:0px;left:0px;');
+				
 		        app.detectCurrentLocation();
 		        app.check_campains();		        
 	},
