@@ -224,6 +224,7 @@ var app = {
 					html += '<td width="15%">İndirim Oranı</td>';
 					//html += '<td width="15%">' + a[i].startdate + '</td>';
 					html += '<td width="15%"> Kampanya Bitiş Tarihi</td></tr>';
+					html += '<td > Yeni</td></tr>';
 				    html+="</table>";
 				listItems.append('<li id="prj_header">' + html + '</li>');
 				for (var i = 0; i < a.length; i++) {
@@ -234,6 +235,7 @@ var app = {
 					html += '<td width="15%">' + a[i].discount + '</td>';
 					//html += '<td width="15%">' + a[i].startdate + '</td>';
 					html += '<td width="15%">' + a[i].expiredate + '</td></tr>';
+					html += '<td>' + a[i].isread + '</td></tr>';
 				    html+="</table>";
 					listItems.append('<li id="prj_' + a[i].campain_id + '">' + html + '</li>');
 				};
@@ -262,7 +264,7 @@ var app = {
 		});		    
 		
 		
-		
+		/*
 		$.ajax({
 			url : app.url+"GetCampains?conn_type=setread_campain_all&member_id="+app.id,
 			dataType : "json",
@@ -277,7 +279,7 @@ var app = {
 				console.log("err c ", c);
 				console.log("err c ", c);
 			}
-		});				    
+		});	*/		    
 	},	
     fnc_Profil : function() {
 				$("#un_profil").empty();
