@@ -100,7 +100,7 @@ var app = {
 	// Application Constructor
 	initialize : function() {
 		console.log("init");
-		google.load("maps", "3.8", {"callback": map, other_params: "sensor=true&language=en"});
+		//google.load("maps", "3.8", {"callback": map, other_params: "sensor=true&language=en"});
 		this.bindEvents();
 		//app.url="http://10.0.0.31:8080/fiba_group_webservices/";
 		app.total_points=0;
