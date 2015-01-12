@@ -171,7 +171,7 @@ var app = {
 				listItems.append('<li id="prj_header">' + html + '</li>');
 								
 				for (var i = 0; i < a.length; i++) {
-				html ="<table style='width:100%'>";
+				html ="<table id="" style='width:100%'>";
 					console.log("puanlarım 4");
 					html += '<tr><td width="50%">'+ a[i].company_name+ '</td>';
 					html += '<td width="30%">' + a[i].activity_date + '</td>';
@@ -252,9 +252,10 @@ var app = {
 						dataType : "json",
 						success : function(a, b, c) {
 							console.log("kampanyalar update");
+							$.mobile.changePage($('#barkod'));
 					    },
 						error : function(a, b, c) {
-							$("#device_info").append('hata aldı '+ '<br />');
+							$.mobile.changePage($('#puanlarim'));
 			
 							console.log("err a ", a);
 							console.log("err b ", b);
