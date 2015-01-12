@@ -170,8 +170,9 @@ var app = {
 				    html+="</table>";
 				listItems.append('<li id="prj_header">' + html + '</li>');
 								
-				for (var i = 0; i < a.length; i++) {
-				html ="<table style='width:100%'>";
+				for (var i = 0; i < a.length; i++) 
+				{
+					html ="<table style='width:100%'>";
 					console.log("puanlarım 4");
 					html += '<tr><td width="50%">'+ a[i].company_name+ '</td>';
 					html += '<td width="30%">' + a[i].activity_date + '</td>';
@@ -219,7 +220,7 @@ var app = {
 				listItems = $('#div_mesajlar').find('ul');
 				console.log("div_mesajlar 3");
 				 
-				html ="<table style='width:100%'>";
+					html ="<table style='width:100%'>";
 					html += '<tr><td width="25%"> Şirket Adı </td>';
 					html += '<td width="30%"> Kampanya </td>';
 					html += '<td width="15%">İndirim Oranı</td>';
@@ -227,7 +228,7 @@ var app = {
 					html += '<td width="15%"> Kampanya Bitiş Tarihi</td></tr>';
 					html += '<td > Yeni</td></tr>';
 				    html+="</table>";
-				listItems.append('<li id="prj_header">' + html + '</li>');
+					listItems.append('<li id="prj_header">' + html + '</li>');
 				for (var i = 0; i < a.length; i++) {
 					if (a[i].isread=="0")
 					html ="<table style='width:100%' bgcolor='#00FF00'>";
@@ -241,14 +242,14 @@ var app = {
 					//html += '<td width="15%">' + a[i].startdate + '</td>';
 					html += '<td width="15%">' + a[i].expiredate + '</td></tr>';
 				    html+="</table>";
-					listItems.append('<li id="prj_' + a[i].campain_id + '">' + html + '</li>');
+					listItems.append('<li id="camp_' + a[i].campain_id + '">' + html + '</li>');
 				};
 				
 				$('#div_mesajlar ul').listview();
 				console.log("div_mesajlar 5");
 				for (var i = 0; i < a.length; i++) {
 					console.log("div_mesajlar 6");
-					$('#prj_' + a[i].campain_id).bind('tap',
+					$('#camp_' + a[i].campain_id).bind('tap',
 					function(event, ui) {
 		
 					$.ajax({
@@ -447,7 +448,6 @@ var app = {
 				for (var i = 0; i < a.length; i++) {
 					if ((a[i].isread=="0") || (a[i].isread=="null"))
 					{
-						console.log("div_kapmanya isread = " + a[i].isread + "  a[i].company_id="+a[i].company_id);
 				    	isThereNewCampain=true;
 				    	if (a[i].company_id=="2") // aeropostale
 				    	  icon2=true;
@@ -562,7 +562,6 @@ var app = {
 			};
 		    },
 			error : function(a, b, c) {
-				$("#device_info").append('hata aldı '+ '<br />');
 				console.log("err a ", a);
 				console.log("err b ", b);
 				console.log("err c ", c);
