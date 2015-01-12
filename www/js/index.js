@@ -147,11 +147,11 @@ var app = {
 		        
 				$("#barkod_id").empty();
 				$("#barkod_id").append(app.id);
-		        
+		        app.check_campains();
 	},	
 	fnc_Puanlarim : function() {
 				$("#un_puanlarim").empty();
-		        $("#un_puanlarim").append(app.user_name + "("+app.total_points+")");		        
+		        $("#un_puanlarim").append(app.user_name + "("+app.total_points+")");
 		$.ajax({
 			url : app.url+"GetAcitivies?member_id="+app.id,
 			dataType : "json",
@@ -171,7 +171,7 @@ var app = {
 				listItems.append('<li id="prj_header">' + html + '</li>');
 								
 				for (var i = 0; i < a.length; i++) {
-				html ="<table id="" style='width:100%'>";
+				html ="<table style='width:100%'>";
 					console.log("puanlarım 4");
 					html += '<tr><td width="50%">'+ a[i].company_name+ '</td>';
 					html += '<td width="30%">' + a[i].activity_date + '</td>';
@@ -202,6 +202,7 @@ var app = {
 				console.log("err c ", c);
 			}
 		});
+		app.check_campains();
 	},	
 	
 	fnc_Mesajlar : function() {
@@ -266,7 +267,7 @@ var app = {
 		
 					});
 				}
-
+				
 		    },
 			error : function(a, b, c) {
 				$("#device_info").append('hata aldı '+ '<br />');
@@ -296,6 +297,7 @@ var app = {
 				console.log("err c ", c);
 			}
 		});	*/
+		app.check_campains();
 	},	
     fnc_Profil : function() {
 				$("#un_profil").empty();
@@ -316,155 +318,26 @@ var app = {
 				$('#chk_sms').prop('checked',true);
 				else
 				$('#chk_sms').prop('checked',false);
+				
+				app.check_campains();
 
 	},
 	fnc_Kampanyalar : function() {
 				$("#un_kampanyalar").empty();
 		        $("#un_kampanyalar").append(app.user_name+ "("+app.total_points+")");
 		        
-		        
-		$.ajax({
-			url : app.url+"GetCampains?member_id="+app.id,
-			dataType : "json",
-			success : function(a, b, c) {
-				console.log("kampanyalar");
-				isThereNewCampain=false;
-				for (var i = 0; i < a.length; i++) {
-					if ((a[i].isread=="0") || (a[i].isread=="null"))
-					{
-						console.log("div_kapmanya isread = " + a[i].isread + "  a[i].company_id="+a[i].company_id);
-				    	isThereNewCampain=true;
-				    	if (a[i].company_id=="2") // aeropostale
-				    	  icon2=true;
-				    	if (a[i].company_id=="3") //bananerepuvlic
-				    	  icon3=true;
-						if (a[i].company_id=="22") //gap
-				    	  icon22=true;				    	  
-						if (a[i].company_id=="27") //mark spencer
-				    	  icon27=true;		
-				    }
-
-// aeropostale
-if (icon2)
-{
-		console.log($("#icon2").attr('src'));
-		$("#icon2").attr("src","img/company_icons/2_.jpg");
-}
-
-//bananerepuvlic
-if (icon3)
-{
-		console.log($("#icon3").attr('src'));
-		$("#icon3").attr("src","img/company_icons/3_.jpg");
-}
-//gap
-if (icon22)
-{
-		console.log($("#icon22").attr('src'));
-		$("#icon22").attr("src","img/company_icons/22_.jpg");
-}				    	  
-//mark spencer
-if (icon27)
-{
-		console.log($("#icon27").attr('src'));
-		$("#icon27").attr("src","img/company_icons/27_.jpg");
-}				    
-				};
-		    },
-			error : function(a, b, c) {
-				$("#device_info").append('hata aldı '+ '<br />');
-				console.log("err a ", a);
-				console.log("err b ", b);
-				console.log("err c ", c);
-				console.log("err c ", c);
-			}
-		});		
-
-		        
-	if (isThereNewCampain)
-	{
-		console.log($("#img_msg").attr('src'));
-		$("#img_msg").attr("src","img/menu_icons/3_Message_y.png");
-		
-		console.log($("#img_camp").attr('src'));
-		$("#img_camp").attr("src","img/menu_icons/5_Campaign_y.png");
-
-		console.log($("#img_msg1").attr('src'));
-		$("#img_msg1").attr("src","img/menu_icons/3_Message_y.png");
-
-		console.log($("#img_camp1").attr('src'));
-		$("#img_camp1").attr("src","img/menu_icons/5_Campaign_y.png");
-
-
-		console.log($("#img_msg3").attr('src'));
-		$("#img_msg3").attr("src","img/menu_icons/3_Message_y.png");
-
-		console.log($("#img_camp3").attr('src'));
-		$("#img_camp3").attr("src","img/menu_icons/5_Campaign_y.png");
-
-		
-		console.log($("#img_msg5").attr('src'));
-		$("#img_msg5").attr("src","img/menu_icons/3_Message_y.png");
-
-		console.log($("#img_camp5").attr('src'));
-		$("#img_camp5").attr("src","img/menu_icons/5_Campaign_y.png");
-
-
-		console.log($("#img_msg6").attr('src'));
-		$("#img_msg6").attr("src","img/menu_icons/3_Message_y.png");
-
-		console.log($("#img_camp6").attr('src'));
-		$("#img_camp6").attr("src","img/menu_icons/5_Campaign_y.png");
-
-	}
-	else
-	{		
-		console.log($("#img_msg").attr('src'));
-		$("#img_msg").attr("src","img/menu_icons/3_Message.png");
-
-		console.log($("#img_camp").attr('src'));
-		$("#img_camp").attr("src","img/menu_icons/5_Campaign.png");
-
-
-		console.log($("#img_msg1").attr('src'));
-		$("#img_msg1").attr("src","img/menu_icons/3_Message.png");
-
-		console.log($("#img_camp1").attr('src'));
-		$("#img_camp1").attr("src","img/menu_icons/5_Campaign.png");
-
-
-		console.log($("#img_msg3").attr('src'));
-		$("#img_msg3").attr("src","img/menu_icons/3_Message.png");
-
-		console.log($("#img_camp3").attr('src'));
-		$("#img_camp3").attr("src","img/menu_icons/5_Campaign.png");
-
-		
-		console.log($("#img_msg5").attr('src'));
-		$("#img_msg5").attr("src","img/menu_icons/3_Message.png");
-
-		console.log($("#img_camp5").attr('src'));
-		$("#img_camp5").attr("src","img/menu_icons/5_Campaign.png");
-
-
-		console.log($("#img_msg6").attr('src'));
-		$("#img_msg6").attr("src","img/menu_icons/3_Message.png");
-
-		console.log($("#img_camp6").attr('src'));
-		$("#img_camp6").attr("src","img/menu_icons/5_Campaign.png");
-
-	}	
-
-		        
+			app.check_campains();
 	},			
 	fnc_Istatistik : function() {
 				$("#un_istatistik").empty();
 		        $("#un_istatistik").append(app.user_name+ "("+app.total_points+")");
+		        app.check_campains();
 	},
 	fnc_Enyakin : function() {
 				$("#un_enyakin").empty();
 		        $("#un_enyakin").append(app.user_name+ "("+app.total_points+")");
 		        app.detectCurrentLocation();
+		        app.check_campains();		        
 	},
 	isnull : function(p){
 		if (p ==null)
@@ -486,6 +359,83 @@ if (icon27)
 		app.id="123456789";
 
 
+		app.check_campains();
+		
+		$("#un_barkod").empty();
+		$("#un_barkod").append(app.user_name);
+
+		$("#un_barkod2").empty();
+		$("#un_barkod2").append(app.user_name);
+
+		new Chart(document.getElementById("pie").getContext("2d")).Pie(pieData,pieOptions);
+		new Chart(document.getElementById("line").getContext("2d")).Line(lineChartData);
+
+		$.ajax({
+			url : app.url+"GetAcitivies?member_id="+app.id+"&conType=totalpoint",
+			dataType : "json",
+			success : function(a, b, c) {
+					app.total_points=a[0].total_point;
+					$("#un_barkod").empty();
+					$("#un_barkod").append(app.user_name+ "("+app.total_points+")");					
+			},
+			error : function(a, b, c) {
+				$("#device_info").append('hata aldı '+ '<br />');
+				element2.innerHTML = "hata username:";
+
+				console.log("err a ", a);
+				console.log("err b ", b);
+				console.log("err c ", c);
+				console.log("err c ", c);
+			}
+		});
+		
+		
+		
+		//if(app.name==null)
+		{
+		$.ajax({			
+			url : app.url+"GetMember?member_id="+app.id,
+			dataType : "json",
+			success : function(a, b, c) {
+				{
+				  app.identityno=a.identityno;
+				  app.name=a.name;
+				  app.surname=a.surname;
+				  app.birthdate=a.birthdate;
+				  app.birth_place=a.Birth_place;
+				  app.address_type=a.address_type;
+				  app.address_text=a.address_text;
+				  app.city_id=a.city_id;
+				  app.allow_email=a.allow_email;
+				  app.allow_sms=a.allow_sms;
+				  app.mobile=a.mobile;
+				  app.work_phone=a.work_phone;
+				  app.home_phone=a.home_phone;
+				  app.fax=a.fax;
+				  app.email=a.email;
+				  app.user_name ="Merhaba : " + a.name + " " + a.surname;
+				  				  
+				 }
+				//else
+				//  $("#device_info").append('Kullanıcı tanımınız yapılmamıştır. Lütfen yöneticinize danışınız ');
+			},
+			error : function(a, b, c) {
+				$("#device_info").append('hata aldı '+ '<br />');
+				element2.innerHTML = "hata username:";
+
+				console.log("err a ", a);
+				console.log("err b ", b);
+				console.log("err c ", c);
+				console.log("err c ", c);
+			}
+		});
+		}
+
+
+	//app.setbadge('#m1 a#msj span.badge', 0);
+	},
+	
+	check_campains : function(){
 		$.ajax({
 			url : app.url+"GetCampains?member_id="+app.id,
 			dataType : "json",
@@ -618,79 +568,7 @@ if (icon27)
 			}
 		});		
 
-		$("#un_barkod").empty();
-		$("#un_barkod").append(app.user_name);
-
-		$("#un_barkod2").empty();
-		$("#un_barkod2").append(app.user_name);
-
-		new Chart(document.getElementById("pie").getContext("2d")).Pie(pieData,pieOptions);
-		new Chart(document.getElementById("line").getContext("2d")).Line(lineChartData);
-
-		$.ajax({
-			url : app.url+"GetAcitivies?member_id="+app.id+"&conType=totalpoint",
-			dataType : "json",
-			success : function(a, b, c) {
-					app.total_points=a[0].total_point;
-					$("#un_barkod").empty();
-					$("#un_barkod").append(app.user_name+ "("+app.total_points+")");					
-			},
-			error : function(a, b, c) {
-				$("#device_info").append('hata aldı '+ '<br />');
-				element2.innerHTML = "hata username:";
-
-				console.log("err a ", a);
-				console.log("err b ", b);
-				console.log("err c ", c);
-				console.log("err c ", c);
-			}
-		});
-		
-		
-		
-		//if(app.name==null)
-		{
-		$.ajax({			
-			url : app.url+"GetMember?member_id="+app.id,
-			dataType : "json",
-			success : function(a, b, c) {
-				{
-				  app.identityno=a.identityno;
-				  app.name=a.name;
-				  app.surname=a.surname;
-				  app.birthdate=a.birthdate;
-				  app.birth_place=a.Birth_place;
-				  app.address_type=a.address_type;
-				  app.address_text=a.address_text;
-				  app.city_id=a.city_id;
-				  app.allow_email=a.allow_email;
-				  app.allow_sms=a.allow_sms;
-				  app.mobile=a.mobile;
-				  app.work_phone=a.work_phone;
-				  app.home_phone=a.home_phone;
-				  app.fax=a.fax;
-				  app.email=a.email;
-				  app.user_name ="Merhaba : " + a.name + " " + a.surname;
-				  				  
-				 }
-				//else
-				//  $("#device_info").append('Kullanıcı tanımınız yapılmamıştır. Lütfen yöneticinize danışınız ');
-			},
-			error : function(a, b, c) {
-				$("#device_info").append('hata aldı '+ '<br />');
-				element2.innerHTML = "hata username:";
-
-				console.log("err a ", a);
-				console.log("err b ", b);
-				console.log("err c ", c);
-				console.log("err c ", c);
-			}
-		});
-		}
-
-
-	//app.setbadge('#m1 a#msj span.badge', 0);
-	},
+	},	
 	insertfunc : function() {
 		console.log("save func");
 		var result= $("#sel_personels_yeni option:selected").val();
