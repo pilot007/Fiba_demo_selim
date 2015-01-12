@@ -229,14 +229,17 @@ var app = {
 				    html+="</table>";
 				listItems.append('<li id="prj_header">' + html + '</li>');
 				for (var i = 0; i < a.length; i++) {
-				html ="<table style='width:100%'>";
+					if (a[i].isread=="0")
+					html ="<table style='width:100%' bgcolor='#00FF00'>";
+					else
+					html ="<table style='width:100%'>";
+					
 					console.log("div_mesajlar 4");
 					html += '<tr><td width="25%">'+ a[i].company_name+ '</td>';
 					html += '<td width="30%">' + a[i].campain_name + '</td>';
 					html += '<td width="15%">' + a[i].discount + '</td>';
 					//html += '<td width="15%">' + a[i].startdate + '</td>';
 					html += '<td width="15%">' + a[i].expiredate + '</td></tr>';
-					html += '<td>' + a[i].isread + '</td></tr>';
 				    html+="</table>";
 					listItems.append('<li id="prj_' + a[i].campain_id + '">' + html + '</li>');
 				};
@@ -253,11 +256,10 @@ var app = {
 						dataType : "json",
 						success : function(a, b, c) {
 							console.log("kampanyalar update");
+							app.check_campains();
 							$.mobile.changePage($('#barkod'));
 					    },
 						error : function(a, b, c) {
-							$.mobile.changePage($('#puanlarim'));
-			
 							console.log("err a ", a);
 							console.log("err b ", b);
 							console.log("err c ", c);
