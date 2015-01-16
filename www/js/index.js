@@ -408,22 +408,22 @@ var app = {
 			dataType : "json",
 			success : function(a, b, c) {
 				{
-				  app.identityno=a.identityno;
-				  app.name=a.name;
-				  app.surname=a.surname;
-				  app.birthdate=a.birthdate;
-				  app.birth_place=a.Birth_place;
-				  app.address_type=a.address_type;
-				  app.address_text=a.address_text;
-				  app.city_id=a.city_id;
-				  app.allow_email=a.allow_email;
-				  app.allow_sms=a.allow_sms;
-				  app.mobile=a.mobile;
-				  app.work_phone=a.work_phone;
-				  app.home_phone=a.home_phone;
-				  app.fax=a.fax;
-				  app.email=a.email;
-				  app.user_name ="Merhaba : " + a.name + " " + a.surname;
+				  app.identityno=a[0].identityno;
+				  app.name=a[0].name;
+				  app.surname=a[0].surname;
+				  app.birthdate=a[0].birthdate;
+				  app.birth_place=a[0].Birth_place;
+				  app.address_type=a[0].address_type;
+				  app.address_text=a[0].address_text;
+				  app.city_id=a[0].city_id;
+				  app.allow_email=a[0].allow_email;
+				  app.allow_sms=a[0].allow_sms;
+				  app.mobile=a[0].mobile;
+				  app.work_phone=a[0].work_phone;
+				  app.home_phone=a[0].home_phone;
+				  app.fax=a[0].fax;
+				  app.email=a[0].email;
+				  app.user_name ="Merhaba : " + a[0].name + " " + a[0].surname;
 				  				  
 				 }
 				//else
