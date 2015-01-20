@@ -6,52 +6,81 @@
         <meta name="format-detection" content="telephone=no" />
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height" />
                
-        <script type="text/javascript" src="js/jquery-2.0.3.min.js"></script>
         <script type="text/javascript" src="js/my.js"></script>        
-		<script src="style/jquery.mobile-1.2.0.min.js" type="text/javascript"></script>
-		<link rel="stylesheet" href="style/jquery.mobile-1.2.0.min.css" />
-	 	<script src="scripts/jquery-1.6.4.js" type="text/javascript"></script>
-		<script src="scripts/jquery.mobile-1.2.0.min.js" type="text/javascript"></script>
-		
-		<link rel="Stylesheet" href="style/jquery.mobile-1.2.0.min.css" />
-		<link rel="stylesheet" type="text/css" href="css/index.css" />
- 		<script src="Chart.min.js"></script> 		
+        <link rel="Stylesheet" href="style/jquery.mobile-1.2.0.min.css" />
+        <script src="scripts/jquery-1.6.4.js" type="text/javascript"></script>
+        <script src="scripts/jquery.mobile-1.2.0.min.js" type="text/javascript"></script>
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+ 		<script src="Chart.min.js"></script>
  		<script type="text/javascript" src="http://www.google.com/jsapi"></script>
+ 		
 </head>
-    <body onload="app.onDeviceReady()">    	
-	
+    <body onload="app.onDeviceReady()">  
+        
+        <!--start login page-->
+        <div data-role="page" id="login_form">
+            <div data-role="header" align="center">
+                <h1>Login Ekranı</h1>
+            </div>
+            <div data-role="main" class="ui-content" align="center">
+             <table border="0">
+                <tr> 
+                <td>Kullanıcı Adı:<span>*</span></td>
+                <td><input type="text" id="username" placeholder="username"/> </td>
+                </tr>
+                <tr> 
+                <td>Şifre:<span>*</span></td>
+                <td><input type="password" id="password" placeholder="password"/> </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><input type="button" name="btn_login" id="btn_login" value="Giriş" onclick="app.loginfnc()"/></td>
+                </tr>
+                
+            </table>
+            <br />
+            <br />
+               <p>
+                    <a href="#"> <img src="img/login_with_facebook.jpg" height="30"/></a>
+                    <br />
+                    <br />
+                    <br />
+                    Kayıt olmadan ziyaretçi girişi için <a onclick="app.loginguest()">Tıklayınız</a>
+               </p>
+            </div>
+        </div> 
+        <!--end login page-->
+        
+        
 <div data-role="page" id="barkod">
     <div data-role="header" align="center">
     	<br/>
         FİBA GRUP<div id="un_barkod"> </div> <div id="point_barkod"> </div>
-		      <div id="m1">
-			      <a id="msj" href="#barkod"  onclick="app.fnc_Barkod()">	<img src="img/menu_icons/1_Home_.png" width="12%"> <img/> </a>
-			      <a href="#puanlarim" onclick="app.fnc_Puanlarim()">		<img src="img/menu_icons/2_Score.png" width="12%"> <img/></a>
-			      <a href="#mesajlar"  onclick="app.fnc_Mesajlar()">		<img id="img_msg" src="img/menu_icons/3_Message.png" width="12%"> <img/> </a>
-			      <a href="#profil" onclick="app.fnc_Profil()">				<img src="img/menu_icons/4_Profile.png" width="12%"> <img/></a>
-			      <a href="#kampanyalar" onclick="app.fnc_Kampanyalar()">	<img id="img_camp" src="img/menu_icons/5_Campaign.png" width="12%"> <img/></a>
-			      <a href="#istatistik" onclick="app.fnc_Istatistik()">		<img src="img/menu_icons/6_Statistic.png" width="12%"> <img/></a>
-			      <a href="#enyakin" onclick="app.detectCurrentLocation()">			<img src="img/menu_icons/7_Map.png" width="12%"> <img/></a>
-		      </div>            
+		      <div >
+                <a href="#barkod" data-ajax="false" onclick="app.fnc_Barkod()"><img src="img/menu_icons/1_Home_.png" width="12%"> <img/></a>
+                <a href="#puanlarim" data-ajax="false"  onclick="app.fnc_Puanlarim()"><img src="img/menu_icons/2_Score.png" width="12%"> <img/></a>
+                <a href="#mesajlar"  onclick="app.fnc_Mesajlar()">        <img id="img_msg" src="img/menu_icons/3_Message.png" width="12%"> <img/> </a>
+                <a href="#profil" data-ajax="false" onclick="app.fnc_Profil()"><img src="img/menu_icons/4_Profile.png" width="12%"> <img/></a>
+                <a href="#kampanyalar" onclick="app.fnc_Kampanyalar()">   <img id="img_camp" src="img/menu_icons/5_Campaign.png" width="12%"> <img/></a>
+                <a href="#istatistik" data-ajax="false" onclick="app.fnc_Istatistik()"><img src="img/menu_icons/6_Statistic.png" width="12%"> <img/></a>
+				<a href="#istatistik" data-ajax="false" onclick="app.fnc_Anket()"><img src="img/menu_icons/8_anket.png" width="12%"> <img/></a>                
+                <a href="#enyakin" data-ajax="false" onclick="app.detectCurrentLocation()"><img src="img/menu_icons/7_Map.png" width="12%"> <img/></a>
+		      </div>        
     </div><!-- /header -->
-    
-    
 <div data-role="content">
     	<div id="div_barkod">
     		<div id="un_barkod2"> </div>
-    		Size özel üretilmiş dijital barkodunuzu alış verişlerinizde okutarak indirim ve puan kazabilirisiniz.
+    		Size özel üretilmiş dijital barkodunuzu alış verişlerinizde okutarak indirim ve puan kazabilirisiniz. 
     		<br/>
     		<br/>
     		<br/>
-    		<h2>
-    		<div id="barkod_id" align="center"> </div>
-    		</h2>
-    		<br/>
-    		<div align="center"> 
+            <h2>
+            <div id="barkod_id" align="center">123456789</div>
+            </h2>
+            <br/>
     		<img src="img/qr_code.gif"><img/>
-    		</div>
 		</div>
-</div>
+</div>,0
 	
 </div><!-- /page -->
 
@@ -60,13 +89,14 @@
     	<br/>
         FİBA GRUP<div id="un_puanlarim"> </div><div id="point_puanlarim"> </div>
 		      <div >
-			      <a id="msj1" href="#barkod"  onclick="app.fnc_Barkod()">	<img src="img/menu_icons/1_Home.png" width="12%"> <img/> </a>
-			      <a href="#puanlarim" onclick="app.fnc_Puanlarim()">		<img src="img/menu_icons/2_Score_.png" width="12%"> <img/></a>
-			      <a href="#mesajlar"  onclick="app.fnc_Mesajlar()">		<img id="img_msg1" src="img/menu_icons/3_Message.png" width="12%"> <img/> </a>
-			      <a href="#profil" onclick="app.fnc_Profil()">				<img src="img/menu_icons/4_Profile.png" width="12%"> <img/></a>
-			      <a href="#kampanyalar" onclick="app.fnc_Kampanyalar()">	<img id="img_camp1" src="img/menu_icons/5_Campaign.png" width="12%"> <img/></a>
-			      <a href="#istatistik" onclick="app.fnc_Istatistik()">		<img src="img/menu_icons/6_Statistic.png" width="12%"> <img/></a>
-			      <a href="#enyakin" onclick="app.detectCurrentLocation()">			<img src="img/menu_icons/7_Map.png" width="12%"> <img/></a>
+                <a href="#barkod" data-ajax="false" onclick="app.fnc_Barkod()"><img src="img/menu_icons/1_Home.png" width="12%"> <img/></a>
+                <a href="#puanlarim" data-ajax="false"  onclick="app.fnc_Puanlarim()"><img src="img/menu_icons/2_Score_.png" width="12%"> <img/></a>
+                  <a href="#mesajlar"  onclick="app.fnc_Mesajlar()">        <img id="img_msg1" src="img/menu_icons/3_Message.png" width="12%"> <img/> </a>
+                <a href="#profil" data-ajax="false" onclick="app.fnc_Profil()"><img src="img/menu_icons/4_Profile.png" width="12%"> <img/></a>
+                  <a href="#kampanyalar" onclick="app.fnc_Kampanyalar()">   <img id="img_camp1" src="img/menu_icons/5_Campaign.png" width="12%"> <img/></a>
+                <a href="#istatistik" data-ajax="false" onclick="app.fnc_Istatistik()"><img src="img/menu_icons/6_Statistic.png" width="12%"> <img/></a>
+				<a href="#istatistik" data-ajax="false" onclick="app.fnc_Anket()"><img src="img/menu_icons/8_anket.png" width="12%"> <img/></a>                
+                <a href="#enyakin" data-ajax="false" onclick="app.detectCurrentLocation()"><img src="img/menu_icons/7_Map.png" width="12%"> <img/></a>
 
 		      </div>        
     </div><!-- /header -->	
@@ -84,13 +114,15 @@ puanlarım
     	<br/>
         FİBA GRUP<div id="un_mesajlar"> </div><div id="point_mesajlar"> </div>
 		      <div >
-			      <a id="msj2" href="#barkod"  onclick="app.fnc_Barkod()">	<img src="img/menu_icons/1_Home.png" width="12%"> <img/> </a>
-			      <a href="#puanlarim" onclick="app.fnc_Puanlarim()">		<img src="img/menu_icons/2_Score.png" width="12%"> <img/></a>
-			      <a href="#mesajlar"  onclick="app.fnc_Mesajlar()">		<img id="img_msg2" src="img/menu_icons/3_Message_.png" width="12%"> <img/> </a>
-			      <a href="#profil" onclick="app.fnc_Profil()">				<img src="img/menu_icons/4_Profile.png" width="12%"> <img/></a>
-			      <a href="#kampanyalar" onclick="app.fnc_Kampanyalar()">	<img id="img_camp2" src="img/menu_icons/5_Campaign.png" width="12%"> <img/></a>
-			      <a href="#istatistik" onclick="app.fnc_Istatistik()">		<img src="img/menu_icons/6_Statistic.png" width="12%"> <img/></a>
-			      <a href="#enyakin" onclick="app.fnc_Enyakin()">			<img src="img/menu_icons/7_Map.png" width="12%"> <img/></a>
+                <a href="#barkod" data-ajax="false" onclick="app.fnc_Barkod()"><img src="img/menu_icons/1_Home.png" width="12%"> <img/></a>
+                <a href="#puanlarim" data-ajax="false"  onclick="app.fnc_Puanlarim()"><img src="img/menu_icons/2_Score.png" width="12%"> <img/></a>
+                  <a href="#mesajlar"  onclick="app.fnc_Mesajlar()">        <img id="img_msg2" src="img/menu_icons/3_Message_.png" width="12%"> <img/> </a>
+                <a href="#profil" data-ajax="false" onclick="app.fnc_Profil()"><img src="img/menu_icons/4_Profile.png" width="12%"> <img/></a>
+                  <a href="#kampanyalar" onclick="app.fnc_Kampanyalar()">   <img id="img_camp2" src="img/menu_icons/5_Campaign.png" width="12%"> <img/></a>
+                <a href="#istatistik" data-ajax="false" onclick="app.fnc_Istatistik()"><img src="img/menu_icons/6_Statistic.png" width="12%"> <img/></a>
+				<a href="#istatistik" data-ajax="false" onclick="app.fnc_Anket()"><img src="img/menu_icons/8_anket.png" width="12%"> <img/></a>                
+                <a href="#enyakin" data-ajax="false" onclick="app.detectCurrentLocation()"><img src="img/menu_icons/7_Map.png" width="12%"> <img/></a>
+
 		      </div>        
     </div><!-- /header -->	
 
@@ -108,13 +140,14 @@ puanlarım
     	<br/>
         FİBA GRUP<div id="un_profil"> </div><div id="point_profil"> </div>
 		      <div >
-			      <a id="msj3" href="#barkod"  onclick="app.fnc_Barkod()">	<img src="img/menu_icons/1_Home.png" width="12%"> <img/> </a>
-			      <a href="#puanlarim" onclick="app.fnc_Puanlarim()">		<img src="img/menu_icons/2_Score.png" width="12%"> <img/></a>
-			      <a href="#mesajlar"  onclick="app.fnc_Mesajlar()">		<img id="img_msg3" src="img/menu_icons/3_Message.png" width="12%"> <img/> </a>
-			      <a href="#profil" onclick="app.fnc_Profil()">				<img src="img/menu_icons/4_Profile_.png" width="12%"> <img/></a>
-			      <a href="#kampanyalar" onclick="app.fnc_Kampanyalar()">	<img id="img_camp3" src="img/menu_icons/5_Campaign.png" width="12%"> <img/></a>
-			      <a href="#istatistik" onclick="app.fnc_Istatistik()">		<img src="img/menu_icons/6_Statistic.png" width="12%"> <img/></a>
-			      <a href="#enyakin" onclick="app.fnc_Enyakin()">			<img src="img/menu_icons/7_Map.png" width="12%"> <img/></a>
+                <a href="#barkod" data-ajax="false" onclick="app.fnc_Barkod()"><img src="img/menu_icons/1_Home.png" width="12%"> <img/></a>
+                <a href="#puanlarim" data-ajax="false"  onclick="app.fnc_Puanlarim()"><img src="img/menu_icons/2_Score.png" width="12%"> <img/></a>
+                <a href="#mesajlar"  onclick="app.fnc_Mesajlar()">        <img id="img_msg3" src="img/menu_icons/3_Message.png" width="12%"> <img/> </a>
+                <a href="#profil" data-ajax="false" onclick="app.fnc_Profil()"><img src="img/menu_icons/4_Profile_.png" width="12%"> <img/></a>
+                <a href="#kampanyalar" onclick="app.fnc_Kampanyalar()">   <img id="img_camp3" src="img/menu_icons/5_Campaign.png" width="12%"> <img/></a>
+                <a href="#istatistik" data-ajax="false" onclick="app.fnc_Istatistik()"><img src="img/menu_icons/6_Statistic.png" width="12%"> <img/></a>
+				<a href="#istatistik" data-ajax="false" onclick="app.fnc_Anket()"><img src="img/menu_icons/8_anket.png" width="12%"> <img/></a>                
+                <a href="#enyakin" data-ajax="false" onclick="app.detectCurrentLocation()"><img src="img/menu_icons/7_Map.png" width="12%"> <img/></a>
 		      </div>
     </div><!-- /header -->
     <div data-role="content">
@@ -122,13 +155,9 @@ puanlarım
 	<div id="div_profil">
 		<br/>
 		<table border="0">
-			<tr > 
-			<td>isim  </td>
-			<td><input type="text" id="txt_isim"/> </td>
-			</tr>
 			<tr> 
-			<td> soyisim </td>
-			<td><input type="text" id="txt_soyisim"/> </td>
+			<td>isim soyisim </td>
+			<td><input type="text" id="txt_isim"/> </td>
 			</tr>
 			<tr> 
 			<td>TC Kimlik No </td>
@@ -173,21 +202,23 @@ puanlarım
     	<br/>
         FİBA GRUP<div id="un_kampanyalar"> </div><div id="point_kampanyalar"> </div>
 		      <div >
-			      <a id="msj4" href="#barkod"  onclick="app.fnc_Barkod()">	<img src="img/menu_icons/1_Home.png" width="12%"> <img/> </a>
-			      <a href="#puanlarim" onclick="app.fnc_Puanlarim()">		<img src="img/menu_icons/2_Score.png" width="12%"> <img/></a>
-			      <a href="#mesajlar"  onclick="app.fnc_Mesajlar()">		<img id="img_msg4" src="img/menu_icons/3_Message.png" width="12%"> <img/> </a>
-			      <a href="#profil" onclick="app.fnc_Profil()">				<img src="img/menu_icons/4_Profile.png" width="12%"> <img/></a>
-			      <a href="#kampanyalar" onclick="app.fnc_Kampanyalar()">	<img id="img_camp4" src="img/menu_icons/5_Campaign_.png" width="12%"> <img/></a>
-			      <a href="#istatistik" onclick="app.fnc_Istatistik()">		<img src="img/menu_icons/6_Statistic.png" width="12%"> <img/></a>
-			      <a href="#enyakin" onclick="app.fnc_Enyakin()">			<img src="img/menu_icons/7_Map.png" width="12%"> <img/></a>
-		      </div>
+                <a href="#barkod" data-ajax="false" onclick="app.fnc_Barkod()"><img src="img/menu_icons/1_Home.png" width="12%"> <img/></a>
+                <a href="#puanlarim" data-ajax="false"  onclick="app.fnc_Puanlarim()"><img src="img/menu_icons/2_Score.png" width="12%"> <img/></a>
+                  <a href="#mesajlar"  onclick="app.fnc_Mesajlar()">        <img id="img_msg4" src="img/menu_icons/3_Message.png" width="12%"> <img/> </a>
+                <a href="#profil" data-ajax="false" onclick="app.fnc_Profil()"><img src="img/menu_icons/4_Profile.png" width="12%"> <img/></a>
+                  <a href="#kampanyalar" onclick="app.fnc_Kampanyalar()">   <img id="img_camp4" src="img/menu_icons/5_Campaign_.png" width="12%"> <img/></a>
+                <a href="#istatistik" data-ajax="false" onclick="app.fnc_Istatistik()"><img src="img/menu_icons/6_Statistic.png" width="12%"> <img/></a>
+				<a href="#istatistik" data-ajax="false" onclick="app.fnc_Anket()"><img src="img/menu_icons/8_anket.png" width="12%"> <img/></a>                
+                <a href="#enyakin" data-ajax="false" onclick="app.detectCurrentLocation()"><img src="img/menu_icons/7_Map.png" width="12%"> <img/></a>
+
+		      </div>               
     </div><!-- /header -->
     <div data-role="content">
  	
 	<div id="div_kampanyalar">
 		<br/>
-		<table width="100%">
-					<tr valign="center"> 
+		<table>
+                    <tr valign="center"> 
                     <td valign="center"><a href="#mesajlar"  onclick="app.fnc_Mesajlar()"> <img id="icon1" src="img/company_icons/1.jpg" width="90%" alt="AÇEV" /></a></td>
                     <td valign="center"><a href="#mesajlar"  onclick="app.fnc_Mesajlar()"><img id="icon2" src="img/company_icons/2.jpg" width="90%" alt="Aeropostale" /></a></td>
                     </tr>
@@ -219,12 +250,40 @@ puanlarım
                     <td><a href="#mesajlar"  onclick="app.fnc_Mesajlar()"><img id="icon29" src="img/company_icons/29.jpg" width="90%" alt="Özyeğin Üniversitesi" /></a></td>
                     <td><a href="#mesajlar"  onclick="app.fnc_Mesajlar()"><img id="icon31" src="img/company_icons/31.jpg" width="90%" alt="Swissotel The Bosphorus" /></a></td>
                     </tr>
-		</table>
+                   </table>
+
+
+
 		
 	</div>
 </div>
 </div><!-- /page -->
 
+
+<!-- Start of second page -->
+<div data-role="page" id="anket">
+    <div data-role="header" align="center">
+    	<br/>
+        FİBA GRUP<div id="un_anket"> </div><div id="point_anket"> </div>
+		      <div >
+                <a href="#barkod" data-ajax="false" onclick="app.fnc_Barkod()"><img src="img/menu_icons/1_Home.png" width="12%"> <img/></a>
+                <a href="#puanlarim" data-ajax="false"  onclick="app.fnc_Puanlarim()"><img src="img/menu_icons/2_Score.png" width="12%"> <img/></a>
+                <a href="#mesajlar"  onclick="app.fnc_Mesajlar()">        <img id="img_msg5" src="img/menu_icons/3_Message.png" width="12%"> <img/> </a>
+                <a href="#profil" data-ajax="false" onclick="app.fnc_Profil()"><img src="img/menu_icons/4_Profile.png" width="12%"> <img/></a>
+                <a href="#kampanyalar" onclick="app.fnc_Kampanyalar()">   <img id="img_camp5" src="img/menu_icons/5_Campaign.png" width="12%"> <img/></a>
+                <a href="#istatistik" data-ajax="false" onclick="app.fnc_Istatistik()"><img src="img/menu_icons/6Statistic.png" width="12%"> <img/></a>
+				<a href="#istatistik" data-ajax="false" onclick="app.fnc_Anket()"><img src="img/menu_icons/8_anket_.png" width="12%"> <img/></a>                
+                <a href="#enyakin" data-ajax="false" onclick="app.detectCurrentLocation()"><img src="img/menu_icons/7_Map.png" width="12%"> <img/></a>
+
+		      </div>               
+    </div><!-- /header -->
+    <div data-role="content">
+    <canvas id="pie" height="150" width="150"> </canvas> 	
+    <!-- <canvas id="line" height="300" width="200"> </canvas> -->
+	<div id="div_istatistik">
+	</div>
+</div>
+</div><!-- /page -->
 
 
 <!-- Start of second page -->
@@ -233,18 +292,20 @@ puanlarım
     	<br/>
         FİBA GRUP<div id="un_istatistik"> </div><div id="point_istatistik"> </div>
 		      <div >
-			      <a id="msj5" href="#barkod"  onclick="app.fnc_Barkod()">	<img src="img/menu_icons/1_Home.png" width="12%"><img/> </a>
-			      <a href="#puanlarim" onclick="app.fnc_Puanlarim()">		<img src="img/menu_icons/2_Score.png" width="12%"> <img/></a>
-			      <a href="#mesajlar"  onclick="app.fnc_Mesajlar()">		<img id="img_msg5" src="img/menu_icons/3_Message.png" width="12%"> <img/> </a>
-			      <a href="#profil" onclick="app.fnc_Profil()">				<img src="img/menu_icons/4_Profile.png" width="12%"> <img/></a>
-			      <a href="#kampanyalar" onclick="app.fnc_Kampanyalar()">	<img id="img_camp5" src="img/menu_icons/5_Campaign.png" width="12%"> <img/></a>
-			      <a href="#istatistik" onclick="app.fnc_Istatistik()">		<img src="img/menu_icons/6_Statistic_.png" width="12%"> <img/></a>
-			      <a href="#enyakin" onclick="app.fnc_Enyakin()">			<img src="img/menu_icons/7_Map.png" width="12%"> <img/></a>
+                <a href="#barkod" data-ajax="false" onclick="app.fnc_Barkod()"><img src="img/menu_icons/1_Home.png" width="12%"> <img/></a>
+                <a href="#puanlarim" data-ajax="false"  onclick="app.fnc_Puanlarim()"><img src="img/menu_icons/2_Score.png" width="12%"> <img/></a>
+                <a href="#mesajlar"  onclick="app.fnc_Mesajlar()">        <img id="img_msg5" src="img/menu_icons/3_Message.png" width="12%"> <img/> </a>
+                <a href="#profil" data-ajax="false" onclick="app.fnc_Profil()"><img src="img/menu_icons/4_Profile.png" width="12%"> <img/></a>
+                  <a href="#kampanyalar" onclick="app.fnc_Kampanyalar()">   <img id="img_camp5" src="img/menu_icons/5_Campaign.png" width="12%"> <img/></a>
+                <a href="#istatistik" data-ajax="false" onclick="app.fnc_Istatistik()"><img src="img/menu_icons/6_Statistic_.png" width="12%"> <img/></a>
+				<a href="#istatistik" data-ajax="false" onclick="app.fnc_Anket()"><img src="img/menu_icons/8_anket.png" width="12%"> <img/></a>                
+                <a href="#enyakin" data-ajax="false" onclick="app.detectCurrentLocation()"><img src="img/menu_icons/7_Map.png" width="12%"> <img/></a>
+
 		      </div>               
     </div><!-- /header -->
     <div data-role="content">
     <canvas id="pie" height="150" width="150"> </canvas> 	
-    <canvas id="line" height="300" width="200"> </canvas>
+    <!-- <canvas id="line" height="300" width="200"> </canvas> -->
 	<div id="div_istatistik">
 	</div>
 </div>
@@ -257,31 +318,128 @@ puanlarım
     	<br/>
         FİBA GRUP<div id="un_enyakin"> </div><div id="point_enyakin"> </div>
 		      <div >
-			      <a id="msj6" href="#barkod"  onclick="app.fnc_Barkod()">	<img src="img/menu_icons/1_Home.png" width="12%"><img/> </a>
-			      <a href="#puanlarim" onclick="app.fnc_Puanlarim()">		<img src="img/menu_icons/2_Score.png" width="12%"> <img/></a>
-			      <a href="#mesajlar"  onclick="app.fnc_Mesajlar()">		<img id="img_msg6" src="img/menu_icons/3_Message.png" width="12%"> <img/> </a>
-			      <a href="#profil" onclick="app.fnc_Profil()">				<img src="img/menu_icons/4_Profile.png" width="12%"> <img/></a>
-			      <a href="#kampanyalar" onclick="app.fnc_Kampanyalar()">	<img id="img_camp6" src="img/menu_icons/5_Campaign.png" width="12%"> <img/></a>
-			      <a href="#istatistik" onclick="app.fnc_Istatistik()">		<img src="img/menu_icons/6_Statistic.png" width="12%"> <img/></a>
-			      <a href="#enyakin" onclick="app.fnc_Enyakin()">			<img src="img/menu_icons/7_Map_.png" width="12%"> <img/></a>
+                <a href="#barkod" data-ajax="false" onclick="app.fnc_Barkod()"><img src="img/menu_icons/1_Home.png" width="12%"> <img/></a>
+                <a href="#puanlarim" data-ajax="false"  onclick="app.fnc_Puanlarim()"><img src="img/menu_icons/2_Score.png" width="12%"> <img/></a>
+                <a href="#mesajlar"  onclick="app.fnc_Mesajlar()">        <img id="img_msg6" src="img/menu_icons/3_Message.png" width="12%"> <img/> </a>
+                <a href="#profil" data-ajax="false" onclick="app.fnc_Profil()"><img src="img/menu_icons/4_Profile.png" width="12%"> <img/></a>
+                  <a href="#kampanyalar" onclick="app.fnc_Kampanyalar()">   <img id="img_camp6" src="img/menu_icons/5_Campaign.png" width="12%"> <img/></a>
+                <a href="#istatistik" data-ajax="false" onclick="app.fnc_Istatistik()"><img src="img/menu_icons/6_Statistic.png" width="12%"> <img/></a>
+                <a href="#enyakin" data-ajax="false" onclick="app.detectCurrentLocation()"><img src="img/menu_icons/7_Map_.png" width="12%"> <img/></a>
+
 		      </div>               
     </div><!-- /header -->
     <div data-role="content" id="mapContent" style="padding:0;position:absolute;top:90px;right:0px;bottom:0px;left:0px;">
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD2qBI9GSPtX0zrcLHLhPtc519cEPyGotw&sensor=false"> </script>
         <div id="map"  style="width:100%; height: 100%;" > </div>
-    </div>
+    </div> 
+
 
 </div><!-- /page -->
 
+<!--for guest company-->
+<div data-role="page" id="g_campaign">
+    <div data-role="header" align="center">
+        <a href="#login_form" style="margin-top: 8px;"><img src="img/menu_icons/back_icon.png" width="30px" height="30px"> <img/></a>
+        <br/>
+              <div >
+                <a href="#g_campaign" onclick="app.fnc_Kampanyalar()">   <img id="img_campaign" src="img/menu_icons/5_Campaign_.png" width="12%"> <img/></a>
+                <a href="#g_messages"  onclick="app.fnc_message()">        <img id="g_img_msg2" src="img/menu_icons/3_Message.png" width="12%"> <img/> </a>
+                <a href="#g_nearest" data-ajax="false" onclick="app.detectCurrentLocation()"><img src="img/menu_icons/7_Map.png" width="12%"> <img/></a>
+
+              </div>               
+    </div><!-- /header -->
+    <div data-role="content">
+    
+    <div id="div_campaign">
+        <br/>
+        <table>
+                    <tr valign="center"> 
+                    <td valign="center"><a href="#g_messages"  onclick="app.fnc_Mesajlar()"> <img id="g_icon1" src="img/company_icons/1.jpg" width="90%" alt="AÇEV" /></a></td>
+                    <td valign="center"><a href="#g_messages"  onclick="app.fnc_Mesajlar()"><img id="g_icon2" src="img/company_icons/2.jpg" width="90%" alt="Aeropostale" /></a></td>
+                    </tr>
+                    <tr valign="center">
+                    <td><a href="#g_messages"  onclick="app.fnc_Mesajlar()"><img id="g_icon3" src="img/company_icons/3.jpg" width="90%" alt="Banana Republic" /></a></td>
+                    <td><a href="#g_messages"  onclick="app.fnc_Mesajlar()"><img id="g_icon12" src="img/company_icons/12.jpg" width="90%" alt="Fiba Gönüllüleri" /></a></td>
+                    </tr>
+                    <tr valign="center">
+                    <td><a href="#g_messages"  onclick="app.fnc_Mesajlar()"><img id="g_icon13" src="img/company_icons/13.jpg" width="90%" alt="Fiba Air" /></a></td>
+                    <td><a href="#g_messages"  onclick="app.fnc_Mesajlar()"><img id="g_icon14" src="img/company_icons/14.jpg" width="90%" alt="Fibabanka" /></a></td>
+                    </tr>
+                    <tr valign="center">  
+                    <td><a href="#g_messages"  onclick="app.fnc_Mesajlar()"><img id="g_icon17" src="img/company_icons/17.jpg" width="90%" alt="Florence Nightingale İstanbul" /></a></td>
+                    <td><a href="#g_messages"  onclick="app.fnc_Mesajlar()"><img id="g_icon18" src="img/company_icons/18.jpg" width="90%" alt="Fiba Group" /></a></td>
+                    </tr>
+                    <tr valign="center">  
+                    <td ><a href="#g_messages"  onclick="app.fnc_Mesajlar()"><img id="g_icon19" src="img/company_icons/19.jpg" width="90%" alt="Fiba Hayat" /></a></td>
+                    <td><a href="#g_messages"  onclick="app.fnc_Mesajlar()"><img id="g_icon22" src="img/company_icons/22.jpg" width="90%" alt="Gap" /></a></td>
+                    </tr>  
+                    <tr valign="center">
+                    <td><a href="#g_messages"  onclick="app.fnc_Mesajlar()"><img id="g_icon25" src="img/company_icons/25.jpg" width="90%" alt="Hüsnü M. Özyeğin Vakfı" /></a></td>
+                    <td><a href="#g_messages"  onclick="app.fnc_Mesajlar()"><img id="g_icon26" src="img/company_icons/26.png" width="90%" alt="Kumport" /></a></td>
+                    </tr>
+                    <tr valign="center">  
+                    <td><a href="#g_messages"  onclick="app.fnc_Mesajlar()"><img id="g_icon27" src="img/company_icons/27.jpg" width="90%" alt="Marks & Spencer" /></a></td>
+                    <td><a href="#g_messages"  onclick="app.fnc_Mesajlar()"><img id="g_icon28" src="img/company_icons/28.jpg" width="90%" alt="Ofishane" /></a></td>
+                    </tr>
+                    <tr valign="center">  
+                    <td><a href="#g_messages"  onclick="app.fnc_Mesajlar()"><img id="g_icon29" src="img/company_icons/29.jpg" width="90%" alt="Özyeğin Üniversitesi" /></a></td>
+                    <td><a href="#g_messages"  onclick="app.fnc_Mesajlar()"><img id="g_icon31" src="img/company_icons/31.jpg" width="90%" alt="Swissotel The Bosphorus" /></a></td>
+                    </tr>
+                   </table>
+
+
+
         
+    </div>
+</div>
+</div><!-- /page -->
+
+<!--for guest messages-->
+<div data-role="page" id="g_messages">
+    <div data-role="header" align="center">
+        <a href="#login_form" style="margin-top: 8px;"><img src="img/menu_icons/back_icon.png" width="30px" height="30px"> <img/></a>
+        <br/>
+              <div >
+                 <a href="#g_campaign" onclick="app.fnc_Kampanyalar()">   <img src="img/menu_icons/5_Campaign.png" width="12%"> <img/></a>
+                <a href="#g_messages"  onclick="app.fnc_message()">  <img src="img/menu_icons/3_Message_.png" width="12%"> <img/> </a>
+                <a href="#g_nearest" data-ajax="false" onclick="app.detectCurrentLocation()"><img src="img/menu_icons/7_Map.png" width="12%"> <img/></a>
+
+              </div>        
+    </div><!-- /header -->  
+
+<div data-role="content">
+<div id="div_messages_gs">
+                
+</div>
+</div>
+</div>
+
+<!--for guest nearest location-->
+<div data-role="page" id="g_nearest">
+    <div data-role="header" align="center">
+        <a href="#login_form" style="margin-top: 8px;"><img src="img/menu_icons/back_icon.png" width="30px" height="30px"> <img/></a>
+        <br/>
+              <div >
+                <a href="#g_campaign" onclick="app.fnc_Kampanyalar()">   <img id="g_img_camp6" src="img/menu_icons/5_Campaign.png" width="12%"> <img/></a>
+                <a href="#g_messages"  onclick="app.fnc_message()">  <img id="g_img_campaign234" src="img/menu_icons/3_Message.png" width="12%"> <img/> </a>
+                <a href="#g_nearest" data-ajax="false" onclick="app.detectCurrentLocation()"><img src="img/menu_icons/7_Map_.png" width="12%"> <img/></a>
+
+              </div>               
+    </div><!-- /header -->
+    <div data-role="content" id="guest_mapContent" style="padding:0;position:absolute;top:90px;right:0px;bottom:0px;left:0px;">
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD2qBI9GSPtX0zrcLHLhPtc519cEPyGotw&sensor=false"> </script>
+        <div id="guest_map"  style="width:100%; height: 100%;" > </div>
+    </div> 
+</div><!-- /page -->
         <img src="" id="img1">
-        
+        <!-- <script type="text/javascript" src="phonegap.js"></script> -->
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/PushwooshAndroid.js"></script>
         <script type="text/javascript" src="js/PushwooshiOS.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
+        
         <script type="text/javascript">
-         app.initialize();
+            app.initialize();
         </script>
     </body>
 </html>
