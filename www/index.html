@@ -54,6 +54,51 @@
         </div> 
         <!--end login page-->
         
+<div data-role="page" id="anket_detay">
+    <div data-role="header" align="center">
+    	<br/>
+        FİBA GRUP<div id="un_anket_detay"> </div> <div id="point_anket_detay"> </div>
+		      <div >
+                <a href="#barkod" data-ajax="false" onclick="app.fnc_Barkod()"><img src="img/menu_icons/1_Home.png" width="12%"> <img/></a>
+                <a href="#puanlarim" data-ajax="false"  onclick="app.fnc_Puanlarim()"><img src="img/menu_icons/2_Score.png" width="12%"> <img/></a>
+                <a href="#mesajlar"  onclick="app.fnc_Mesajlar()">        <img id="img_msg9" src="img/menu_icons/3_Message.png" width="12%"> <img/> </a>
+                <a href="#profil" data-ajax="false" onclick="app.fnc_Profil()"><img src="img/menu_icons/4_Profile.png" width="12%"> <img/></a>
+                <a href="#kampanyalar" onclick="app.fnc_Kampanyalar()">   <img id="img_camp9" src="img/menu_icons/5_Campaign.png" width="12%"> <img/></a>
+                <a href="#istatistik" data-ajax="false" onclick="app.fnc_Istatistik()"><img src="img/menu_icons/6_Statistic.png" width="12%"> <img/></a>
+				<a href="#anket" data-ajax="false" onclick="app.fnc_Anket()"><img src="img/menu_icons/8_anket_.png" width="12%"> <img/></a>                
+                <a href="#enyakin" data-ajax="false" onclick="app.detectCurrentLocation()"><img src="img/menu_icons/7_Map.png" width="12%"> <img/></a>
+		      </div>        
+    </div><!-- /header -->
+<div data-role="content">
+    	<div id="div_anket_detay">
+    		Selam , hangi elbise bana en çok yakışır ;)
+    		<fieldset data-role="controlgroup">
+             <table border="0">
+                <tr> 
+                <td><img src="img/elbise1.png"> <img/> </td>
+                <td><img src="img/elbise2.png"> <img/> </td>
+                <td><img src="img/elbise3.png"> <img/> </td>
+                </tr>
+            </table>
+            </fieldset>
+            
+            <fieldset data-role="controlgroup">
+	 	<input type="radio" name="radio-choice" id="radio-choice-1" value="choice-1" checked="checked" />
+     	<label for="radio-choice-1">Siyah Elbise</label>
+
+     	<input type="radio" name="radio-choice" id="radio-choice-2" value="choice-2"  />
+     	<label for="radio-choice-2">Kırmızı Elbise</label>
+
+     	<input type="radio" name="radio-choice" id="radio-choice-3" value="choice-3"  />
+     	<label for="radio-choice-3">Mavi Elbise</label>
+
+</fieldset>
+         <input type="button" name="btn_anket" id="btn_anket" value="kaydet" onclick="app.fnc_saveanket()"/>
+
+		</div>
+</div>
+	
+</div><!-- /page -->
         
 <div data-role="page" id="barkod">
     <div data-role="header" align="center">
@@ -66,6 +111,7 @@
                 <a href="#profil" data-ajax="false" onclick="app.fnc_Profil()"><img src="img/menu_icons/4_Profile.png" width="12%"> <img/></a>
                 <a href="#kampanyalar" onclick="app.fnc_Kampanyalar()">   <img id="img_camp" src="img/menu_icons/5_Campaign.png" width="12%"> <img/></a>
                 <a href="#istatistik" data-ajax="false" onclick="app.fnc_Istatistik()"><img src="img/menu_icons/6_Statistic.png" width="12%"> <img/></a>
+				<a href="#anket" data-ajax="false" onclick="app.fnc_Anket()"><img src="img/menu_icons/8_anket.png" width="12%"> <img/></a>                
                 <a href="#enyakin" data-ajax="false" onclick="app.detectCurrentLocation()"><img src="img/menu_icons/7_Map.png" width="12%"> <img/></a>
 		      </div>        
     </div><!-- /header -->
@@ -144,6 +190,7 @@
                 <a href="#profil" data-ajax="false" onclick="app.fnc_Profil()"><img src="img/menu_icons/4_Profile.png" width="12%"> <img/></a>
                   <a href="#kampanyalar" onclick="app.fnc_Kampanyalar()">   <img id="img_camp1" src="img/menu_icons/5_Campaign.png" width="12%"> <img/></a>
                 <a href="#istatistik" data-ajax="false" onclick="app.fnc_Istatistik()"><img src="img/menu_icons/6_Statistic.png" width="12%"> <img/></a>
+				<a href="#anket" data-ajax="false" onclick="app.fnc_Anket()"><img src="img/menu_icons/8_anket.png" width="12%"> <img/></a>                
                 <a href="#enyakin" data-ajax="false" onclick="app.detectCurrentLocation()"><img src="img/menu_icons/7_Map.png" width="12%"> <img/></a>
 
 		      </div>        
@@ -168,6 +215,7 @@ puanlarım
                 <a href="#profil" data-ajax="false" onclick="app.fnc_Profil()"><img src="img/menu_icons/4_Profile.png" width="12%"> <img/></a>
                   <a href="#kampanyalar" onclick="app.fnc_Kampanyalar()">   <img id="img_camp2" src="img/menu_icons/5_Campaign.png" width="12%"> <img/></a>
                 <a href="#istatistik" data-ajax="false" onclick="app.fnc_Istatistik()"><img src="img/menu_icons/6_Statistic.png" width="12%"> <img/></a>
+				<a href="#anket" data-ajax="false" onclick="app.fnc_Anket()"><img src="img/menu_icons/8_anket.png" width="12%"> <img/></a>                
                 <a href="#enyakin" data-ajax="false" onclick="app.detectCurrentLocation()"><img src="img/menu_icons/7_Map.png" width="12%"> <img/></a>
 
 		      </div>        
@@ -193,6 +241,7 @@ puanlarım
                 <a href="#profil" data-ajax="false" onclick="app.fnc_Profil()"><img src="img/menu_icons/4_Profile_.png" width="12%"> <img/></a>
                 <a href="#kampanyalar" onclick="app.fnc_Kampanyalar()">   <img id="img_camp3" src="img/menu_icons/5_Campaign.png" width="12%"> <img/></a>
                 <a href="#istatistik" data-ajax="false" onclick="app.fnc_Istatistik()"><img src="img/menu_icons/6_Statistic.png" width="12%"> <img/></a>
+				<a href="#anket" data-ajax="false" onclick="app.fnc_Anket()"><img src="img/menu_icons/8_anket.png" width="12%"> <img/></a>                
                 <a href="#enyakin" data-ajax="false" onclick="app.detectCurrentLocation()"><img src="img/menu_icons/7_Map.png" width="12%"> <img/></a>
 		      </div>
     </div><!-- /header -->
@@ -254,6 +303,7 @@ puanlarım
                 <a href="#profil" data-ajax="false" onclick="app.fnc_Profil()"><img src="img/menu_icons/4_Profile.png" width="12%"> <img/></a>
                   <a href="#kampanyalar" onclick="app.fnc_Kampanyalar()">   <img id="img_camp4" src="img/menu_icons/5_Campaign_.png" width="12%"> <img/></a>
                 <a href="#istatistik" data-ajax="false" onclick="app.fnc_Istatistik()"><img src="img/menu_icons/6_Statistic.png" width="12%"> <img/></a>
+				<a href="#anket" data-ajax="false" onclick="app.fnc_Anket()"><img src="img/menu_icons/8_anket.png" width="12%"> <img/></a>                
                 <a href="#enyakin" data-ajax="false" onclick="app.detectCurrentLocation()"><img src="img/menu_icons/7_Map.png" width="12%"> <img/></a>
 
 		      </div>               
@@ -305,29 +355,6 @@ puanlarım
 </div><!-- /page -->
 
 
-<!-- Start of second page -->
-<div data-role="page" id="anket">
-    <div data-role="header" align="center">
-    	<br/>
-        FİBA GRUP<div id="un_anket"> </div><div id="point_anket"> </div>
-		      <div >
-                <a href="#barkod" data-ajax="false" onclick="app.fnc_Barkod()"><img src="img/menu_icons/1_Home.png" width="12%"> <img/></a>
-                <a href="#puanlarim" data-ajax="false"  onclick="app.fnc_Puanlarim()"><img src="img/menu_icons/2_Score.png" width="12%"> <img/></a>
-                <a href="#mesajlar"  onclick="app.fnc_Mesajlar()">        <img id="img_msg5" src="img/menu_icons/3_Message.png" width="12%"> <img/> </a>
-                <a href="#profil" data-ajax="false" onclick="app.fnc_Profil()"><img src="img/menu_icons/4_Profile.png" width="12%"> <img/></a>
-                <a href="#kampanyalar" onclick="app.fnc_Kampanyalar()">   <img id="img_camp5" src="img/menu_icons/5_Campaign.png" width="12%"> <img/></a>
-                <a href="#istatistik" data-ajax="false" onclick="app.fnc_Istatistik()"><img src="img/menu_icons/6Statistic.png" width="12%"> <img/></a>
-                <a href="#enyakin" data-ajax="false" onclick="app.detectCurrentLocation()"><img src="img/menu_icons/7_Map.png" width="12%"> <img/></a>
-
-		      </div>               
-    </div><!-- /header -->
-    <div data-role="content">
-    <canvas id="pie" height="150" width="150"> </canvas> 	
-    <!-- <canvas id="line" height="300" width="200"> </canvas> -->
-	<div id="div_istatistik">
-	</div>
-</div>
-</div><!-- /page -->
 
 
 <!-- Start of second page -->
@@ -342,6 +369,7 @@ puanlarım
                 <a href="#profil" data-ajax="false" onclick="app.fnc_Profil()"><img src="img/menu_icons/4_Profile.png" width="12%"> <img/></a>
                   <a href="#kampanyalar" onclick="app.fnc_Kampanyalar()">   <img id="img_camp5" src="img/menu_icons/5_Campaign.png" width="12%"> <img/></a>
                 <a href="#istatistik" data-ajax="false" onclick="app.fnc_Istatistik()"><img src="img/menu_icons/6_Statistic_.png" width="12%"> <img/></a>
+				<a href="#anket" data-ajax="false" onclick="app.fnc_Anket()"><img src="img/menu_icons/8_anket.png" width="12%"> <img/></a>                
                 <a href="#enyakin" data-ajax="false" onclick="app.detectCurrentLocation()"><img src="img/menu_icons/7_Map.png" width="12%"> <img/></a>
 
 		      </div>               
@@ -356,6 +384,29 @@ puanlarım
 
 
 <!-- Start of second page -->
+<div data-role="page" id="anket">
+    <div data-role="header" align="center">
+    	<br/>
+        FİBA GRUP<div id="un_anket"> </div><div id="point_anket"> </div>
+		      <div >
+                <a href="#barkod" data-ajax="false" onclick="app.fnc_Barkod()"><img src="img/menu_icons/1_Home.png" width="12%"> <img/></a>
+                <a href="#puanlarim" data-ajax="false"  onclick="app.fnc_Puanlarim()"><img src="img/menu_icons/2_Score.png" width="12%"> <img/></a>
+                <a href="#mesajlar"  onclick="app.fnc_Mesajlar()">        <img id="img_msg8" src="img/menu_icons/3_Message.png" width="12%"> <img/> </a>
+                <a href="#profil" data-ajax="false" onclick="app.fnc_Profil()"><img src="img/menu_icons/4_Profile.png" width="12%"> <img/></a>
+                <a href="#kampanyalar" onclick="app.fnc_Kampanyalar()">   <img id="img_camp8" src="img/menu_icons/5_Campaign.png" width="12%"> <img/></a>
+                <a href="#istatistik" data-ajax="false" onclick="app.fnc_Istatistik()"><img src="img/menu_icons/6_Statistic.png" width="12%"> <img/></a>
+				<a href="#anket" data-ajax="false" onclick="app.fnc_Anket()"><img src="img/menu_icons/8_anket_.png" width="12%"> <img/></a>                
+                <a href="#enyakin" data-ajax="false" onclick="app.detectCurrentLocation()"><img src="img/menu_icons/7_Map.png" width="12%"> <img/></a>
+
+		      </div>               
+    </div><!-- /header -->
+    <div data-role="content">
+	<div id="div_anket">
+	</div>
+</div>
+</div><!-- /page -->
+
+<!-- Start of second page -->
 <div data-role="page" id="enyakin">
     <div data-role="header" align="center">
     	<br/>
@@ -367,6 +418,7 @@ puanlarım
                 <a href="#profil" data-ajax="false" onclick="app.fnc_Profil()"><img src="img/menu_icons/4_Profile.png" width="12%"> <img/></a>
                 <a href="#kampanyalar" onclick="app.fnc_Kampanyalar()"><img id="img_camp6" src="img/menu_icons/5_Campaign.png" width="12%"> <img/></a>
                 <a href="#istatistik" data-ajax="false" onclick="app.fnc_Istatistik()"><img src="img/menu_icons/6_Statistic.png" width="12%"> <img/></a>
+				<a href="#anket" data-ajax="false" onclick="app.fnc_Anket()"><img src="img/menu_icons/8_anket.png" width="12%"> <img/></a>                
                 <a href="#enyakin" data-ajax="false" onclick="app.detectCurrentLocation()"><img src="img/menu_icons/7_Map_.png" width="12%"> <img/></a>
 
 		      </div>               

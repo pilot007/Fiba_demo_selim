@@ -417,11 +417,46 @@ var app = {
 		        
 		        app.check_campains();
 	},
+	fnc_saveanket: function() {
+		$.mobile.changePage($('#anket'));
+		},
 	fnc_Anket : function() {
 				$("#un_anket").empty();
 		        $("#un_anket").append(app.user_name+ "("+app.total_points+")");
 		        
-		        app.check_campains();
+
+	    console.log("first click anket  ");
+
+                console.log("anket");
+                $('#div_anket ul').remove();
+                $('#div_anket').append('<ul data-role="listview"></ul>');
+                listItems = $('#div_anket').find('ul');
+                 
+                    html ="<table style='width:100%'>";
+                    html += '<tr><td width="33%">Kimden</td>';
+                    html += '<td width="33%">Konu</td>';
+                    html += '<td width="33%"> Nerede</td></tr>';
+                   
+                    html+="</table>";
+                    listItems.append('<li id="prj_header_z">' + html + '</li>');
+
+                    html ="<table style='width:100%'>";
+                    html += '<tr><td width="33%">'+ 'Selma Balcı'+ '</td>';
+                    html += '<td width="33%">' + 'elbise oylaması' + '</td>';
+                    html += '<td width="33%">' + 'GAP Kadıköy' + '</td>';
+                    html+="</table>";
+                    listItems.append('<li id="g_camp_1453">' + html + '</li>');
+                
+                $('#div_anket ul').listview();
+
+                    $('#g_camp_1453').bind('tap',
+                    function(event, ui) {
+                    	console.log("click anket detay");
+                    	$.mobile.changePage($('#anket_detay'));
+                    });
+		        
+		        console.log("click anket son");
+		        //app.check_campains();
 	},
 	fnc_EnYakin : function() {
 				 $("#map").empty();
