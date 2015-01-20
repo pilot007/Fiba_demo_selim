@@ -33,7 +33,7 @@
                 <td><input type="password" id="password" placeholder="password"/> </td>
                 </tr>
                 <tr>
-                    <td></td>
+                    <td> </td>
                     <td><input type="button" name="btn_login" id="btn_login" value="Giriş" onclick="app.loginfnc()"/></td>
                 </tr>
                 
@@ -46,6 +46,9 @@
                     <br />
                     <br />
                     Kayıt olmadan ziyaretçi girişi için <a onclick="app.loginguest()">Tıklayınız</a>
+                    <br />
+                    <br />
+                    Kayıt olmak için <a onclick="app.fnc_register()">Tıklayınız</a>
                </p>
             </div>
         </div> 
@@ -80,9 +83,56 @@
             <br/>
     		<img src="img/qr_code.gif"><img/>
 		</div>
-</div>,0
+</div>
 	
 </div><!-- /page -->
+
+
+<div data-role="page" id="register">
+    <div data-role="header" align="center">
+    	<br/>
+        FİBA GRUP
+		      <div >
+                <a href="#login_form" style="margin-top: 8px;"><img src="img/menu_icons/1_Home.png" width="12%"> <img/></a>
+		      </div>        
+    </div><!-- /header -->
+<div data-role="content">
+    	<div id="div_register">
+       		<br/>
+             <table border="0">
+                <tr> 
+                <td>İsiminiz:<span>*</span></td>
+                <td><input type="text" id="name" placeholder="isim"/> </td>
+                </tr>
+                <tr> 
+                <td>Soyisiminiz:<span>*</span></td>
+                <td><input type="text" id="surname" placeholder="soyisim"/> </td>
+                </tr>
+                <tr> 
+                <td>email adresiniz:<span>*</span></td>
+                <td><input type="text" id="emailname" placeholder="email"/> </td>
+                </tr>
+                <tr> 
+                <td>Cep Telefonunuz:<span>*</span></td>
+                <td><input type="text" id="mobile" placeholder="cep telefonunuz"/> </td>
+                </tr>
+                <tr> 
+                <td>Kullanıcı Adınız:<span>*</span></td>
+                <td><input type="text" id="username2" placeholder="kullanıcı adınız"/> </td>
+                </tr>
+                <tr> 
+                <td>Şifreniz:<span>*</span></td>
+                <td><input type="password" id="password2" placeholder="şifreniz"/> </td>
+                </tr>
+                <tr>
+                    <td> </td>
+                    <td><input type="button" name="btn_register" id="btn_register" value="Kaydet"/></td>
+                </tr>                
+            </table>
+		</div>
+</div>
+</div><!-- /page -->
+
 
 <div data-role="page" id="puanlarim">
     <div data-role="header" align="center">
@@ -320,9 +370,9 @@ puanlarım
 		      <div >
                 <a href="#barkod" data-ajax="false" onclick="app.fnc_Barkod()"><img src="img/menu_icons/1_Home.png" width="12%"> <img/></a>
                 <a href="#puanlarim" data-ajax="false"  onclick="app.fnc_Puanlarim()"><img src="img/menu_icons/2_Score.png" width="12%"> <img/></a>
-                <a href="#mesajlar"  onclick="app.fnc_Mesajlar()">        <img id="img_msg6" src="img/menu_icons/3_Message.png" width="12%"> <img/> </a>
+                <a href="#mesajlar"  onclick="app.fnc_Mesajlar()"><img id="img_msg6" src="img/menu_icons/3_Message.png" width="12%"> <img/> </a>
                 <a href="#profil" data-ajax="false" onclick="app.fnc_Profil()"><img src="img/menu_icons/4_Profile.png" width="12%"> <img/></a>
-                  <a href="#kampanyalar" onclick="app.fnc_Kampanyalar()">   <img id="img_camp6" src="img/menu_icons/5_Campaign.png" width="12%"> <img/></a>
+                <a href="#kampanyalar" onclick="app.fnc_Kampanyalar()"><img id="img_camp6" src="img/menu_icons/5_Campaign.png" width="12%"> <img/></a>
                 <a href="#istatistik" data-ajax="false" onclick="app.fnc_Istatistik()"><img src="img/menu_icons/6_Statistic.png" width="12%"> <img/></a>
                 <a href="#enyakin" data-ajax="false" onclick="app.detectCurrentLocation()"><img src="img/menu_icons/7_Map_.png" width="12%"> <img/></a>
 
@@ -339,9 +389,9 @@ puanlarım
 <!--for guest company-->
 <div data-role="page" id="g_campaign">
     <div data-role="header" align="center">
-        <a href="#login_form" style="margin-top: 8px;"><img src="img/menu_icons/back_icon.png" width="30px" height="30px"> <img/></a>
         <br/>
               <div >
+        		<a href="#login_form" style="margin-top: 8px;"><img src="img/menu_icons/1_Home.png" width="12%"> <img/></a>
                 <a href="#g_campaign" onclick="app.fnc_Kampanyalar()">   <img id="img_campaign" src="img/menu_icons/5_Campaign_.png" width="12%"> <img/></a>
                 <a href="#g_messages"  onclick="app.fnc_message()">        <img id="g_img_msg2" src="img/menu_icons/3_Message.png" width="12%"> <img/> </a>
                 <a href="#g_nearest" data-ajax="false" onclick="app.detectCurrentLocation()"><img src="img/menu_icons/7_Map.png" width="12%"> <img/></a>
@@ -397,10 +447,10 @@ puanlarım
 <!--for guest messages-->
 <div data-role="page" id="g_messages">
     <div data-role="header" align="center">
-        <a href="#login_form" style="margin-top: 8px;"><img src="img/menu_icons/back_icon.png" width="30px" height="30px"> <img/></a>
         <br/>
               <div >
-                 <a href="#g_campaign" onclick="app.fnc_Kampanyalar()">   <img src="img/menu_icons/5_Campaign.png" width="12%"> <img/></a>
+        		<a href="#login_form" style="margin-top: 8px;"><img src="img/menu_icons/1_Home.png" width="12%"> <img/></a>
+                <a href="#g_campaign" onclick="app.fnc_Kampanyalar()">   <img src="img/menu_icons/5_Campaign.png" width="12%"> <img/></a>
                 <a href="#g_messages"  onclick="app.fnc_message()">  <img src="img/menu_icons/3_Message_.png" width="12%"> <img/> </a>
                 <a href="#g_nearest" data-ajax="false" onclick="app.detectCurrentLocation()"><img src="img/menu_icons/7_Map.png" width="12%"> <img/></a>
 
@@ -417,9 +467,10 @@ puanlarım
 <!--for guest nearest location-->
 <div data-role="page" id="g_nearest">
     <div data-role="header" align="center">
-        <a href="#login_form" style="margin-top: 8px;"><img src="img/menu_icons/back_icon.png" width="30px" height="30px"> <img/></a>
+        
         <br/>
               <div >
+        		<a href="#login_form" style="margin-top: 8px;"><img src="img/menu_icons/1_Home.png" width="12%"> <img/></a>
                 <a href="#g_campaign" onclick="app.fnc_Kampanyalar()">   <img id="g_img_camp6" src="img/menu_icons/5_Campaign.png" width="12%"> <img/></a>
                 <a href="#g_messages"  onclick="app.fnc_message()">  <img id="g_img_campaign234" src="img/menu_icons/3_Message.png" width="12%"> <img/> </a>
                 <a href="#g_nearest" data-ajax="false" onclick="app.detectCurrentLocation()"><img src="img/menu_icons/7_Map_.png" width="12%"> <img/></a>

@@ -429,6 +429,9 @@ var app = {
 		        
 		        app.check_campains();
 	},			
+	fnc_register : function() {
+		$.mobile.changePage($('#register'));
+	},				
 	member_savefunc : function() {
 	},	
 	getMusteriler : function(){
