@@ -420,13 +420,17 @@ var app = {
 	fnc_saveanket: function() {
 		$.mobile.changePage($('#anket'));
 		},
+		
 	fnc_Anket : function() {
+		$.mobile.changePage($('#anket'));
+		app.fnc_Anket2();
+		app.fnc_Anket2();
+	},
+	fnc_Anket2 : function() {
 				$("#un_anket").empty();
 		        $("#un_anket").append(app.user_name+ "("+app.total_points+")");
 		        
-
-	    console.log("first click anket  ");
-
+	    		console.log("first click anket  ");
                 console.log("anket");
                 $('#div_anket ul').remove();
                 $('#div_anket').append('<ul data-role="listview"></ul>');
@@ -447,7 +451,7 @@ var app = {
                     html+="</table>";
                     listItems.append('<li id="g_camp_1453">' + html + '</li>');
                 
-                $('#div_anket ul').listview();
+                	$('#div_anket ul').listview();
 
                     $('#g_camp_1453').bind('tap',
                     function(event, ui) {
@@ -456,7 +460,6 @@ var app = {
                     });
 		        
 		        console.log("click anket son");
-		        //app.check_campains();
 	},
 	fnc_EnYakin : function() {
 				 $("#map").empty();
@@ -726,15 +729,41 @@ var app = {
 		var result= $("#sel_personels option:selected").val();
 		var result2= $("#sel_status option:selected").val();
 		var desc= $("#userDesc").val();
-		//if(app.status==null)
+		
+		        app.name = $("#txt_isim").val();
+		        app.surname= $("#txt_soyisim").val();
+		        app.identityno=$("#tx_tckn").val();
+		        app.birthdate=$("#txt_dogumtarihi").val();
+		        //app.birth_place=$("#txt_dogumyeri").val();
+				app.mobile=$("#txt_cep_tel").val();
+				app.email=$("#txt_email").val();
+				app.address_text=$("#txt_adres").val();
+
+				if ($('#chk_mail').is(":checked"))
+					app.allow_email=1;
+				else
+					app.allow_email=0;
+				
+				if ($('#chk_sms').is(":checked"))
+					app.allow_sms=1;
+				else
+					app.allow_sms=0;
+		
+		app.user_name ="Merhaba : " +app.name  + " "+app.surname;
+		//identityno=1234567890&name=selim&surname=göktaş&birthdate=1999&Birth_place=istanbul&address_type=1&address_text=adres&city_id=34&allow_email=0&allow_sms=1&mobile=5362798531&work_phone=536123456&home_phone=5363213232&fax=5363213232&email=selimgoktas@gtech.com.tr
 		{
-		$.ajax({			
-			url : app.url+"/istakip_yesis_webservices/GetMyActivities?android_id="+app.uuid+"&jsonType=1&con_type=updateactivity&temp_activity_type_id="+app.id+"&temp_status_id="+result2+"&temp_assignto="+result + "&desc=" + desc,
+		$.ajax({
+			url : app.url+"/GetMember?member_id="+app.id+
+			"&conn_type=update&identityno="+app.identityno+"&name="+app.name+"&surname="+app.surname+"&birthdate="+app.birthdate+
+			"&Birth_place="+app.birth_place+"&address_type="+app.address_type+"&address_text="+app.address_text+
+			"&city_id="+app.city_id+"&allow_email="+app.allow_email+
+			"&allow_sms="+app.allow_sms+"&mobile="+app.mobile+
+			"&work_phone="+app.work_phone+"&home_phone="+
+			app.home_phone+"&fax="+app.fax+"&email="+app.email ,
 			dataType : "json",
 			success : function(a, b, c) {
-			app.status=a;			
-			$.mobile.changePage($('#benim'));
-			app.getProducts2();
+				console.log( "başarılı" );
+			$.mobile.changePage($('#barkod'));
 			},
 			error : function(a, b, c) {
 				console.log("err a ", a);
@@ -744,7 +773,7 @@ var app = {
 			}
 		});
 		}				
-	}, 
+	},
 	loginguest : function() {
         $.mobile.changePage("#g_campaign");    
         is_guest = true;
