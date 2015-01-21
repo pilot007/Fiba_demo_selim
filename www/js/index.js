@@ -485,7 +485,7 @@ var app = {
 		app.uuid = app.isnull(device.uuid);
 		//if (app.uuid==".")
 		app.uuid="586BC0F6-09DC-44FB-8F1D-A3ABCB8E0C80";
-		app.user_name="";
+		app.user_name="Merhaba : Selma Balcı";
 		app.user_id="90910000001";
 		app.id="123456789";
 
