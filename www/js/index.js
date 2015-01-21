@@ -790,7 +790,8 @@ var app = {
            // $.mobile.changePage("#login");
                 if (a != null && a.length > 0) {
                     if (a[0].status == 'ok') {
-                        $.mobile.changePage("#barkod");
+                        app.first_init();
+                        $.mobile.changePage("#barkod");                        
                     }else{
                         alert("Lütfen kullanıcı adı ve şifrenizi doğru giriniz!");
                         $('#username').removeAttr('value');
