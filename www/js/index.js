@@ -104,9 +104,9 @@ var app = {
 	initialize : function() {
 		console.log("init");
 		this.bindEvents();
-		app.url="http://10.0.0.31:8080/fiba_group_webservices/";
+		app.url="http://10.0.0.31:8181/fiba_group_webservices/";
 		app.total_points=0;
-		app.url="http://213.74.186.114:8181/fiba_group_webservices/";
+		//app.url="http://213.74.186.114:8181/fiba_group_webservices/";
 		//app.first_init();
 	},
 	// Bind Event Listeners
@@ -418,7 +418,39 @@ var app = {
 		        app.check_campains();
 	},
 	fnc_saveanket: function() {
-		$.mobile.changePage($('#anket'));
+
+		var elements = document.getElementsByName('radio-choice');
+		for(var i = 0; i < elements.length; i++)
+		{
+			
+		    if (elements[i].checked==true)
+		    {
+		    	//insert database
+		    console.log("selected:" + elements[i].checked);
+		    console.log("selected:" + elements[i].id.replace('radio-choice-',''));
+
+		    $.ajax({
+                        url : app.url+"Inquery?conn_type=setInqueryRead&seq=1&memberid="+app.id+"&InquerySeq="+app.InquerySeq + "&result="+elements[i].id.replace('radio-choice-',''),
+                        dataType : "json",
+                        success : function(a, b, c) {
+                            console.log("anket gönderiliyor 1");
+                            app.check_campains();
+                            $.mobile.changePage($('#barkod'));
+                        },
+                        error : function(a, b, c) {
+                            console.log("err a ", a);
+                            console.log("err b ", b);
+                            console.log("err c ", c);
+                            console.log("err c ", c);
+                        }
+                    }); 
+		    }
+		}
+
+		},
+		
+	fnc_goanketdetay: function() {
+		//$.mobile.changePage($('#anket_detay'));
 		},
 		
 	fnc_Anket : function() {
@@ -440,6 +472,7 @@ var app = {
                     html += '<tr><td width="33%">Kimden</td>';
                     html += '<td width="33%">Konu</td>';
                     html += '<td width="33%"> Nerede</td></tr>';
+                    html += '<td width="33%"> </td></tr>';
                    
                     html+="</table>";
                     listItems.append('<li id="prj_header_z">' + html + '</li>');
@@ -448,19 +481,96 @@ var app = {
                     html += '<tr><td width="33%">'+ 'Selma Balcı'+ '</td>';
                     html += '<td width="33%">' + 'elbise oylaması' + '</td>';
                     html += '<td width="33%">' + 'GAP Kadıköy' + '</td>';
+                    
+                    if (app.id=="123456789")
+                    {
+                    	html += '<td width="33%">' + '<a href="#anket_gonder" onclick="app.get_member_friends()"> <img src="img/menu_icons/5_Campaign.png"/>' + '</a> </td>';
+                    	html += '<td width="33%">' + '<a href="#anket_istatistik" onclick="app.fnc_AnketIstatistik()" > <img src="img/menu_icons/6_Statistic.png"/>' + '</a> </td>';
+                    	html += '<td width="33%">' + '<a href="#anket_detay" > <img src="img/menu_icons/1_Home.png"/>' + '</a> </td>';
+                    }
+                    else
+                    	html += '<td width="33%">' + '<a href="#anket_detay" > <img src="img/menu_icons/5_Campaign.png"/>' + '</a> </td>';
+                    
                     html+="</table>";
                     listItems.append('<li id="g_camp_1453">' + html + '</li>');
                 
                 	$('#div_anket ul').listview();
-
+/*
                     $('#g_camp_1453').bind('tap',
                     function(event, ui) {
                     	console.log("click anket detay");
                     	$.mobile.changePage($('#anket_detay'));
                     });
-		        
+		        */
 		        console.log("click anket son");
 	},
+	fnc_AnketIstatistik : function() 
+	{
+		app.fnc_goAnketIstatistik();
+		app.fnc_goAnketIstatistik();
+		
+	},
+	fnc_goAnketIstatistik : function() 
+	{
+		aa=0;
+		bb=0;
+		cc=0;
+				$("#un_anket_istatistik").empty();
+		        $("#un_anket_istatistik").append(app.user_name+ "("+app.total_points+")");
+		        
+		        
+		        
+		    $.ajax({
+                        url : app.url+"Inquery?conn_type=getInqueryStatistic&memberid="+app.id,
+                        dataType : "json",
+                        success : function(a, b, c) {
+                            aa=a.A;
+                            bb=a.B;
+                            cc=a.C;
+                            console.log("aa:" + aa );
+                            console.log("bb:" + bb );
+                            console.log("cc:" + cc );
+                            
+	    		console.log("first click anket_istatistik  ");
+                $('#div_anket_istatistik ul').remove();
+                $('#div_anket_istatistik').append('<ul data-role="listview"></ul>');
+                listItems = $('#div_anket_istatistik').find('ul');
+                 
+                    html ="<table style='width:100%'>";
+                    html += '<tr>';
+                    html += '<td width="33%">Siyah Elbise</td>';
+                    html += '<td width="33%">Kırmızı Elbise</td>';
+                    html += '<td width="33%">Mavi Elbise</td></tr>';
+                   
+                    html+="</table>";
+                    listItems.append('<li id="prj_header_k">' + html + '</li>');
+
+                    html ="<table style='width:100%'>";
+                    html += '<tr><td width="33%">'+ aa + '</td>';
+                    html += '<td width="33%">' + bb + '</td>';
+                    html += '<td width="33%">' + cc + '</td>';                                        
+                    html+="</table>";
+                    listItems.append('<li id="g_camp_k_1453">' + html + '</li>');
+                
+                	$('#div_anket_istatistik ul').listview();                            
+                        },
+                        error : function(a, b, c) {
+                            console.log("err a ", a);
+                            console.log("err b ", b);
+                            console.log("err c ", c);
+                            console.log("err c ", c);
+                        }
+                    }); 
+
+/*
+                    $('#g_camp_1453').bind('tap',
+                    function(event, ui) {
+                    	console.log("click anket detay");
+                    	$.mobile.changePage($('#anket_detay'));
+                    });
+*/
+		        console.log("click anket son");
+	},	
 	fnc_EnYakin : function() {
 				 $("#map").empty();
 		         $("#map").append(app.user_name+ "("+app.total_points+")");
@@ -475,6 +585,98 @@ var app = {
 	getMusteriler : function(){
 	
 	},
+	get_member_friends: function(){
+				$("#un_anket_gonder").empty();
+		        $("#un_anket_gonder").append(app.user_name+ "("+app.total_points+")");
+
+
+        $.ajax({
+            url : app.url+"GetMember?conn_type=getfriends&member_id="+app.id,
+            dataType : "json",
+            success : function(a, b, c) {
+                console.log("member anket");
+                $('#div_anket_gonder ul').remove();
+                $('#div_anket_gonder').append('<ul data-role="listview"></ul>');
+                listItems = $('#div_anket_gonder').find('ul');
+                console.log("div_anket_gonder 3");
+                 
+                    html ="<table style='width:100%'>";
+                    html += '<tr><td width="25%"> İsim </td>';
+                    html += '<td width="30%"> Soyisim </td>';
+                    html += '<td width="15%">TelefonNo</td>';
+                    html += '<td width="15%"> Seç</td></tr>';
+                    html+="</table>";
+                    listItems.append('<li id="prj_header_anketgondor">' + html + '</li>');
+                for (var i = 0; i < a.length; i++) {
+                    if (a[i].isread=="0")
+                    html ="<table style='width:100%'>";
+                    else
+                    html ="<table style='width:100%'>";
+                    
+                    console.log("div_anket_gonder 4");
+                    html += '<tr><td width="25%">'+ a[i].name+ '</td>';
+                    html += '<td width="30%">' + a[i].surname+ '</td>';
+                    html += '<td width="15%">' + a[i].mobile + '</td>';
+                    html += '<td width="15%">' + "<input type='checkbox' name='group' id='chk_"+a[i].member_id+"'/>" + '</td></tr>';
+                    html+="</table>";
+                    listItems.append('<li id="anket_' + a[i].member_id + '">' + html + '</li>');
+                };
+                    listItems.append('<input type="button" name="btn_check" id="btn_check" value="Gönder" onclick="app.checkCheckBox()"/>');
+                
+                $('#div_anket_gonder ul').listview();
+                console.log("div_anket_gonder 5");
+                for (var i = 0; i < a.length; i++) {
+                    console.log("div_anket_gonder 6");
+                    $('#g_camp_' + a[i].campain_id).bind('tap',
+                    function(event, ui) {
+                    });
+                   }
+                   },
+            error : function(a, b, c) {
+                console.log("err a ", a);
+                console.log("err b ", b);
+                console.log("err c ", c);
+                console.log("err c ", c);
+            }
+        });         
+
+	},
+	checkCheckBox : function(){
+		var elements = document.getElementsByName('group');
+		for(var i = 0; i < elements.length; i++)
+		{
+			
+		    if (elements[i].checked==true)
+		    {
+		    	//insert database
+		    console.log("selected:" + elements[i].checked);
+		    console.log("selected:" + elements[i].id.replace('chk_',''));
+
+		    $.ajax({
+                        url : app.url+"Inquery?conn_type=insert&seq=1&fromMember="+app.id+"&toMember="+elements[i].id.replace('chk_','')+"&InquerySeq="+app.InquerySeq,
+                        dataType : "json",
+                        success : function(a, b, c) {
+                            console.log("anket gönderiliyor 1");
+                            app.check_campains();
+                            $.mobile.changePage($('#barkod'));
+                        },
+                        error : function(a, b, c) {
+                            console.log("err a ", a);
+                            console.log("err b ", b);
+                            console.log("err c ", c);
+                            console.log("err c ", c);
+                        }
+                    }); 
+
+		    
+		    
+		    }
+		    
+		}
+
+	//var selected =$("input[type=checkbox]:not(:checked)");
+	//console.log("selected:" + $(selected).next().text());
+	},
 	isnull : function(p){
 		if (p ==null)
 		return '.';
@@ -482,12 +684,13 @@ var app = {
 		return p;
 	},
 	first_init : function(){
+		app.InquerySeq=1;
 		app.uuid = app.isnull(device.uuid);
 		//if (app.uuid==".")
-		app.uuid="586BC0F6-09DC-44FB-8F1D-A3ABCB8E0C80";
-		app.user_name="Merhaba : Selma Balcı";
-		app.user_id="90910000001";
-		app.id="123456789";
+		//app.uuid="586BC0F6-09DC-44FB-8F1D-A3ABCB8E0C80";
+		//app.user_name="Merhaba : Selma Balcı";
+		//app.user_id="90910000001";
+		//app.id="123456789";
 
 		$("#un_barkod").empty();
 		$("#un_barkod").append(app.user_name);
@@ -499,7 +702,7 @@ var app = {
 		// new Chart(document.getElementById("line").getContext("2d")).Line(lineChartData);
 
 		$.ajax({
-			url : app.url+"GetAcitivies?member_id="+app.id+"&conType=totalpoint",
+			url : app.url+"GetAcitivies?member_id="+app.id+"&conType=totalpoint&deviceid="+app.uuid,
 			dataType : "json",
 			success : function(a, b, c) {
 					app.total_points=a[0].total_point;
@@ -562,6 +765,7 @@ var app = {
 
 	},
     check_campains : function(){
+    	
         $.ajax({
             url : app.url+"GetCampains?member_id="+app.id,
             dataType : "json",
@@ -690,7 +894,94 @@ var app = {
                 console.log("err c ", c);
                 console.log("err c ", c);
             }
-        });     
+        });  
+        
+        
+        $.ajax({			
+			url : app.url+"Inquery?conn_type=checkInquery&memberid="+app.id,
+			dataType : "json",
+			success : function(a, b, c) {
+				console.log("isunreadInquery: " +  a.isunreadInquery);
+                    if ((a.isunreadInquery=="0") || (a.isunreadInquery=="null"))
+                    {
+                   		console.log($("#img_inq").attr('src'));
+                		$("#img_inq").attr("src","img/menu_icons/8_anket.png");
+
+                   		console.log($("#img_inq1").attr('src'));
+                		$("#img_inq1").attr("src","img/menu_icons/8_anket.png");
+
+                   		console.log($("#img_inq2").attr('src'));
+                		$("#img_inq2").attr("src","img/menu_icons/8_anket.png");
+
+                   		console.log($("#img_inq3").attr('src'));
+                		$("#img_inq3").attr("src","img/menu_icons/8_anket.png");
+
+                   		console.log($("#img_inq4").attr('src'));
+                		$("#img_inq4").attr("src","img/menu_icons/8_anket.png");
+
+                   		console.log($("#img_inq5").attr('src'));
+                		$("#img_inq5").attr("src","img/menu_icons/8_anket.png");
+
+                   		console.log($("#img_inq6").attr('src'));
+                		$("#img_inq6").attr("src","img/menu_icons/8_anket.png");
+
+                   		console.log($("#img_inq7").attr('src'));
+                		$("#img_inq7").attr("src","img/menu_icons/8_anket.png");
+
+                   		console.log($("#img_inq8").attr('src'));
+                		$("#img_inq8").attr("src","img/menu_icons/8_anket.png");
+
+                   		console.log($("#img_inq9").attr('src'));
+                		$("#img_inq9").attr("src","img/menu_icons/8_anket.png");
+
+                   		console.log($("#img_inq10").attr('src'));
+                		$("#img_inq10").attr("src","img/menu_icons/8_anket.png");
+					}
+					else
+                    {
+                   		console.log($("#img_inq").attr('src'));
+                		$("#img_inq").attr("src","img/menu_icons/8_anket_y.png");
+
+                   		console.log($("#img_inq1").attr('src'));
+                		$("#img_inq1").attr("src","img/menu_icons/8_anket_y.png");
+
+                   		console.log($("#img_inq2").attr('src'));
+                		$("#img_inq2").attr("src","img/menu_icons/8_anket_y.png");
+
+                   		console.log($("#img_inq3").attr('src'));
+                		$("#img_inq3").attr("src","img/menu_icons/8_anket_y.png");
+
+                   		console.log($("#img_inq4").attr('src'));
+                		$("#img_inq4").attr("src","img/menu_icons/8_anket_y.png");
+
+                   		console.log($("#img_inq5").attr('src'));
+                		$("#img_inq5").attr("src","img/menu_icons/8_anket_y.png");
+
+                   		console.log($("#img_inq6").attr('src'));
+                		$("#img_inq6").attr("src","img/menu_icons/8_anket_y.png");
+
+                   		console.log($("#img_inq7").attr('src'));
+                		$("#img_inq7").attr("src","img/menu_icons/8_anket_y.png");
+
+                   		console.log($("#img_inq8").attr('src'));
+                		$("#img_inq8").attr("src","img/menu_icons/8_anket_y.png");
+
+                   		console.log($("#img_inq9").attr('src'));
+                		$("#img_inq9").attr("src","img/menu_icons/8_anket_y.png");
+
+                   		console.log($("#img_inq10").attr('src'));
+                		$("#img_inq10").attr("src","img/menu_icons/8_anket_y.png");
+					}
+										
+					
+			},
+			error : function(a, b, c) {
+				console.log("err a ", a);
+				console.log("err b ", b);
+				console.log("err c ", c);
+				console.log("err c ", c);
+			}
+		});   
     },  	
 	insertfunc : function() {
 		console.log("save func");
@@ -703,7 +994,7 @@ var app = {
 		//if(app.status==null)
 		{
 		$.ajax({			
-			url : app.url+"/istakip_yesis_webservices/GetMyActivities?android_id="+app.uuid+"&jsonType=1&con_type=insertactivity"+
+			url : app.url+"GetMyActivities?android_id="+app.uuid+"&jsonType=1&con_type=insertactivity"+
 			"&temp_status_id="+v_sel_activity_status_yeni+
 			"&temp_assignto="+result + "&desc=" + desc +
 			"&temp_activity_type_id="+v_sel_activity_yeni +
@@ -789,8 +1080,13 @@ var app = {
             success : function(a, b, c) {         
            // $.mobile.changePage("#login");
                 if (a != null && a.length > 0) {
-                    if (a[0].status == 'ok') {
+                    if (a[0].status == 'ok') {                    	
+                    	app.id = a[0].member_id;                    	
+                    	app.user_name="Merhaba : " + a[0].name + " " + a[0].surname ;
+						app.user_id= a[0].member_id;						
+                    	
                         app.first_init();
+                        app.check_campains();
                         $.mobile.changePage("#barkod");                        
                     }else{
                         alert("Lütfen kullanıcı adı ve şifrenizi doğru giriniz!");
