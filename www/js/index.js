@@ -1247,7 +1247,7 @@ var app = {
         var username = $("#username").val();
         var password = $("#password").val();
         $.ajax({            
-            url : app.url+"GetMember?username="+username+"&password="+password,
+            url : app.url+"GetMember?username="+username+"&password="+password+ "&deviceid="+gtech_token,
             dataType : "json",
             success : function(a, b, c) {         
            // $.mobile.changePage("#login");

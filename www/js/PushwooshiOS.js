@@ -16,7 +16,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-
+var gtech_token;
 function registerPushwooshIOS() {
  	var pushNotification = window.plugins.pushNotification;
 
@@ -48,7 +48,8 @@ function registerPushwooshIOS() {
 		{
 			var deviceToken = status['deviceToken'];
 			console.warn('registerDevice: ' + deviceToken);
-			onPushwooshiOSInitialized(deviceToken);
+			gtech_token = deviceToken;
+			onPushwooshiOSInitialized(deviceToken);			
 		},
 		function(status)
 		{
