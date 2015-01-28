@@ -177,15 +177,15 @@ var app = {
 		console.log("ondevice ready");
 		app.receivedEvent('deviceready');
 		
-		app.first_init();
-
-        
         try{
             initPushwoosh();
         }catch(err) 
         {
                 console.log(err.message);
         }		
+
+		app.first_init();
+
 	},
 	
     fnc_location_list : function() {
