@@ -11,6 +11,11 @@ var icon22=false;
 var icon27=false;
 // if user exist set true
 var is_guest = false;
+
+var lat_end = "28.72082";
+var lng_end = "77.107241";
+var clicked_val;
+
 var lineChartData = {
  labels : ["","","","","","",""],
  datasets : [
