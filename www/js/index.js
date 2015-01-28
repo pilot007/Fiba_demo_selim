@@ -176,15 +176,16 @@ var app = {
 	onDeviceReady : function() {
 		console.log("ondevice ready");
 		app.receivedEvent('deviceready');
+
+		app.first_init();
 		
         try{
             initPushwoosh();
         }catch(err) 
         {
-                console.log(err.message);
+         	console.log(err.message);
         }		
 
-		app.first_init();
 
 	},
 	
