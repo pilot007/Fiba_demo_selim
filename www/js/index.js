@@ -857,7 +857,7 @@ var app = {
 	},
 	first_init : function(){
 		app.InquerySeq=1;
-		app.uuid = app.isnull(device.uuid);
+		app.uuid = gtech_token; //app.isnull(device.uuid);
 		//if (app.uuid==".")
 		//app.uuid="586BC0F6-09DC-44FB-8F1D-A3ABCB8E0C80";
 		//app.user_name="Merhaba : Selma Balcı";
@@ -874,7 +874,7 @@ var app = {
 		// new Chart(document.getElementById("line").getContext("2d")).Line(lineChartData);
 
 		$.ajax({
-			url : app.url+"GetAcitivies?member_id="+app.id+"&conType=totalpoint&deviceid="+app.uuid,
+			url : app.url+"GetAcitivies?member_id="+app.id+"&conType=totalpoint&deviceid="+gtech_token,
 			dataType : "json",
 			success : function(a, b, c) {
 					app.total_points=a[0].total_point;
