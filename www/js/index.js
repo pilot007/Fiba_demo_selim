@@ -940,7 +940,7 @@ var app = {
     check_campains : function(){
     	
         $.ajax({
-            url : app.url+"GetCampains?member_id="+app.id,
+            url : app.url+"GetCampains?member_id="+app.id+"&deviceid="+gtech_token,
             dataType : "json",
             success : function(a, b, c) {
                 console.log("kampanyalar");
