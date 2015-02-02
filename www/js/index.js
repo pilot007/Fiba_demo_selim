@@ -514,7 +514,7 @@ var app = {
     fnc_randevuAl : function() {
 		    $.ajax({
                         url : app.url+"GetAppointment?conn_type=setAppointment&departman="+$('#departman_list').val()+"&memberid="+app.id+
-                        "&hospital="+$('#hospital_list').val()+ "&tarih="+ +$('#tarih').val()+
+                        "&hospital="+$('#hospital_list').val()+ "&tarih="+$('#tarih').val()+
                         "&doctor="+$('#doktor_list').val() + "&saatler="+$('#saatler_list').val() +"&deviceid="+gtech_token,
                         dataType : "json",
                         success : function(a, b, c) {
