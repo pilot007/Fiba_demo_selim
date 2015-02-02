@@ -13,7 +13,7 @@
         <link rel="stylesheet" type="text/css" href="css/index.css" />
  		<script src="Chart.min.js"></script>
  		<script type="text/javascript" src="http://www.google.com/jsapi"></script>
- 		
+
 </head>
     <body onload="app.onDeviceReady()">  
         <!--start login page-->
@@ -746,7 +746,10 @@ puanlarım
 					<option val="-1">seçiniz</option>	
 				</select>		
 
-				<input type="date" name="tarih" id="tarih">
+				<input type="date" name="tarih" id="tarih" value="">
+				<script type="text/javascript">
+				document.getElementById("tarih").value = new Date();
+				</script>
 
 				<select id="saatler_list">
 					<option val="-1">seçiniz</option>	
@@ -793,7 +796,7 @@ puanlarım
         <script type="text/javascript" src="js/PushwooshiOS.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
         
-        
+ 		       
         <script type="text/javascript">
             app.initialize();
         </script>

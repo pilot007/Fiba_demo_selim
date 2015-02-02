@@ -440,7 +440,7 @@ var app = {
 		this.bindEvents();
 		app.url="http://10.0.0.31:8181/fiba_group_webservices/";
 		app.total_points=0;
-		app.url="http://213.74.186.114:8181/fiba_group_webservices/";
+		//app.url="http://213.74.186.114:8181/fiba_group_webservices/";
 		
 	},
 	// Bind Event Listeners
@@ -487,9 +487,6 @@ var app = {
 
 
 	$('#departman_list').change(function(){
-    console.log('on departman change : ' + $('#departman_list').val());
-    //console.log('on departman change : ' + DepartmanArray[$('#departman_list').val()].name );
-
 				$('#doktor_list').empty();
 				var o = new Option("Seçiniz", -1);
 				$('#doktor_list').append(o);
@@ -498,8 +495,7 @@ var app = {
 					if (DoctorArray[i].value.indexOf( $('#departman_list').val() ) >-1 )
 					{
 						var o = new Option(DoctorArray[i].name, DoctorArray[i].name);
-						$('#doktor_list').append(o);
-						console.log('DoctorArray[i].name : ' + DoctorArray[i].name + DoctorArray[i].value);
+						$('#doktor_list').append(o);						
 					}
 				};				
 				}); 				
@@ -509,7 +505,24 @@ var app = {
 					var o = new Option(SaatlerArray[i].name, SaatlerArray[i].value);
 					$('#saatler_list').append(o);
 				}
-
+				var today = new Date();
+				var dd = today.getDate();
+				var mm = today.getMonth()+1; //January is 0!
+				var yyyy = today.getFullYear();
+				
+				if(dd<10) {
+				    dd='0'+dd;
+				} 
+				
+				if(mm<10) {
+				    mm='0'+mm;
+				} 
+				
+				today = mm+'/'+dd+'/'+yyyy;
+				console.log("Date() : " +today);
+				//$('#tarih').attr("value",today);
+				console.log("$('#tarih').val() : " +$('#tarih').val());
+				
 	},	
     fnc_randevuAl : function() {
 		    $.ajax({
@@ -519,6 +532,7 @@ var app = {
                         dataType : "json",
                         success : function(a, b, c) {
                             console.log("randevü kaydediliyor");
+                            app.fnc_randevuList();
                             $.mobile.changePage($('#hospital_randevular'));
                         },
                         error : function(a, b, c) {
@@ -545,8 +559,8 @@ var app = {
 						for (var i = 0; i < a.length; i++) {
 						html ="<table style='width:100%'>";
 							console.log("div_randevular 4");
-							html += '<tr><td width="50%">'+ a[i].Hospital + '</td>';
-							html += '<td width="30%">' + a[i].Departman + '</td>';
+							html += '<tr><td width="20%">'+ a[i].Hospital + '</td>';
+							html += '<td width="20%">' + a[i].Departman + '</td>';
 							html += '<td width="20%">' + a[i].Doctor_name + '</td></tr>';
 							html += '<td width="20%">' + a[i].Appointment_date + '</td></tr>';
 							html += '<td width="20%">' + a[i].Appointment_hours + '</td></tr>';
