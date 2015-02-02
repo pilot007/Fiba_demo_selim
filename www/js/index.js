@@ -545,10 +545,11 @@ var app = {
 						for (var i = 0; i < a.length; i++) {
 						html ="<table style='width:100%'>";
 							console.log("div_randevular 4");
-							html += '<tr><td width="50%">'+ a[i].hospital + '</td>';
-							html += '<td width="30%">' + a[i].departman + '</td>';
-							html += '<td width="20%">' + a[i].doctor + '</td></tr>';
-							html += '<td width="20%">' + a[i].app_date + '</td></tr>';
+							html += '<tr><td width="50%">'+ a[i].Hospital + '</td>';
+							html += '<td width="30%">' + a[i].Departman + '</td>';
+							html += '<td width="20%">' + a[i].Doctor_name + '</td></tr>';
+							html += '<td width="20%">' + a[i].Appointment_date + '</td></tr>';
+							html += '<td width="20%">' + a[i].Appointment_hours + '</td></tr>';
 						    html+="</table>";
 							listItems.append('<li id="prj_' + a[i].seq + '">' + html + '</li>');
 						};
