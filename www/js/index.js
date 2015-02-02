@@ -93,11 +93,11 @@ var pieData = [
 
 var HospitalArray = 
 [
-     {name : 'İstanbul Florence N.H.', value : '1'}
-    ,{name : 'Şişli Florence N.H.', value : '2'}
-    ,{name : 'Gayrettepe Florence N.H.', value : '3'}
-    ,{name : 'Kadıköy Florence N.H.', value : '4'}
-    ,{name : 'Göktürk Florence N. Tıp Merkezi', value : '5'}    
+     {name : 'İstanbul F.N.H.', value : '1'}
+    ,{name : 'Şişli F.N.H.', value : '2'}
+    ,{name : 'Gayrettepe F.N.H.', value : '3'}
+    ,{name : 'Kadıköy F.N.H.', value : '4'}
+    ,{name : 'Göktürk F.N. Tıp Merkezi', value : '5'}    
 ];
 
 var DepartmanArray = 
@@ -195,140 +195,140 @@ var DepartmanArray =
 
 var DoctorArray = 
 [
- {name : 'Prof.Dr. Abdullah EREN', value : 'Ortopedi ve Travmatoloji',hospital:'1'}
-,{name:'Prof.Dr. Abdullah GÖĞÜŞ', value : 'Ortopedi ve Travmatoloji',hospital:'1'}
-,{name:'Prof.Dr. Alin BAŞGÜL YİĞİTER', value : 'Kadın Hastalıkları ve Doğum	Fetal Maternal Tıp  - Perinatoloji',hospital:'1'}
-,{name:'Prof.Dr. Alper TOKER', value : 'Göğüs Cerrahisi',hospital:'1'}
-,{name:'Prof.Dr. Azmi HAMZAOĞLU', value : 'Ortopedi ve Travmatoloji- Omurga Cerrahisi Merkezi',hospital:'1'}
-,{name:'Prof.Dr. Belhhan AKPINAR', value : 'Kalp ve Damar Cerrahisi',hospital:'1'}
-,{name:'Prof.Dr. Bülent BAYSAL', value : 'Kadın Hastalıkları ve Doğum - Tüp Bebek Merkezi',hospital:'1'}
-,{name:'Prof.Dr. Canan AKMAN', value : 'Radyoloji',hospital:'1'}
-,{name:'Prof.Dr. Cemil AKGÜL', value : 'Kadın Hastalıkları ve Doğum - Tüp Bebek',hospital:'1'}
-,{name:'Prof.Dr. Füsun UYSAL', value : 'Fizik Tedavi ve Rehabilitasyon',hospital:'1'}
-,{name:'Prof.Dr. Gülşen AKMAN DEMİR', value : 'Nöroloji',hospital:'1'}
-,{name:'Prof.Dr. Hakkı KAHRAMAN', value : 'Endokrinoloji ve Metabolizma Hastalıkları - İç Hastalıkları',hospital:'1'}
-,{name:'Prof.Dr. İbrahim TURAN', value : 'Ortopedi ve Travmatoloji',hospital:'1'}
-,{name:'Prof.Dr. İlkkan DÜNDER', value : 'Kadın Hastalıkları ve Doğum',hospital:'1'}
-,{name:'Prof.Dr. Levent ERDEM', value : 'Gastroenteroloji - İç Hastalıkları',hospital:'1'}
-,{name:'Prof.Dr. Mahmut Refik KİLLİ', value : 'Radyoloji',hospital:'1'}
-,{name:'Prof.Dr. M.Çiçek BAYINDIR', value : 'Patoloji',hospital:'1'}
-,{name:'Prof.Dr. Mehmet TINAZ', value : 'Kulak Burun Boğaz',hospital:'1'}
-,{name:'Prof.Dr. Metin KÜÇÜKKAYA', value : 'Ortopedi ve Travmatoloji',hospital:'1'}
-,{name:'Prof.Dr. Murat GÜLBARAN', value : 'Anjiyografi - Kardiyoloji',hospital:'1'}
-,{name:'Prof.Dr. Murat KAYABALI', value : 'Kalp ve Damar Cerrahisi',hospital:'1'}
-,{name:'Prof.Dr. Mustafa ŞİRVANCI', value : 'Radyoloji',hospital:'1'}
-,{name:'Prof.Dr. Nuran YAZICIOĞLU', value : 'Kardiyoloji',hospital:'1'}
-,{name:'Prof.Dr. Osman BAYINDIR', value : 'Anesteziyoloji',hospital:'1'}
-,{name:'Prof.Dr. Saide AYTEKİN', value : 'Ekokardiyografi - Kardiyoloji',hospital:'1'}
-,{name:'Prof.Dr. Serdar ERDİNE', value : 'Algoloji (Ağrı) Merkezi - Anesteziyoloji',hospital:'1'}
-,{name:'Prof.Dr. Sibel ALPER', value : 'Dermatoloji',hospital:'1'}
-,{name:'Prof.Dr. Süleyman Tevfik ECDER', value : 'Nefroloji',hospital:'1'}
-,{name:'Prof.Dr. Şehnaz KARADENİZ', value : 'Göz Hastalıkları',hospital:'1'}
-,{name:'Prof.Dr. Şenol AKMAN', value : 'Ortopedi ve Travmatoloji',hospital:'1'}
-,{name:'Prof.Dr. Şule YAVUZ ', value : 'İç Hastalıkları- Romatoloji ve Bağ Dokusu',hospital:'1'}
-,{name:'Prof.Dr. Talat KİRİŞ', value : 'Beyin ve Sinir Cerrahisi',hospital:'1'}
-,{name:'Prof.Dr. Tayfun ÖZDEMİR', value : 'Ağız, Çene ve Diş Sağlığı',hospital:'1'}
-,{name:'Prof.Dr. Tülay ERKAN', value : 'Çocuk Gastroenterolojisi',hospital:'1'}
-,{name:'Prof.Dr. Vahit ÖZMEN', value : 'Genel Cerrahi',hospital:'1'}
-,{name:'Prof.Dr. Vedat AYTEKİN', value : 'Anjiyografi - Kardiyoloji',hospital:'1'}
-,{name:'Prof.Dr. Yaman TOKAT', value : 'Genel Cerrahi',hospital:'1'}
-,{name:'Prof.Dr. Yalım YALÇIN', value : 'Çocuk Kardiyolojisi',hospital:'1'}
-,{name:'Prof.Dr. Yasef ÖZSARFATİ', value : 'Nöroloji',hospital:'1'}
-,{name:'Prof.Dr. Yaşar Sümer YAMANER', value : 'Genel Cerrahi',hospital:'1'}
-,{name:'Prof.Dr. Yıldıray YÜZER', value : 'Organ Nakli Merkezi - Genel Cerrahi',hospital:'1'}
-,{name:'Prof.Dr. Zekeriya Uğur', value : 'IŞIKLARalt	Ortopedi ve Travmatoloji',hospital:'1'}
-,{name:'Prof.Dr. Zuhal YAPICI', value : 'Çocuk Nörolojisi',hospital:'1'}
-,{name:'Doç.Dr. Faruk ABİKE', value : 'Kadın Hastalıkları ve Doğum',hospital:'1'}
-,{name:'Prof.Dr. Fatih ATUĞ', value : 'Endoüroloji ve Robotik Cerrahi',hospital:'1'}
-,{name:'Doç.Dr. Haluk KULAKSIZOĞLU', value : 'Üroloji',hospital:'1'}
-,{name:'Doç.Dr. İlker YAZICI', value : 'Estetik, Plastik ve Rekonstruktif Cerrahisi',hospital:'1'}
-,{name:'Doç.Dr. Kıvanç ŞEREFHANOĞLU', value : 'Enfeksiyon Hastalıkları ve Klinik Mikrobiyoloji',hospital:'1'}
-,{name:'Doç.Dr. Levent DALAR', value : 'Göğüs Hastalıkları',hospital:'1'}
-,{name:'Doç.Dr. Levent ÖZGÖNENEL', value : 'Fizik Tedavi ve Rehabilitasyon',hospital:'1'}
-,{name:'Doç.Dr. Süleyman URAZ', value : 'Gastroenteroloji',hospital:'1'}
-,{name:'Op.Dr. Ahmet Serkan İLGÜN', value : 'Genel Cerrahi',hospital:'1'}
-,{name:'Op.Dr. Ali ARMAN', value : 'Kadın Hastalıkları ve Doğum',hospital:'1'}
-,{name:'Op.Dr. Alper ŞİŞMANOĞLU', value : 'Kadın Hastalıkları ve Doğum',hospital:'1'}
-,{name:'Op.Dr. Bülent POLAT', value : 'Kalp ve Damar Cerrahisi',hospital:'1'}
-,{name:'Op.Dr. Cengiz DİBEKOĞLU', value : 'Genel Cerrahi',hospital:'1'}
-,{name:'Op.Dr. Dauren SARSENOV', value : 'Genel Cerrahi',hospital:'1'}
-,{name:'Op.Dr. Erkan AKTAN', value : 'Kulak Burun Boğaz',hospital:'1'}
-,{name:'Op.Dr. Evrim AKSOY', value : 'Kadın Hastalıkları ve Doğum',hospital:'1'}
-,{name:'Op.Dr. Halil DİLEK', value : 'Ortopedi ve Travmatoloji',hospital:'1'}
-,{name:'Op.Dr. Herman İŞÇİ', value : 'Kadın Hastalıkları ve Doğum',hospital:'1'}
-,{name:'Op.Dr. Mazhar ÇELİKOYAR', value : 'Kulak Burun Boğaz',hospital:'1'}
-,{name:'Op.Dr. Mercan SARIER', value : 'Beyin ve Sinir Cerrahisi',hospital:'1'}
-,{name:'Op.Dr. Mehmet Kerem ORAL', value : 'Kalp ve Damar Cerrahisi',hospital:'1'}
-,{name:'Op.Dr. Meriç ENERCAN', value : 'Ortopedi ve Travmatoloji',hospital:'1'}
-,{name:'Op.Dr. Mürsel DEBRE', value : 'Ortopedi ve Travmatoloji',hospital:'1'}
-,{name:'Op.Dr. M.Faik SEÇKİN', value : 'Ortopedi ve Travmatoloji',hospital:'1'}
-,{name:'Op.Dr. Nejat DEMİRYONTAR', value : 'Ortopedi ve Travmatoloji',hospital:'1'}
-,{name:'Op.Dr. Rıfat RASİER', value : 'Göz Hastalıkları',hospital:'1'}
-,{name:'Op.Dr. Ökkeş Kemal AYALP', value : 'Genel Cerrahi',hospital:'1'}
-,{name:'Op.Dr.Özlem KARABAY AKGÜL', value : 'Kadın Hastalıkları ve Doğum',hospital:'1'}
-,{name:'Op.Dr. Selhan KARADERELER', value : 'Beyin ve Sinir Cerrahisi',hospital:'1'}
-,{name:'Op.Dr. Sinan KAHRAMAN', value : 'Ortopedi ve Travmatoloji',hospital:'1'}
-,{name:'Op.Dr. Süleyman N. KARABEYOĞLU', value : 'Kadın Hastalıkları ve Doğum',hospital:'1'}
-,{name:'Op.Dr. Tuğçe TÜRKER BOTANLIOĞLU', value : 'Kulak Burun Boğaz',hospital:'1'}
-,{name:'Op.Dr. Ünal SAKALLIOĞLU', value : 'Ortopedi ve Travmatoloji',hospital:'1'}
-,{name:'Uzm.Dr. Afife BERKYÜREK', value : 'İç Hastalıkları, Kardiyoloji',hospital:'1'}
-,{name:'Uzm.Dr. Ali TIRTIR', value : 'Çocuk Sağlığı ve Hastalıkları',hospital:'1'}
-,{name:'Uzm.Dr. Ayhan MUTLU', value : 'Radyoloji',hospital:'1'}
-,{name:'Uzm.Dr. Aynur SAATÇİOĞLU', value : 'Anesteziyoloji',hospital:'1'}
-,{name:'Uzm.Dr. Bekir AYBEY', value : 'Dermatoloji',hospital:'1'}
-,{name:'Uzm.Dr. Bülent YARDIMCI', value : 'İç Hastalıkları',hospital:'1'}
-,{name:'Uzm.Dr. Bilgiser ESER', value : 'Anesteziyoloji',hospital:'1'}
-,{name:'Uzm.Dr. Coşkun GÜVEN', value : 'Anesteziyoloji',hospital:'1'}
-,{name:'Uzm.Dr. Cumhur LEBLEBİCİ', value : 'Kardiyoloji - İç Hastalıkları',hospital:'1'}
-,{name:'Uzm.Dr. Demet ERCİYES ', value : 'Kardiyoloji - Check-Up',hospital:'1'}
-,{name:'Uzm.Dr. Demet GÜNAY', value : 'Biyokimya',hospital:'1'}
-,{name:'Uzm.Dr. Deniz Tuna ERŞAYLI', value : 'Anesteziyoloji',hospital:'1'}
-,{name:'Uzm.Dr. Eda ÇINGI', value : 'Çocuk Cerrahisi',hospital:'1'}
-,{name:'Uzm.Dr. Emel PEKEL', value : 'Anesteziyoloji',hospital:'1'}
-,{name:'Uzm.Dr. Emine KARAHAN OKLU', value : 'Anesteziyoloji',hospital:'1'}
-,{name:'Uzm.Dr. Esin EĞİLMEZ MORKOÇ', value : 'Anesteziyoloji',hospital:'1'}
-,{name:'Uzm.Dr. Ferda DORA', value : 'Çocuk Sağlığı ve Hastalıkları',hospital:'1'}
-,{name:'Uzm.Dr. F. Başak NAMDAR ÇELİKHAN', value : 'Çocuk Sağlığı ve Hastalıkları',hospital:'1'}
-,{name:'Uzm.Dr. Filiz ÖNAL', value : 'Radyoloji',hospital:'1'}
-,{name:'Uzm.Dr. Günay CANTÜRK', value : 'Çocuk Sağlığı ve Hastalıkları',hospital:'1'}
-,{name:'Uzm.Dr. Hayri PARLAR', value : 'Kardiyoloji - İç Hastalıkları',hospital:'1'}
-,{name:'Uzm.Dr. Hülya AZİZAĞAOĞLU', value : 'İç Hastalıkları',hospital:'1'}
-,{name:'Uzm.Dr. Hasan Hüseyin TAVUKÇU', value : 'Nöroloji',hospital:'1'}
-,{name:'Uzm.Dr. Hülya Gamze ÇELİK', value : 'Kardiyoloji',hospital:'1'}
-,{name:'Uzm.Dr. İbrahim ÖRNEK ', value : 'Nöroloji',hospital:'1'}
-,{name:'Uzm.Dr. Levent ONAT ', value : 'Radyoloji',hospital:'1'}
-,{name:'Uzm.Dr. Levent ÖKLÜ', value : 'Anesteziyoloji',hospital:'1'}
-,{name:'Uzm.Dr. Mari BENLİ', value : 'Nükleer Tıp - Tiroid Hastalıkları Merkezi',hospital:'1'}
-,{name:'Uzm.Dr. Mefkure PLATİN', value : 'İç Hastalıkları - Kardiyoloji',hospital:'1'}
-,{name:'Uzm.Dr. Melahat DEĞİRMENCİ ESER', value : 'Nöroloji',hospital:'1'}
-,{name:'Uzm.Dr. Neriman Zeynep EKİCİ', value : 'Anesteziyoloji',hospital:'1'}
-,{name:'Uzm.Dr. Nevzat YILDIRIM', value : 'Kardiyoloji - İç Hastalıkları',hospital:'1'}
-,{name:'Uzm.Dr. Orhan GEREN', value : 'İç Hastalıkları, Kardiyoloji',hospital:'1'}
-,{name:'Uzm.Dr. Onur Levent ULUSOY', value : 'Radyoloji',hospital:'1'}
-,{name:'Uzm.Dr. Özgür ŞAMİLGİL', value : 'İç Hastalıkları',hospital:'1'}
-,{name:'Uzm.Dr. Seher AKGÜL', value : 'Anesteziyoloji',hospital:'1'}
-,{name:'Uzm.Dr. Roza Elif BALAN', value : 'Anesteziyoloji',hospital:'1'}
-,{name:'Uzm.Dr. Sema ÖZTÜRK', value : 'Nöroloji',hospital:'1'}
-,{name:'Uzm.Dr. Serkan TATLIAĞAÇ', value : 'Endokrinoloji ve Metabolizma Hastalıkları - İç Hastalıkları',hospital:'1'}
-,{name:'Uzm.Dr. Tuba COŞKUN FALAY', value : 'Göğüs Hastalıkları',hospital:'1'}
-,{name:'Uzm.Dr. Uğur ÖZBEK', value : 'Anesteziyoloji',hospital:'1'}
-,{name:'Uzm.Dr. Ülkü PEKCAN', value : 'Anesteziyoloji',hospital:'1'}
-,{name:'Uzm.Dr. Yonca ÇAĞATAY', value : 'Romatoloji ve Bağ Dokusu',hospital:'1'}
-,{name:'Dt. Benal ÖZDEMİR', value : 'Ağız, Çene ve Diş Sağlığı Merkezi',hospital:'1'}
-,{name:'Dr. Abdulaziz BALWİ', value : 'Acil Servis',hospital:'1'}
-,{name:'Dr. Alhammam BANİODEH', value : 'Acil Servis',hospital:'1'}
-,{name:'Dr. Alper GENCER', value : 'Acil Servis',hospital:'1'}
-,{name:'Dr. Cenk ÖZCAN', value : 'Tüp Bebek Merkezi',hospital:'1'}
-,{name:'Dr. Çağlar ÖZKAYA', value : 'Acil Servis',hospital:'1'}
-,{name:'Dr. Elif İNAÇ', value : 'Anesteziyoloji',hospital:'1'}
-,{name:'Dr. Farid KISMAT', value : 'Acil Servis',hospital:'1'}
-,{name:'Dr. Mohammed DOKHAN', value : 'Acil Servis',hospital:'1'}
-,{name:'Dr. Myat Su WIN', value : 'Acil Servis',hospital:'1'}
-,{name:'Dr. Nurgul NAURZVAI', value : 'Acil Servis',hospital:'1'}
-,{name:'Dr. Thiha Min NAIGH', value : 'Acil Servis',hospital:'1'}
-,{name:'Dr. Orli BEHAR', value : 'Acil Servis',hospital:'1'}
-,{name:'Dyt. Ece GÜNAY AKKUŞ', value : 'Beslenme ve Diyet',hospital:'1'}
-,{name:'Dyt. Gül TATAR', value : 'Beslenme ve Diyet',hospital:'1'}
+ {name :'Prof.Dr.Abdullah EREN', value : 'Ortopedi ve Travmatoloji',hospital:'1'}
+,{name:'Prof.Dr.Abdullah GÖĞÜŞ', value : 'Ortopedi ve Travmatoloji',hospital:'1'}
+,{name:'Prof.Dr.Alin BAŞGÜL YİĞİTER', value : 'Kadın Hastalıkları ve Doğum	Fetal Maternal Tıp  - Perinatoloji',hospital:'1'}
+,{name:'Prof.Dr.Alper TOKER', value : 'Göğüs Cerrahisi',hospital:'1'}
+,{name:'Prof.Dr.Azmi HAMZAOĞLU', value : 'Ortopedi ve Travmatoloji- Omurga Cerrahisi Merkezi',hospital:'1'}
+,{name:'Prof.Dr.Belhhan AKPINAR', value : 'Kalp ve Damar Cerrahisi',hospital:'1'}
+,{name:'Prof.Dr.Bülent BAYSAL', value : 'Kadın Hastalıkları ve Doğum - Tüp Bebek Merkezi',hospital:'1'}
+,{name:'Prof.Dr.Canan AKMAN', value : 'Radyoloji',hospital:'1'}
+,{name:'Prof.Dr.Cemil AKGÜL', value : 'Kadın Hastalıkları ve Doğum - Tüp Bebek',hospital:'1'}
+,{name:'Prof.Dr.Füsun UYSAL', value : 'Fizik Tedavi ve Rehabilitasyon',hospital:'1'}
+,{name:'Prof.Dr.Gülşen AKMAN DEMİR', value : 'Nöroloji',hospital:'1'}
+,{name:'Prof.Dr.Hakkı KAHRAMAN', value : 'Endokrinoloji ve Metabolizma Hastalıkları - İç Hastalıkları',hospital:'1'}
+,{name:'Prof.Dr.İbrahim TURAN', value : 'Ortopedi ve Travmatoloji',hospital:'1'}
+,{name:'Prof.Dr.İlkkan DÜNDER', value : 'Kadın Hastalıkları ve Doğum',hospital:'1'}
+,{name:'Prof.Dr.Levent ERDEM', value : 'Gastroenteroloji - İç Hastalıkları',hospital:'1'}
+,{name:'Prof.Dr.Mahmut Refik KİLLİ', value : 'Radyoloji',hospital:'1'}
+,{name:'Prof.Dr.M.Çiçek BAYINDIR', value : 'Patoloji',hospital:'1'}
+,{name:'Prof.Dr.Mehmet TINAZ', value : 'Kulak Burun Boğaz',hospital:'1'}
+,{name:'Prof.Dr.Metin KÜÇÜKKAYA', value : 'Ortopedi ve Travmatoloji',hospital:'1'}
+,{name:'Prof.Dr.Murat GÜLBARAN', value : 'Anjiyografi - Kardiyoloji',hospital:'1'}
+,{name:'Prof.Dr.Murat KAYABALI', value : 'Kalp ve Damar Cerrahisi',hospital:'1'}
+,{name:'Prof.Dr.Mustafa ŞİRVANCI', value : 'Radyoloji',hospital:'1'}
+,{name:'Prof.Dr.Nuran YAZICIOĞLU', value : 'Kardiyoloji',hospital:'1'}
+,{name:'Prof.Dr.Osman BAYINDIR', value : 'Anesteziyoloji',hospital:'1'}
+,{name:'Prof.Dr.Saide AYTEKİN', value : 'Ekokardiyografi - Kardiyoloji',hospital:'1'}
+,{name:'Prof.Dr.Serdar ERDİNE', value : 'Algoloji (Ağrı) Merkezi - Anesteziyoloji',hospital:'1'}
+,{name:'Prof.Dr.Sibel ALPER', value : 'Dermatoloji',hospital:'1'}
+,{name:'Prof.Dr.Süleyman Tevfik ECDER', value : 'Nefroloji',hospital:'1'}
+,{name:'Prof.Dr.Şehnaz KARADENİZ', value : 'Göz Hastalıkları',hospital:'1'}
+,{name:'Prof.Dr.Şenol AKMAN', value : 'Ortopedi ve Travmatoloji',hospital:'1'}
+,{name:'Prof.Dr.Şule YAVUZ ', value : 'İç Hastalıkları- Romatoloji ve Bağ Dokusu',hospital:'1'}
+,{name:'Prof.Dr.Talat KİRİŞ', value : 'Beyin ve Sinir Cerrahisi',hospital:'1'}
+,{name:'Prof.Dr.Tayfun ÖZDEMİR', value : 'Ağız, Çene ve Diş Sağlığı',hospital:'1'}
+,{name:'Prof.Dr.Tülay ERKAN', value : 'Çocuk Gastroenterolojisi',hospital:'1'}
+,{name:'Prof.Dr.Vahit ÖZMEN', value : 'Genel Cerrahi',hospital:'1'}
+,{name:'Prof.Dr.Vedat AYTEKİN', value : 'Anjiyografi - Kardiyoloji',hospital:'1'}
+,{name:'Prof.Dr.Yaman TOKAT', value : 'Genel Cerrahi',hospital:'1'}
+,{name:'Prof.Dr.Yalım YALÇIN', value : 'Çocuk Kardiyolojisi',hospital:'1'}
+,{name:'Prof.Dr.Yasef ÖZSARFATİ', value : 'Nöroloji',hospital:'1'}
+,{name:'Prof.Dr.Yaşar Sümer YAMANER', value : 'Genel Cerrahi',hospital:'1'}
+,{name:'Prof.Dr.Yıldıray YÜZER', value : 'Organ Nakli Merkezi - Genel Cerrahi',hospital:'1'}
+,{name:'Prof.Dr.Zekeriya Uğur', value : 'IŞIKLARalt	Ortopedi ve Travmatoloji',hospital:'1'}
+,{name:'Prof.Dr.Zuhal YAPICI', value : 'Çocuk Nörolojisi',hospital:'1'}
+,{name:'Doç.Dr.Faruk ABİKE', value : 'Kadın Hastalıkları ve Doğum',hospital:'1'}
+,{name:'Prof.Dr.Fatih ATUĞ', value : 'Endoüroloji ve Robotik Cerrahi',hospital:'1'}
+,{name:'Doç.Dr.Haluk KULAKSIZOĞLU', value : 'Üroloji',hospital:'1'}
+,{name:'Doç.Dr.İlker YAZICI', value : 'Estetik, Plastik ve Rekonstruktif Cerrahisi',hospital:'1'}
+,{name:'Doç.Dr.Kıvanç ŞEREFHANOĞLU', value : 'Enfeksiyon Hastalıkları ve Klinik Mikrobiyoloji',hospital:'1'}
+,{name:'Doç.Dr.Levent DALAR', value : 'Göğüs Hastalıkları',hospital:'1'}
+,{name:'Doç.Dr.Levent ÖZGÖNENEL', value : 'Fizik Tedavi ve Rehabilitasyon',hospital:'1'}
+,{name:'Doç.Dr.Süleyman URAZ', value : 'Gastroenteroloji',hospital:'1'}
+,{name:'Op.Dr.Ahmet Serkan İLGÜN', value : 'Genel Cerrahi',hospital:'1'}
+,{name:'Op.Dr.Ali ARMAN', value : 'Kadın Hastalıkları ve Doğum',hospital:'1'}
+,{name:'Op.Dr.Alper ŞİŞMANOĞLU', value : 'Kadın Hastalıkları ve Doğum',hospital:'1'}
+,{name:'Op.Dr.Bülent POLAT', value : 'Kalp ve Damar Cerrahisi',hospital:'1'}
+,{name:'Op.Dr.Cengiz DİBEKOĞLU', value : 'Genel Cerrahi',hospital:'1'}
+,{name:'Op.Dr.Dauren SARSENOV', value : 'Genel Cerrahi',hospital:'1'}
+,{name:'Op.Dr.Erkan AKTAN', value : 'Kulak Burun Boğaz',hospital:'1'}
+,{name:'Op.Dr.Evrim AKSOY', value : 'Kadın Hastalıkları ve Doğum',hospital:'1'}
+,{name:'Op.Dr.Halil DİLEK', value : 'Ortopedi ve Travmatoloji',hospital:'1'}
+,{name:'Op.Dr.Herman İŞÇİ', value : 'Kadın Hastalıkları ve Doğum',hospital:'1'}
+,{name:'Op.Dr.Mazhar ÇELİKOYAR', value : 'Kulak Burun Boğaz',hospital:'1'}
+,{name:'Op.Dr.Mercan SARIER', value : 'Beyin ve Sinir Cerrahisi',hospital:'1'}
+,{name:'Op.Dr.Mehmet Kerem ORAL', value : 'Kalp ve Damar Cerrahisi',hospital:'1'}
+,{name:'Op.Dr.Meriç ENERCAN', value : 'Ortopedi ve Travmatoloji',hospital:'1'}
+,{name:'Op.Dr.Mürsel DEBRE', value : 'Ortopedi ve Travmatoloji',hospital:'1'}
+,{name:'Op.Dr.M.Faik SEÇKİN', value : 'Ortopedi ve Travmatoloji',hospital:'1'}
+,{name:'Op.Dr.Nejat DEMİRYONTAR', value : 'Ortopedi ve Travmatoloji',hospital:'1'}
+,{name:'Op.Dr.Rıfat RASİER', value : 'Göz Hastalıkları',hospital:'1'}
+,{name:'Op.Dr.Ökkeş Kemal AYALP', value : 'Genel Cerrahi',hospital:'1'}
+,{name:'Op.Dr.zlem KARABAY AKGÜL', value : 'Kadın Hastalıkları ve Doğum',hospital:'1'}
+,{name:'Op.Dr.Selhan KARADERELER', value : 'Beyin ve Sinir Cerrahisi',hospital:'1'}
+,{name:'Op.Dr.Sinan KAHRAMAN', value : 'Ortopedi ve Travmatoloji',hospital:'1'}
+,{name:'Op.Dr.Süleyman N. KARABEYOĞLU', value : 'Kadın Hastalıkları ve Doğum',hospital:'1'}
+,{name:'Op.Dr.Tuğçe TÜRKER BOTANLIOĞLU', value : 'Kulak Burun Boğaz',hospital:'1'}
+,{name:'Op.Dr.Ünal SAKALLIOĞLU', value : 'Ortopedi ve Travmatoloji',hospital:'1'}
+,{name:'Uzm.Dr.Afife BERKYÜREK', value : 'İç Hastalıkları, Kardiyoloji',hospital:'1'}
+,{name:'Uzm.Dr.Ali TIRTIR', value : 'Çocuk Sağlığı ve Hastalıkları',hospital:'1'}
+,{name:'Uzm.Dr.Ayhan MUTLU', value : 'Radyoloji',hospital:'1'}
+,{name:'Uzm.Dr.Aynur SAATÇİOĞLU', value : 'Anesteziyoloji',hospital:'1'}
+,{name:'Uzm.Dr.Bekir AYBEY', value : 'Dermatoloji',hospital:'1'}
+,{name:'Uzm.Dr.Bülent YARDIMCI', value : 'İç Hastalıkları',hospital:'1'}
+,{name:'Uzm.Dr.Bilgiser ESER', value : 'Anesteziyoloji',hospital:'1'}
+,{name:'Uzm.Dr.Coşkun GÜVEN', value : 'Anesteziyoloji',hospital:'1'}
+,{name:'Uzm.Dr.Cumhur LEBLEBİCİ', value : 'Kardiyoloji - İç Hastalıkları',hospital:'1'}
+,{name:'Uzm.Dr.Demet ERCİYES ', value : 'Kardiyoloji - Check-Up',hospital:'1'}
+,{name:'Uzm.Dr.Demet GÜNAY', value : 'Biyokimya',hospital:'1'}
+,{name:'Uzm.Dr.Deniz Tuna ERŞAYLI', value : 'Anesteziyoloji',hospital:'1'}
+,{name:'Uzm.Dr.Eda ÇINGI', value : 'Çocuk Cerrahisi',hospital:'1'}
+,{name:'Uzm.Dr.Emel PEKEL', value : 'Anesteziyoloji',hospital:'1'}
+,{name:'Uzm.Dr.Emine KARAHAN OKLU', value : 'Anesteziyoloji',hospital:'1'}
+,{name:'Uzm.Dr.Esin EĞİLMEZ MORKOÇ', value : 'Anesteziyoloji',hospital:'1'}
+,{name:'Uzm.Dr.Ferda DORA', value : 'Çocuk Sağlığı ve Hastalıkları',hospital:'1'}
+,{name:'Uzm.Dr.F. Başak NAMDAR ÇELİKHAN', value : 'Çocuk Sağlığı ve Hastalıkları',hospital:'1'}
+,{name:'Uzm.Dr.Filiz ÖNAL', value : 'Radyoloji',hospital:'1'}
+,{name:'Uzm.Dr.Günay CANTÜRK', value : 'Çocuk Sağlığı ve Hastalıkları',hospital:'1'}
+,{name:'Uzm.Dr.Hayri PARLAR', value : 'Kardiyoloji - İç Hastalıkları',hospital:'1'}
+,{name:'Uzm.Dr.Hülya AZİZAĞAOĞLU', value : 'İç Hastalıkları',hospital:'1'}
+,{name:'Uzm.Dr.Hasan Hüseyin TAVUKÇU', value : 'Nöroloji',hospital:'1'}
+,{name:'Uzm.Dr.Hülya Gamze ÇELİK', value : 'Kardiyoloji',hospital:'1'}
+,{name:'Uzm.Dr.İbrahim ÖRNEK ', value : 'Nöroloji',hospital:'1'}
+,{name:'Uzm.Dr.Levent ONAT ', value : 'Radyoloji',hospital:'1'}
+,{name:'Uzm.Dr.Levent ÖKLÜ', value : 'Anesteziyoloji',hospital:'1'}
+,{name:'Uzm.Dr.Mari BENLİ', value : 'Nükleer Tıp - Tiroid Hastalıkları Merkezi',hospital:'1'}
+,{name:'Uzm.Dr.Mefkure PLATİN', value : 'İç Hastalıkları - Kardiyoloji',hospital:'1'}
+,{name:'Uzm.Dr.Melahat DEĞİRMENCİ ESER', value : 'Nöroloji',hospital:'1'}
+,{name:'Uzm.Dr.Neriman Zeynep EKİCİ', value : 'Anesteziyoloji',hospital:'1'}
+,{name:'Uzm.Dr.Nevzat YILDIRIM', value : 'Kardiyoloji - İç Hastalıkları',hospital:'1'}
+,{name:'Uzm.Dr.Orhan GEREN', value : 'İç Hastalıkları, Kardiyoloji',hospital:'1'}
+,{name:'Uzm.Dr.Onur Levent ULUSOY', value : 'Radyoloji',hospital:'1'}
+,{name:'Uzm.Dr.Özgür ŞAMİLGİL', value : 'İç Hastalıkları',hospital:'1'}
+,{name:'Uzm.Dr.Seher AKGÜL', value : 'Anesteziyoloji',hospital:'1'}
+,{name:'Uzm.Dr.Roza Elif BALAN', value : 'Anesteziyoloji',hospital:'1'}
+,{name:'Uzm.Dr.Sema ÖZTÜRK', value : 'Nöroloji',hospital:'1'}
+,{name:'Uzm.Dr.Serkan TATLIAĞAÇ', value : 'Endokrinoloji ve Metabolizma Hastalıkları - İç Hastalıkları',hospital:'1'}
+,{name:'Uzm.Dr.Tuba COŞKUN FALAY', value : 'Göğüs Hastalıkları',hospital:'1'}
+,{name:'Uzm.Dr.Uğur ÖZBEK', value : 'Anesteziyoloji',hospital:'1'}
+,{name:'Uzm.Dr.Ülkü PEKCAN', value : 'Anesteziyoloji',hospital:'1'}
+,{name:'Uzm.Dr.Yonca ÇAĞATAY', value : 'Romatoloji ve Bağ Dokusu',hospital:'1'}
+,{name:'Dt.Benal ÖZDEMİR', value : 'Ağız, Çene ve Diş Sağlığı Merkezi',hospital:'1'}
+,{name:'Dr.Abdulaziz BALWİ', value : 'Acil Servis',hospital:'1'}
+,{name:'Dr.Alhammam BANİODEH', value : 'Acil Servis',hospital:'1'}
+,{name:'Dr.Alper GENCER', value : 'Acil Servis',hospital:'1'}
+,{name:'Dr.Cenk ÖZCAN', value : 'Tüp Bebek Merkezi',hospital:'1'}
+,{name:'Dr.Çağlar ÖZKAYA', value : 'Acil Servis',hospital:'1'}
+,{name:'Dr.Elif İNAÇ', value : 'Anesteziyoloji',hospital:'1'}
+,{name:'Dr.Farid KISMAT', value : 'Acil Servis',hospital:'1'}
+,{name:'Dr.Mohammed DOKHAN', value : 'Acil Servis',hospital:'1'}
+,{name:'Dr.Myat Su WIN', value : 'Acil Servis',hospital:'1'}
+,{name:'Dr.Nurgul NAURZVAI', value : 'Acil Servis',hospital:'1'}
+,{name:'Dr.Thiha Min NAIGH', value : 'Acil Servis',hospital:'1'}
+,{name:'Dr.Orli BEHAR', value : 'Acil Servis',hospital:'1'}
+,{name:'Dyt.Ece GÜNAY AKKUŞ', value : 'Beslenme ve Diyet',hospital:'1'}
+,{name:'Dyt.Gül TATAR', value : 'Beslenme ve Diyet',hospital:'1'}
 ];
 
 var SaatlerArray = 
@@ -440,7 +440,7 @@ var app = {
 		this.bindEvents();
 		app.url="http://10.0.0.31:8181/fiba_group_webservices/";
 		app.total_points=0;
-		app.url="http://213.74.186.114:8181/fiba_group_webservices/";
+		//app.url="http://213.74.186.114:8181/fiba_group_webservices/";
 		
 	},
 	// Bind Event Listeners
@@ -559,11 +559,10 @@ var app = {
 						for (var i = 0; i < a.length; i++) {
 						html ="<table style='width:100%'>";
 							console.log("div_randevular 4");
-							html += '<tr><td width="20%">'+ a[i].Hospital + '</td>';
-							html += '<td width="20%">' + a[i].Departman + '</td>';
-							html += '<td width="20%">' + a[i].Doctor_name + '</td></tr>';
-							html += '<td width="20%">' + a[i].Appointment_date + '</td></tr>';
-							html += '<td width="20%">' + a[i].Appointment_hours + '</td></tr>';
+							html += '<tr style="width:100%"><td width="25%">'+ a[i].Hospital + '</td>';
+							html += '<td width="25%">' + a[i].Departman + '</td>';
+							html += '<td width="25%">' + a[i].Doctor_name + '</td></tr>';
+							html += '<td width="25%">' + a[i].Appointment_date + " " + a[i].Appointment_hours +'</td></tr>';							
 						    html+="</table>";
 							listItems.append('<li id="prj_' + a[i].seq + '">' + html + '</li>');
 						};
