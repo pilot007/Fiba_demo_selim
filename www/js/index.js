@@ -513,7 +513,7 @@ var app = {
 	},	
     fnc_randevuAl : function() {
 		    $.ajax({
-                        url : app.url+"Appointment?conn_type=setAppointment&departman="+$('#departman_list').val()+"&memberid="+app.id+
+                        url : app.url+"GetAppointment?conn_type=setAppointment&departman="+$('#departman_list').val()+"&memberid="+app.id+
                         "&hospital="+$('#hospital_list').val()+ "&tarih="+ +$('#tarih').val()+
                         "&doctor="+$('#doktor_list').val() + "&saatler="+$('#saatler_list').val() +"&deviceid="+gtech_token,
                         dataType : "json",
@@ -531,7 +531,7 @@ var app = {
 	},
     fnc_randevuList : function() {
 		    $.ajax({
-                        url : app.url+"Appointment?conn_type=getAppointments&memberid="+app.id,
+                        url : app.url+"GetAppointment?conn_type=getAppointments&memberid="+app.id,
                         dataType : "json",
                         success : function(a, b, c) {
 
