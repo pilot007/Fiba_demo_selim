@@ -90,6 +90,285 @@ var pieData = [
 }
 ];		 
 
+
+var HospitalArray = 
+[
+     {name : 'İstanbul Florence N.H.', value : '1'}
+    ,{name : 'Şişli Florence N.H.', value : '2'}
+    ,{name : 'Gayrettepe Florence N.H.', value : '3'}
+    ,{name : 'Kadıköy Florence N.H.', value : '4'}
+    ,{name : 'Göktürk Florence N. Tıp Merkezi', value : '5'}    
+];
+
+var DepartmanArray = 
+[
+ {value:'1', name :'Acil Ünitesi'}
+,{value:'2', name :'Ağız, Çene ve Diş Sağlığı Merkezi'}
+,{value:'3', name :'Aile Hekimliği'}
+,{value:'4', name :'Algoloji (Ağrı) Merkezi'}
+,{value:'5', name :'Androloji'}
+,{value:'6', name :'Anesteziyoloji'}
+,{value:'7', name :'Anjiyografi'}
+,{value:'8', name :'Astım Teşhis Tedavi'}
+,{value:'9', name :'Ayak Sağlığı ve Ayak Cerrahisi'}
+,{value:'10', name :'Beslenme ve Diyet'}
+,{value:'11', name :'Beyin ve Sinir Cerrahisi'}
+,{value:'12', name :'Biyokimya'}
+,{value:'13', name :'Böbrek Nakli Merkezi'}
+,{value:'14', name :'Büyüme ve Ergenlik Merkezi'}
+,{value:'15', name :'Check-Up'}
+,{value:'16', name :'Çocuk Alerjisi'}
+,{value:'17', name :'Çocuk Cerrahisi'}
+,{value:'18', name :'Çocuk Endokrinoloji'}
+,{value:'19', name :'Çocuk Gastroenterolojisi'}
+,{value:'20', name :'Çocuk Kardiyolojisi'}
+,{value:'21', name :'Çocuk Nörolojisi'}
+,{value:'22', name :'Çocuk Ortopedisi'}
+,{value:'23', name :'Çocuk Sağlığı ve Hastalıkları'}
+,{value:'24', name :'Çocuk Ürolojisi'}
+,{value:'25', name :'Çocuk ve Ergen Ruh Sağlığı ve Hastalıkları'}
+,{value:'26', name :'Dahiliye'}
+,{value:'27', name :'Dermatoloji'}
+,{value:'28', name :'Ekokardiyografi'}
+,{value:'29', name :'El Cerrahisi'}
+,{value:'30', name :'Embriyoloji'}
+,{value:'31', name :'Endokrinoloji ve Metabolizma Hastalıkları'}
+,{value:'32', name :'Endoüroloji ve Robotik Cerrahi'}
+,{value:'33', name :'Enfeksiyon Has.ve Klinik Mikrobiyoloji'}
+,{value:'34', name :'Estetik, Plastik ve Rekonstrüktif Cerrahi'}
+,{value:'35', name :'Fetal Maternal Tıp Merkezi'}
+,{value:'36', name :'Fizik Tedavi ve Rehabilitasyon'}
+,{value:'37', name :'Gastroenteroloji'}
+,{value:'38', name :'Gastrointestinal Cerrahi'}
+,{value:'39', name :'Genel Cerrahi'}
+,{value:'40', name :'Genetik Hastalıklar Tanı Merkezi'}
+,{value:'41', name :'Geriatri'}
+,{value:'42', name :'Göğüs Cerrahisi'}
+,{value:'43', name :'Göğüs Hastalıkları'}
+,{value:'44', name :'Göz Hastalıkları'}
+,{value:'45', name :'Hematoloji'}
+,{value:'46', name :'İç Hastalıklar'}
+,{value:'47', name :'İmmünoloji (Doku Tipleme)'}
+,{value:'48', name :'İnme Merkezi'}
+,{value:'49', name :'Kadın Hastalıkları ve Doğum'}
+,{value:'50', name :'Kalp ve Damar Cerrahisi'}
+,{value:'51', name :'Kan ve Transfüzyon Ünitesi'}
+,{value:'52', name :'Karaciğer ve Safra Yolu Hastalıkları'}
+,{value:'53', name :'Kardiyak Rehabilitasyon Merkezi'}
+,{value:'54', name :'Kardiyoloji'}
+,{value:'55', name :'Klinik Psikoloji Merkezi'}
+,{value:'56', name :'Kulak Burun Boğaz'}
+,{value:'57', name :'Makula Dejenerasyonu Merkezi'}
+,{value:'58', name :'Medikal Onkoloji'}
+,{value:'59', name :'Mikrobiyoloji'}
+,{value:'60', name :'Nefroloji'}
+,{value:'61', name :'Nöro-Üroloji'}
+,{value:'62', name :'Nöroloji'}
+,{value:'63', name :'Nöroradyoloji'}
+,{value:'64', name :'Nükleer Kardiyoloji'}
+,{value:'65', name :'Nükleer Tıp'}
+,{value:'66', name :'Obezite ve Metabolik Cerrahi'}
+,{value:'67', name :'Odyoloji'}
+,{value:'68', name :'Omurga Cerrahisi Merkezi'}
+,{value:'69', name :'Organ Nakli'}
+,{value:'70', name :'Ortopedi ve Travmatoloji'}
+,{value:'71', name :'Patoloji'}
+,{value:'72', name :'Pet-Ct'}
+,{value:'73', name :'Psikiyatri'}
+,{value:'74', name :'Psikoloji'}
+,{value:'75', name :'Radyasyon Onkolojisi'}
+,{value:'76', name :'Radyoloji'}
+,{value:'77', name :'Reflü Merkezi'}
+,{value:'78', name :'Romatoloji ve Bağ Dokusu'}
+,{value:'79', name :'Tıbbi Onkoloji'}
+,{value:'80', name :'Tiroid Hastalıkları'}
+,{value:'81', name :'Toraks Cerrahisi'}
+,{value:'82', name :'TrueBeam STx'}
+,{value:'83', name :'Tüp Bebek Merkezi'}
+,{value:'84', name :'Üro-Jinekoloji'}
+,{value:'85', name :'Üroloji'}
+,{value:'86', name :'Uyku Bozuklukları Merkezi'}
+,{value:'87', name :'Yenidoğan Yoğun Bakım'}
+,{value:'88', name :'Yoğun Bakım'}
+];
+
+
+var DoctorArray = 
+[
+ {name : 'Prof.Dr. Abdullah EREN', value : 'Ortopedi ve Travmatoloji',hospital:'1'}
+,{name:'Prof.Dr. Abdullah GÖĞÜŞ', value : 'Ortopedi ve Travmatoloji',hospital:'1'}
+,{name:'Prof.Dr. Alin BAŞGÜL YİĞİTER', value : 'Kadın Hastalıkları ve Doğum	Fetal Maternal Tıp  - Perinatoloji',hospital:'1'}
+,{name:'Prof.Dr. Alper TOKER', value : 'Göğüs Cerrahisi',hospital:'1'}
+,{name:'Prof.Dr. Azmi HAMZAOĞLU', value : 'Ortopedi ve Travmatoloji- Omurga Cerrahisi Merkezi',hospital:'1'}
+,{name:'Prof.Dr. Belhhan AKPINAR', value : 'Kalp ve Damar Cerrahisi',hospital:'1'}
+,{name:'Prof.Dr. Bülent BAYSAL', value : 'Kadın Hastalıkları ve Doğum - Tüp Bebek Merkezi',hospital:'1'}
+,{name:'Prof.Dr. Canan AKMAN', value : 'Radyoloji',hospital:'1'}
+,{name:'Prof.Dr. Cemil AKGÜL', value : 'Kadın Hastalıkları ve Doğum - Tüp Bebek',hospital:'1'}
+,{name:'Prof.Dr. Füsun UYSAL', value : 'Fizik Tedavi ve Rehabilitasyon',hospital:'1'}
+,{name:'Prof.Dr. Gülşen AKMAN DEMİR', value : 'Nöroloji',hospital:'1'}
+,{name:'Prof.Dr. Hakkı KAHRAMAN', value : 'Endokrinoloji ve Metabolizma Hastalıkları - İç Hastalıkları',hospital:'1'}
+,{name:'Prof.Dr. İbrahim TURAN', value : 'Ortopedi ve Travmatoloji',hospital:'1'}
+,{name:'Prof.Dr. İlkkan DÜNDER', value : 'Kadın Hastalıkları ve Doğum',hospital:'1'}
+,{name:'Prof.Dr. Levent ERDEM', value : 'Gastroenteroloji - İç Hastalıkları',hospital:'1'}
+,{name:'Prof.Dr. Mahmut Refik KİLLİ', value : 'Radyoloji',hospital:'1'}
+,{name:'Prof.Dr. M.Çiçek BAYINDIR', value : 'Patoloji',hospital:'1'}
+,{name:'Prof.Dr. Mehmet TINAZ', value : 'Kulak Burun Boğaz',hospital:'1'}
+,{name:'Prof.Dr. Metin KÜÇÜKKAYA', value : 'Ortopedi ve Travmatoloji',hospital:'1'}
+,{name:'Prof.Dr. Murat GÜLBARAN', value : 'Anjiyografi - Kardiyoloji',hospital:'1'}
+,{name:'Prof.Dr. Murat KAYABALI', value : 'Kalp ve Damar Cerrahisi',hospital:'1'}
+,{name:'Prof.Dr. Mustafa ŞİRVANCI', value : 'Radyoloji',hospital:'1'}
+,{name:'Prof.Dr. Nuran YAZICIOĞLU', value : 'Kardiyoloji',hospital:'1'}
+,{name:'Prof.Dr. Osman BAYINDIR', value : 'Anesteziyoloji',hospital:'1'}
+,{name:'Prof.Dr. Saide AYTEKİN', value : 'Ekokardiyografi - Kardiyoloji',hospital:'1'}
+,{name:'Prof.Dr. Serdar ERDİNE', value : 'Algoloji (Ağrı) Merkezi - Anesteziyoloji',hospital:'1'}
+,{name:'Prof.Dr. Sibel ALPER', value : 'Dermatoloji',hospital:'1'}
+,{name:'Prof.Dr. Süleyman Tevfik ECDER', value : 'Nefroloji',hospital:'1'}
+,{name:'Prof.Dr. Şehnaz KARADENİZ', value : 'Göz Hastalıkları',hospital:'1'}
+,{name:'Prof.Dr. Şenol AKMAN', value : 'Ortopedi ve Travmatoloji',hospital:'1'}
+,{name:'Prof.Dr. Şule YAVUZ ', value : 'İç Hastalıkları- Romatoloji ve Bağ Dokusu',hospital:'1'}
+,{name:'Prof.Dr. Talat KİRİŞ', value : 'Beyin ve Sinir Cerrahisi',hospital:'1'}
+,{name:'Prof.Dr. Tayfun ÖZDEMİR', value : 'Ağız, Çene ve Diş Sağlığı',hospital:'1'}
+,{name:'Prof.Dr. Tülay ERKAN', value : 'Çocuk Gastroenterolojisi',hospital:'1'}
+,{name:'Prof.Dr. Vahit ÖZMEN', value : 'Genel Cerrahi',hospital:'1'}
+,{name:'Prof.Dr. Vedat AYTEKİN', value : 'Anjiyografi - Kardiyoloji',hospital:'1'}
+,{name:'Prof.Dr. Yaman TOKAT', value : 'Genel Cerrahi',hospital:'1'}
+,{name:'Prof.Dr. Yalım YALÇIN', value : 'Çocuk Kardiyolojisi',hospital:'1'}
+,{name:'Prof.Dr. Yasef ÖZSARFATİ', value : 'Nöroloji',hospital:'1'}
+,{name:'Prof.Dr. Yaşar Sümer YAMANER', value : 'Genel Cerrahi',hospital:'1'}
+,{name:'Prof.Dr. Yıldıray YÜZER', value : 'Organ Nakli Merkezi - Genel Cerrahi',hospital:'1'}
+,{name:'Prof.Dr. Zekeriya Uğur', value : 'IŞIKLARalt	Ortopedi ve Travmatoloji',hospital:'1'}
+,{name:'Prof.Dr. Zuhal YAPICI', value : 'Çocuk Nörolojisi',hospital:'1'}
+,{name:'Doç.Dr. Faruk ABİKE', value : 'Kadın Hastalıkları ve Doğum',hospital:'1'}
+,{name:'Prof.Dr. Fatih ATUĞ', value : 'Endoüroloji ve Robotik Cerrahi',hospital:'1'}
+,{name:'Doç.Dr. Haluk KULAKSIZOĞLU', value : 'Üroloji',hospital:'1'}
+,{name:'Doç.Dr. İlker YAZICI', value : 'Estetik, Plastik ve Rekonstruktif Cerrahisi',hospital:'1'}
+,{name:'Doç.Dr. Kıvanç ŞEREFHANOĞLU', value : 'Enfeksiyon Hastalıkları ve Klinik Mikrobiyoloji',hospital:'1'}
+,{name:'Doç.Dr. Levent DALAR', value : 'Göğüs Hastalıkları',hospital:'1'}
+,{name:'Doç.Dr. Levent ÖZGÖNENEL', value : 'Fizik Tedavi ve Rehabilitasyon',hospital:'1'}
+,{name:'Doç.Dr. Süleyman URAZ', value : 'Gastroenteroloji',hospital:'1'}
+,{name:'Op.Dr. Ahmet Serkan İLGÜN', value : 'Genel Cerrahi',hospital:'1'}
+,{name:'Op.Dr. Ali ARMAN', value : 'Kadın Hastalıkları ve Doğum',hospital:'1'}
+,{name:'Op.Dr. Alper ŞİŞMANOĞLU', value : 'Kadın Hastalıkları ve Doğum',hospital:'1'}
+,{name:'Op.Dr. Bülent POLAT', value : 'Kalp ve Damar Cerrahisi',hospital:'1'}
+,{name:'Op.Dr. Cengiz DİBEKOĞLU', value : 'Genel Cerrahi',hospital:'1'}
+,{name:'Op.Dr. Dauren SARSENOV', value : 'Genel Cerrahi',hospital:'1'}
+,{name:'Op.Dr. Erkan AKTAN', value : 'Kulak Burun Boğaz',hospital:'1'}
+,{name:'Op.Dr. Evrim AKSOY', value : 'Kadın Hastalıkları ve Doğum',hospital:'1'}
+,{name:'Op.Dr. Halil DİLEK', value : 'Ortopedi ve Travmatoloji',hospital:'1'}
+,{name:'Op.Dr. Herman İŞÇİ', value : 'Kadın Hastalıkları ve Doğum',hospital:'1'}
+,{name:'Op.Dr. Mazhar ÇELİKOYAR', value : 'Kulak Burun Boğaz',hospital:'1'}
+,{name:'Op.Dr. Mercan SARIER', value : 'Beyin ve Sinir Cerrahisi',hospital:'1'}
+,{name:'Op.Dr. Mehmet Kerem ORAL', value : 'Kalp ve Damar Cerrahisi',hospital:'1'}
+,{name:'Op.Dr. Meriç ENERCAN', value : 'Ortopedi ve Travmatoloji',hospital:'1'}
+,{name:'Op.Dr. Mürsel DEBRE', value : 'Ortopedi ve Travmatoloji',hospital:'1'}
+,{name:'Op.Dr. M.Faik SEÇKİN', value : 'Ortopedi ve Travmatoloji',hospital:'1'}
+,{name:'Op.Dr. Nejat DEMİRYONTAR', value : 'Ortopedi ve Travmatoloji',hospital:'1'}
+,{name:'Op.Dr. Rıfat RASİER', value : 'Göz Hastalıkları',hospital:'1'}
+,{name:'Op.Dr. Ökkeş Kemal AYALP', value : 'Genel Cerrahi',hospital:'1'}
+,{name:'Op.Dr.Özlem KARABAY AKGÜL', value : 'Kadın Hastalıkları ve Doğum',hospital:'1'}
+,{name:'Op.Dr. Selhan KARADERELER', value : 'Beyin ve Sinir Cerrahisi',hospital:'1'}
+,{name:'Op.Dr. Sinan KAHRAMAN', value : 'Ortopedi ve Travmatoloji',hospital:'1'}
+,{name:'Op.Dr. Süleyman N. KARABEYOĞLU', value : 'Kadın Hastalıkları ve Doğum',hospital:'1'}
+,{name:'Op.Dr. Tuğçe TÜRKER BOTANLIOĞLU', value : 'Kulak Burun Boğaz',hospital:'1'}
+,{name:'Op.Dr. Ünal SAKALLIOĞLU', value : 'Ortopedi ve Travmatoloji',hospital:'1'}
+,{name:'Uzm.Dr. Afife BERKYÜREK', value : 'İç Hastalıkları, Kardiyoloji',hospital:'1'}
+,{name:'Uzm.Dr. Ali TIRTIR', value : 'Çocuk Sağlığı ve Hastalıkları',hospital:'1'}
+,{name:'Uzm.Dr. Ayhan MUTLU', value : 'Radyoloji',hospital:'1'}
+,{name:'Uzm.Dr. Aynur SAATÇİOĞLU', value : 'Anesteziyoloji',hospital:'1'}
+,{name:'Uzm.Dr. Bekir AYBEY', value : 'Dermatoloji',hospital:'1'}
+,{name:'Uzm.Dr. Bülent YARDIMCI', value : 'İç Hastalıkları',hospital:'1'}
+,{name:'Uzm.Dr. Bilgiser ESER', value : 'Anesteziyoloji',hospital:'1'}
+,{name:'Uzm.Dr. Coşkun GÜVEN', value : 'Anesteziyoloji',hospital:'1'}
+,{name:'Uzm.Dr. Cumhur LEBLEBİCİ', value : 'Kardiyoloji - İç Hastalıkları',hospital:'1'}
+,{name:'Uzm.Dr. Demet ERCİYES ', value : 'Kardiyoloji - Check-Up',hospital:'1'}
+,{name:'Uzm.Dr. Demet GÜNAY', value : 'Biyokimya',hospital:'1'}
+,{name:'Uzm.Dr. Deniz Tuna ERŞAYLI', value : 'Anesteziyoloji',hospital:'1'}
+,{name:'Uzm.Dr. Eda ÇINGI', value : 'Çocuk Cerrahisi',hospital:'1'}
+,{name:'Uzm.Dr. Emel PEKEL', value : 'Anesteziyoloji',hospital:'1'}
+,{name:'Uzm.Dr. Emine KARAHAN OKLU', value : 'Anesteziyoloji',hospital:'1'}
+,{name:'Uzm.Dr. Esin EĞİLMEZ MORKOÇ', value : 'Anesteziyoloji',hospital:'1'}
+,{name:'Uzm.Dr. Ferda DORA', value : 'Çocuk Sağlığı ve Hastalıkları',hospital:'1'}
+,{name:'Uzm.Dr. F. Başak NAMDAR ÇELİKHAN', value : 'Çocuk Sağlığı ve Hastalıkları',hospital:'1'}
+,{name:'Uzm.Dr. Filiz ÖNAL', value : 'Radyoloji',hospital:'1'}
+,{name:'Uzm.Dr. Günay CANTÜRK', value : 'Çocuk Sağlığı ve Hastalıkları',hospital:'1'}
+,{name:'Uzm.Dr. Hayri PARLAR', value : 'Kardiyoloji - İç Hastalıkları',hospital:'1'}
+,{name:'Uzm.Dr. Hülya AZİZAĞAOĞLU', value : 'İç Hastalıkları',hospital:'1'}
+,{name:'Uzm.Dr. Hasan Hüseyin TAVUKÇU', value : 'Nöroloji',hospital:'1'}
+,{name:'Uzm.Dr. Hülya Gamze ÇELİK', value : 'Kardiyoloji',hospital:'1'}
+,{name:'Uzm.Dr. İbrahim ÖRNEK ', value : 'Nöroloji',hospital:'1'}
+,{name:'Uzm.Dr. Levent ONAT ', value : 'Radyoloji',hospital:'1'}
+,{name:'Uzm.Dr. Levent ÖKLÜ', value : 'Anesteziyoloji',hospital:'1'}
+,{name:'Uzm.Dr. Mari BENLİ', value : 'Nükleer Tıp - Tiroid Hastalıkları Merkezi',hospital:'1'}
+,{name:'Uzm.Dr. Mefkure PLATİN', value : 'İç Hastalıkları - Kardiyoloji',hospital:'1'}
+,{name:'Uzm.Dr. Melahat DEĞİRMENCİ ESER', value : 'Nöroloji',hospital:'1'}
+,{name:'Uzm.Dr. Neriman Zeynep EKİCİ', value : 'Anesteziyoloji',hospital:'1'}
+,{name:'Uzm.Dr. Nevzat YILDIRIM', value : 'Kardiyoloji - İç Hastalıkları',hospital:'1'}
+,{name:'Uzm.Dr. Orhan GEREN', value : 'İç Hastalıkları, Kardiyoloji',hospital:'1'}
+,{name:'Uzm.Dr. Onur Levent ULUSOY', value : 'Radyoloji',hospital:'1'}
+,{name:'Uzm.Dr. Özgür ŞAMİLGİL', value : 'İç Hastalıkları',hospital:'1'}
+,{name:'Uzm.Dr. Seher AKGÜL', value : 'Anesteziyoloji',hospital:'1'}
+,{name:'Uzm.Dr. Roza Elif BALAN', value : 'Anesteziyoloji',hospital:'1'}
+,{name:'Uzm.Dr. Sema ÖZTÜRK', value : 'Nöroloji',hospital:'1'}
+,{name:'Uzm.Dr. Serkan TATLIAĞAÇ', value : 'Endokrinoloji ve Metabolizma Hastalıkları - İç Hastalıkları',hospital:'1'}
+,{name:'Uzm.Dr. Tuba COŞKUN FALAY', value : 'Göğüs Hastalıkları',hospital:'1'}
+,{name:'Uzm.Dr. Uğur ÖZBEK', value : 'Anesteziyoloji',hospital:'1'}
+,{name:'Uzm.Dr. Ülkü PEKCAN', value : 'Anesteziyoloji',hospital:'1'}
+,{name:'Uzm.Dr. Yonca ÇAĞATAY', value : 'Romatoloji ve Bağ Dokusu',hospital:'1'}
+,{name:'Dt. Benal ÖZDEMİR', value : 'Ağız, Çene ve Diş Sağlığı Merkezi',hospital:'1'}
+,{name:'Dr. Abdulaziz BALWİ', value : 'Acil Servis',hospital:'1'}
+,{name:'Dr. Alhammam BANİODEH', value : 'Acil Servis',hospital:'1'}
+,{name:'Dr. Alper GENCER', value : 'Acil Servis',hospital:'1'}
+,{name:'Dr. Cenk ÖZCAN', value : 'Tüp Bebek Merkezi',hospital:'1'}
+,{name:'Dr. Çağlar ÖZKAYA', value : 'Acil Servis',hospital:'1'}
+,{name:'Dr. Elif İNAÇ', value : 'Anesteziyoloji',hospital:'1'}
+,{name:'Dr. Farid KISMAT', value : 'Acil Servis',hospital:'1'}
+,{name:'Dr. Mohammed DOKHAN', value : 'Acil Servis',hospital:'1'}
+,{name:'Dr. Myat Su WIN', value : 'Acil Servis',hospital:'1'}
+,{name:'Dr. Nurgul NAURZVAI', value : 'Acil Servis',hospital:'1'}
+,{name:'Dr. Thiha Min NAIGH', value : 'Acil Servis',hospital:'1'}
+,{name:'Dr. Orli BEHAR', value : 'Acil Servis',hospital:'1'}
+,{name:'Dyt. Ece GÜNAY AKKUŞ', value : 'Beslenme ve Diyet',hospital:'1'}
+,{name:'Dyt. Gül TATAR', value : 'Beslenme ve Diyet',hospital:'1'}
+];
+
+var SaatlerArray = 
+[
+{name:'09:00', value:'09:00'}
+,{name:'09:15', value:'09:15'}
+,{name:'09:30', value:'09:30'}
+,{name:'09:45', value:'09:45'}
+
+,{name:'10:00', value:'10:00'}
+,{name:'10:15', value:'10:15'}
+,{name:'10:30', value:'10:30'}
+,{name:'10:45', value:'10:45'}
+
+,{name:'11:00', value:'11:00'}
+,{name:'11:15', value:'11:15'}
+,{name:'11:30', value:'11:30'}
+,{name:'11:45', value:'11:45'}
+
+,{name:'13:00', value:'13:00'}
+,{name:'13:15', value:'13:15'}
+,{name:'13:30', value:'13:30'}
+,{name:'13:45', value:'13:45'}
+
+,{name:'14:00', value:'14:00'}
+,{name:'14:15', value:'14:15'}
+,{name:'14:30', value:'14:30'}
+,{name:'14:45', value:'14:45'}
+
+,{name:'15:00', value:'15:00'}
+,{name:'15:15', value:'15:15'}
+,{name:'15:30', value:'15:30'}
+,{name:'15:45', value:'15:45'}
+
+,{name:'16:00', value:'16:00'}
+,{name:'16:15', value:'16:15'}
+,{name:'16:30', value:'16:30'}
+,{name:'16:45', value:'16:45'}
+];
+
 var posArray = 
 [
     // Aeropostale
@@ -153,16 +432,16 @@ function initPushwoosh() {
     }
 };
 
-
 var app = {
+
 	// Application Constructor
 	initialize : function() {
 		console.log("init");
 		this.bindEvents();
 		app.url="http://10.0.0.31:8181/fiba_group_webservices/";
 		app.total_points=0;
-		app.url="http://213.74.186.114:8181/fiba_group_webservices/";
-		//app.first_init();
+		//app.url="http://213.74.186.114:8181/fiba_group_webservices/";
+		
 	},
 	// Bind Event Listeners
 	//
@@ -189,6 +468,105 @@ var app = {
 
 	},
 	
+	fnc_randevu_init:function(){
+		
+		//$('#departman_list').empty();
+		//$('#hospital_list').empty();
+		
+		console.log("init hospital array size:" + HospitalArray.length);
+		for (var i = 0; i < HospitalArray.length; i++) {
+			var o = new Option(HospitalArray[i].name, HospitalArray[i].name);
+			$('#hospital_list').append(o);
+		}
+
+		console.log("init Departman array size :" + DepartmanArray.length);
+		for (var i = 0; i < DepartmanArray.length; i++) {
+			var o = new Option(DepartmanArray[i].name, DepartmanArray[i].name);
+			$('#departman_list').append(o);
+		}			
+
+
+	$('#departman_list').change(function(){
+    console.log('on departman change : ' + $('#departman_list').val());
+    //console.log('on departman change : ' + DepartmanArray[$('#departman_list').val()].name );
+
+				$('#doktor_list').empty();
+				var o = new Option("Seçiniz", -1);
+				$('#doktor_list').append(o);
+				for (var i = 0; i < DoctorArray.length; i++) 
+				{
+					if (DoctorArray[i].value.indexOf( $('#departman_list').val() ) >-1 )
+					{
+						var o = new Option(DoctorArray[i].name, DoctorArray[i].name);
+						$('#doktor_list').append(o);
+						console.log('DoctorArray[i].name : ' + DoctorArray[i].name + DoctorArray[i].value);
+					}
+				};				
+				}); 				
+ 
+				for (var i = 0; i < SaatlerArray.length; i++) 
+				{
+					var o = new Option(SaatlerArray[i].name, SaatlerArray[i].value);
+					$('#saatler_list').append(o);
+				}
+
+	},	
+    fnc_randevuAl : function() {
+		    $.ajax({
+                        url : app.url+"Appointment?conn_type=setAppointment&departman="+$('#departman_list').val()+"&memberid="+app.id+
+                        "&hospital="+$('#hospital_list').val()+ "&tarih="+ +$('#hospital_list').val()+
+                        "&doctor="+$('#doktor_list').val() + "&saatler="+$('#saatler_list').val() +"&deviceid="+gtech_token,
+                        dataType : "json",
+                        success : function(a, b, c) {
+                            console.log("randevü kaydediliyor");
+                            $.mobile.changePage($('#hospital_randevular'));
+                        },
+                        error : function(a, b, c) {
+                            console.log("err a ", a);
+                            console.log("err b ", b);
+                            console.log("err c ", c);
+                            console.log("err c ", c);
+                        }
+                    }); 
+	},
+    fnc_randevuList : function() {
+		    $.ajax({
+                        url : app.url+"Appointment?conn_type=getAppointments&memberid="+app.id,
+                        dataType : "json",
+                        success : function(a, b, c) {
+
+						console.log("div_randevular 2");
+						$('#div_randevular ul').remove();
+						$('#div_randevular').append('<ul data-role="listview"></ul>');
+						listItems = $('#div_randevular').find('ul');
+						console.log("div_randevular 3");
+						 
+						
+						for (var i = 0; i < a.length; i++) {
+						html ="<table style='width:100%'>";
+							console.log("div_randevular 4");
+							html += '<tr><td width="50%">'+ a[i].hospital + '</td>';
+							html += '<td width="30%">' + a[i].departman + '</td>';
+							html += '<td width="20%">' + a[i].doctor + '</td></tr>';
+							html += '<td width="20%">' + a[i].app_date + '</td></tr>';
+						    html+="</table>";
+							listItems.append('<li id="prj_' + a[i].seq + '">' + html + '</li>');
+						};
+						
+						$('#div_randevular ul').listview();
+						console.log("div_randevular 5");
+
+
+                        },
+                        error : function(a, b, c) {
+                            console.log("err a ", a);
+                            console.log("err b ", b);
+                            console.log("err c ", c);
+                            console.log("err c ", c);
+                        }
+                    }); 
+	},
+
     fnc_location_list : function() {
 
          $("#div_loc_list ul").page('destroy').page();
@@ -388,7 +766,6 @@ var app = {
 		    },
 			error : function(a, b, c) {
 				$("#device_info").append('hata aldı '+ '<br />');
-				element2.innerHTML = "hata username:";
 
 				console.log("err a ", a);
 				console.log("err b ", b);
@@ -466,7 +843,6 @@ var app = {
             },
             error : function(a, b, c) {
                 $("#device_info").append('hata aldı '+ '<br />');
-                element2.innerHTML = "hata username:";
 
                 console.log("err a ", a);
                 console.log("err b ", b);
@@ -544,7 +920,6 @@ var app = {
             },
             error : function(a, b, c) {
                 $("#device_info").append('hata aldı '+ '<br />');
-                element2.innerHTML = "hata username:";
 
                 console.log("err a ", a);
                 console.log("err b ", b);
@@ -884,7 +1259,6 @@ var app = {
 			},
 			error : function(a, b, c) {
 				$("#device_info").append('hata aldı '+ '<br />');
-				element2.innerHTML = "hata username:";
 
 				console.log("err a ", a);
 				console.log("err b ", b);
@@ -892,8 +1266,6 @@ var app = {
 				console.log("err c ", c);
 			}
 		});
-		
-		
 		
 		//if(app.name==null)
 		{
@@ -925,7 +1297,6 @@ var app = {
 			},
 			error : function(a, b, c) {
 				$("#device_info").append('hata aldı '+ '<br />');
-				element2.innerHTML = "hata username:";
 
 				console.log("err a ", a);
 				console.log("err b ", b);
@@ -934,8 +1305,6 @@ var app = {
 			}
 		});
 		}
-
-
 	},
     check_campains : function(){
     	
@@ -1260,7 +1629,8 @@ var app = {
                     	
                         app.first_init();
                         app.check_campains();
-                        $.mobile.changePage("#barkod");                        
+                        $.mobile.changePage("#choose_company");                        
+                        //$.mobile.changePage("#barkod");                        
                     }else{
                         alert("Lütfen kullanıcı adı ve şifrenizi doğru giriniz!");
                         $('#username').removeAttr('value');
