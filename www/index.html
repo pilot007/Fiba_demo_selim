@@ -82,8 +82,49 @@
    
     </div>
 </div>
-
 <!--end new page-->           
+
+
+
+<!--start new page-->
+<div data-role="page" id="katalog_ms">
+    <div data-role="header" align="center">
+        <br/>
+              <div >
+                <a href="#barkod" data-ajax="false" onclick="app.fnc_Barkod()"><img src="img/menu_icons/1_Home.png" width="10%"> <img/></a>
+                <a href="#puanlarim" data-ajax="false"  onclick="app.fnc_Puanlarim()"><img src="img/menu_icons/2_Score.png" width="10%"> <img/></a>
+                <a href="#mesajlar"  onclick="app.fnc_Mesajlar()">        <img id="img_msg9" src="img/menu_icons/3_Message.png" width="10%"> <img/> </a>
+                <a href="#profil" data-ajax="false" onclick="app.fnc_Profil()"><img src="img/menu_icons/4_Profile.png" width="10%"> <img/></a>
+                <a href="#kampanyalar" onclick="app.fnc_Kampanyalar()">   <img id="img_camp9" src="img/menu_icons/5_Campaign.png" width="10%"> <img/></a>
+                <a href="#istatistik" data-ajax="false" onclick="app.fnc_Istatistik()"><img src="img/menu_icons/6_Statistic.png" width="10%"> <img/></a>
+				<a href="#anket" data-ajax="false" onclick="app.fnc_Anket()"><img id="img_inq9" src="img/menu_icons/8_anket.png" width="10%"> <img/></a>                
+				<a href="#katalog_ms" data-ajax="false"><img src="img/menu_icons/6_Statistic_.png" width="10%"> <img/></a>				
+                <a href="#map_branch_page" data-ajax="false" ><img src="img/menu_icons/7_Map.png" width="10%"> <img/></a>
+              </div>        
+    </div><!-- /header -->
+    <div data-role="content">
+         <div style="position: relative;">
+         		<center> <h2> Lookbook </h2> </center>
+				<select id="lookbook_sex">
+					<option val="-1">Seçiniz</option>	
+				</select>
+
+				<select id="ProductType_List">
+					<option val="-1">Ürün Tipi Seçiniz</option>	
+				</select>			
+					
+				<select id="ProductSubType_List">
+					<option val="-1">Alt Ürün Tipi Seçiniz</option>	
+				</select>		
+         </div>
+         <div id="div_ms_katalog" style="position: relative;">
+         </div>
+    </div>
+</div>
+<!--end new page-->   
+
+
+
 <div data-role="page" id="anket_detay">
     <div data-role="header" align="center">
     	<br/>
@@ -96,6 +137,7 @@
                 <a href="#kampanyalar" onclick="app.fnc_Kampanyalar()">   <img id="img_camp9" src="img/menu_icons/5_Campaign.png" width="10%"> <img/></a>
                 <a href="#istatistik" data-ajax="false" onclick="app.fnc_Istatistik()"><img src="img/menu_icons/6_Statistic.png" width="10%"> <img/></a>
 				<a href="#anket" data-ajax="false" onclick="app.fnc_Anket()"><img id="img_inq9" src="img/menu_icons/8_anket_.png" width="10%"> <img/></a>                
+                <a href="#katalog_ms" data-ajax="false"><img src="img/menu_icons/6_Statistic.png" width="10%"> <img/></a>
                 <a href="#map_branch_page" data-ajax="false" ><img src="img/menu_icons/7_Map.png" width="10%"> <img/></a>
 		      </div>        
     </div><!-- /header -->
@@ -142,6 +184,7 @@
                 <a href="#profil" data-ajax="false" onclick="app.fnc_Profil()"><img src="img/menu_icons/4_Profile.png" width="11%""> <img/></a>
                   <a href="#kampanyalar" onclick="app.fnc_Kampanyalar()">   <img id="img_camp_loc" src="img/menu_icons/5_Campaign.png" width="11%""> <img/></a>
                 <a href="#istatistik" data-ajax="false" onclick="app.fnc_Istatistik()"><img src="img/menu_icons/6_Statistic.png" width="11%""> <img/></a>
+                <a href="#katalog_ms" data-ajax="false"><img src="img/menu_icons/6_Statistic.png" width="10%"> <img/></a>
                 <a href="#map_branch_page" data-ajax="false"><img src="img/menu_icons/7_Map_.png" width="11%""> <img/></a>
               </div>        
     </div><!-- /header -->
@@ -163,6 +206,7 @@
                 <a href="#profil" data-ajax="false" onclick="app.fnc_Profil()"><img src="img/menu_icons/4_Profile.png" width="11%""> <img/></a>
                   <a href="#kampanyalar" onclick="app.fnc_Kampanyalar()">   <img src="img/menu_icons/5_Campaign.png" width="11%""> <img/></a>
                 <a href="#istatistik" data-ajax="false" onclick="app.fnc_Istatistik()"><img src="img/menu_icons/6_Statistic.png" width="11%""> <img/></a>
+                <a href="#katalog_ms" data-ajax="false"><img src="img/menu_icons/6_Statistic.png" width="10%"> <img/></a>
                 <a href="#location_list" data-ajax="false" onclick="app.fnc_location_list()"><img src="img/menu_icons/7_Map_.png" width="11%""> <img/></a>
               </div>        
     </div><!-- /header -->
@@ -188,6 +232,7 @@
                 <a href="#profil" data-ajax="false" onclick="app.fnc_Profil()"><img src="img/menu_icons/4_Profile.png" width="11%""> <img/></a>
                   <a href="#kampanyalar" onclick="app.fnc_Kampanyalar()">   <img id="img_camp_map_section" src="img/menu_icons/5_Campaign.png" width="11%""> <img/></a>
                 <a href="#istatistik" data-ajax="false" onclick="app.fnc_Istatistik()"><img src="img/menu_icons/6_Statistic.png" width="11%""> <img/></a>
+                <a href="#katalog_ms" data-ajax="false"><img src="img/menu_icons/6_Statistic.png" width="10%"> <img/></a>
                 <a href="#map_branch_page" data-ajax="false"> <img src="img/menu_icons/7_Map_.png" width="11%"> <img/></a>
               </div>        
     </div><!-- /header -->
@@ -223,20 +268,23 @@
                 <a href="#kampanyalar" onclick="app.fnc_Kampanyalar()">   <img id="img_camp" src="img/menu_icons/5_Campaign.png" width="10%"> <img/></a>
                 <a href="#istatistik" data-ajax="false" onclick="app.fnc_Istatistik()"><img src="img/menu_icons/6_Statistic.png" width="10%"> <img/></a>
 				<a href="#anket" data-ajax="false" onclick="app.fnc_Anket()"><img id="img_inq" src="img/menu_icons/8_anket.png" width="10%"> <img/></a>                
+                <a href="#katalog_ms" data-ajax="false"><img src="img/menu_icons/6_Statistic.png" width="10%"> <img/></a>
                 <a href="#map_branch_page" data-ajax="false" ><img src="img/menu_icons/7_Map.png" width="10%"> <img/></a>
 		      </div>        
     </div><!-- /header -->
 <div data-role="content">
+	<div id="div_img" align="right">
+		<img id="img_ret" src=""><img/>
+	</div>
     	<div id="div_barkod">
     		<div id="un_barkod2"> </div>
+    		<br/>
     		Size özel üretilmiş dijital barkodunuzu alış verişlerinizde okutarak indirim ve puan kazabilirisiniz. 
-    		<br/>
-    		<br/>
     		<br/>
             <h2>
             <div id="barkod_id" align="center">123456789</div>
             </h2>
-            <br/>
+            
     		<img src="img/qr_code.gif"><img/>
 		</div>
 </div>
@@ -302,6 +350,7 @@
                   <a href="#kampanyalar" onclick="app.fnc_Kampanyalar()">   <img id="img_camp1" src="img/menu_icons/5_Campaign.png" width="10%"> <img/></a>
                 <a href="#istatistik" data-ajax="false" onclick="app.fnc_Istatistik()"><img src="img/menu_icons/6_Statistic.png" width="10%"> <img/></a>
 				<a href="#anket" data-ajax="false" onclick="app.fnc_Anket()"><img id="img_inq1" src="img/menu_icons/8_anket.png" width="10%"> <img/></a>                
+                <a href="#katalog_ms" data-ajax="false"><img src="img/menu_icons/6_Statistic.png" width="10%"> <img/></a>
                 <a href="#map_branch_page" data-ajax="false" ><img src="img/menu_icons/7_Map.png" width="10%"> <img/></a>
 
 		      </div>        
@@ -327,6 +376,7 @@ puanlarım
                   <a href="#kampanyalar" onclick="app.fnc_Kampanyalar()">   <img id="img_camp2" src="img/menu_icons/5_Campaign.png" width="10%"> <img/></a>
                 <a href="#istatistik" data-ajax="false" onclick="app.fnc_Istatistik()"><img src="img/menu_icons/6_Statistic.png" width="10%"> <img/></a>
 				<a href="#anket" data-ajax="false" onclick="app.fnc_Anket()"><img  id="img_inq2" src="img/menu_icons/8_anket.png" width="10%"> <img/></a>                
+                <a href="#katalog_ms" data-ajax="false"><img src="img/menu_icons/6_Statistic.png" width="10%"> <img/></a>
                 <a href="#map_branch_page" data-ajax="false"><img src="img/menu_icons/7_Map.png" width="10%"> <img/></a>
 
 		      </div>        
@@ -353,6 +403,7 @@ puanlarım
                 <a href="#kampanyalar" onclick="app.fnc_Kampanyalar()">   <img id="img_camp3" src="img/menu_icons/5_Campaign.png" width="10%"> <img/></a>
                 <a href="#istatistik" data-ajax="false" onclick="app.fnc_Istatistik()"><img src="img/menu_icons/6_Statistic.png" width="10%"> <img/></a>
 				<a href="#anket" data-ajax="false" onclick="app.fnc_Anket()"><img  id="img_inq3" src="img/menu_icons/8_anket.png" width="10%"> <img/></a>                
+                <a href="#katalog_ms" data-ajax="false"><img src="img/menu_icons/6_Statistic.png" width="10%"> <img/></a>
                 <a href="#map_branch_page" data-ajax="false"><img src="img/menu_icons/7_Map.png" width="10%"> <img/></a>
 		      </div>
     </div><!-- /header -->
@@ -415,6 +466,7 @@ puanlarım
                   <a href="#kampanyalar" onclick="app.fnc_Kampanyalar()">   <img id="img_camp4" src="img/menu_icons/5_Campaign_.png" width="10%"> <img/></a>
                 <a href="#istatistik" data-ajax="false" onclick="app.fnc_Istatistik()"><img src="img/menu_icons/6_Statistic.png" width="10%"> <img/></a>
 				<a href="#anket" data-ajax="false" onclick="app.fnc_Anket()"><img  id="img_inq4" src="img/menu_icons/8_anket.png" width="10%"> <img/></a>                
+                <a href="#katalog_ms" data-ajax="false"><img src="img/menu_icons/6_Statistic.png" width="10%"> <img/></a>
                 <a href="#map_branch_page" data-ajax="false" ><img src="img/menu_icons/7_Map.png" width="10%"> <img/></a>
 
 		      </div>               
@@ -425,31 +477,31 @@ puanlarım
 		<br/>
 		<table>
                     <tr valign="center"> 
-                    <td valign="center"><a href="#mesajlar"  onclick="app.fnc_Mesajlar()"> <img id="icon1" src="img/company_icons/1.jpg" width="90%" alt="AÇEV" /></a></td>
+                    <td valign="center"><a href="#mesajlar"  onclick="app.fnc_Mesajlar()"> <img id="icon22" src="img/company_icons/22.jpg" width="90%" alt="AÇEV" /></a></td>
                     <td valign="center"><a href="#mesajlar"  onclick="app.fnc_Mesajlar()"><img id="icon2" src="img/company_icons/2.jpg" width="90%" alt="Aeropostale" /></a></td>
                     </tr>
                     <tr valign="center">
                     <td><a href="#mesajlar"  onclick="app.fnc_Mesajlar()"><img id="icon3" src="img/company_icons/3.jpg" width="90%" alt="Banana Republic" /></a></td>
-                    <td><a href="#mesajlar"  onclick="app.fnc_Mesajlar()"><img id="icon12" src="img/company_icons/12.jpg" width="90%" alt="Fiba Gönüllüleri" /></a></td>
-                    </tr>
-                    <tr valign="center">
-                    <td><a href="#mesajlar"  onclick="app.fnc_Mesajlar()"><img id="icon13" src="img/company_icons/13.jpg" width="90%" alt="Fiba Air" /></a></td>
-                    <td><a href="#mesajlar"  onclick="app.fnc_Mesajlar()"><img id="icon14" src="img/company_icons/14.jpg" width="90%" alt="Fibabanka" /></a></td>
+                    <td><a href="#mesajlar"  onclick="app.fnc_Mesajlar()"><img id="icon27" src="img/company_icons/27.jpg" width="90%" alt="Fiba Gönüllüleri" /></a></td>
                     </tr>
                     <tr valign="center">  
                     <td><a href="#mesajlar"  onclick="app.fnc_Mesajlar()"><img id="icon17" src="img/company_icons/17.jpg" width="90%" alt="Florence Nightingale İstanbul" /></a></td>
+                    <td><a href="#mesajlar"  onclick="app.fnc_Mesajlar()"><img id="icon14" src="img/company_icons/14.jpg" width="90%" alt="Fibabanka" /></a></td>
+                    </tr>
+                    <tr valign="center">
+                    <td><a href="#mesajlar"  onclick="app.fnc_Mesajlar()"><img id="icon25" src="img/company_icons/25.jpg" width="90%" alt="Hüsnü M. Özyeğin Vakfı" /></a></td>
                     <td><a href="#mesajlar"  onclick="app.fnc_Mesajlar()"><img id="icon18" src="img/company_icons/18.jpg" width="90%" alt="Fiba Group" /></a></td>
                     </tr>
                     <tr valign="center">  
                     <td ><a href="#mesajlar"  onclick="app.fnc_Mesajlar()"><img id="icon19" src="img/company_icons/19.jpg" width="90%" alt="Fiba Hayat" /></a></td>
-                    <td><a href="#mesajlar"  onclick="app.fnc_Mesajlar()"><img id="icon22" src="img/company_icons/22.jpg" width="90%" alt="Gap" /></a></td>
+                    <td><a href="#mesajlar"  onclick="app.fnc_Mesajlar()"><img id="icon1" src="img/company_icons/1.jpg" width="90%" alt="Gap" /></a></td>
                     </tr>  
                     <tr valign="center">
-                    <td><a href="#mesajlar"  onclick="app.fnc_Mesajlar()"><img id="icon25" src="img/company_icons/25.jpg" width="90%" alt="Hüsnü M. Özyeğin Vakfı" /></a></td>
                     <td><a href="#mesajlar"  onclick="app.fnc_Mesajlar()"><img id="icon26" src="img/company_icons/26.png" width="90%" alt="Kumport" /></a></td>
+                    <td><a href="#mesajlar"  onclick="app.fnc_Mesajlar()"><img id="icon13" src="img/company_icons/13.jpg" width="90%" alt="Fiba Air" /></a></td>
                     </tr>
                     <tr valign="center">  
-                    <td><a href="#mesajlar"  onclick="app.fnc_Mesajlar()"><img id="icon27" src="img/company_icons/27.jpg" width="90%" alt="Marks & Spencer" /></a></td>
+                    <td><a href="#mesajlar"  onclick="app.fnc_Mesajlar()"><img id="icon17" src="img/company_icons/12.jpg" width="90%" alt="Marks & Spencer" /></a></td>
                     <td><a href="#mesajlar"  onclick="app.fnc_Mesajlar()"><img id="icon28" src="img/company_icons/28.jpg" width="90%" alt="Ofishane" /></a></td>
                     </tr>
                     <tr valign="center">  
@@ -481,6 +533,7 @@ puanlarım
                   <a href="#kampanyalar" onclick="app.fnc_Kampanyalar()">   <img id="img_camp5" src="img/menu_icons/5_Campaign.png" width="10%"> <img/></a>
                 <a href="#istatistik" data-ajax="false" onclick="app.fnc_Istatistik()"><img src="img/menu_icons/6_Statistic_.png" width="10%"> <img/></a>
 				<a href="#anket" data-ajax="false" onclick="app.fnc_Anket()"><img  id="img_inq5" src="img/menu_icons/8_anket.png" width="10%"> <img/></a>                
+                <a href="#katalog_ms" data-ajax="false"><img src="img/menu_icons/6_Statistic.png" width="10%"> <img/></a>
                 <a href="#map_branch_page" data-ajax="false" ><img src="img/menu_icons/7_Map.png" width="10%"> <img/></a>
 
 		      </div>               
@@ -507,6 +560,7 @@ puanlarım
                 <a href="#kampanyalar" onclick="app.fnc_Kampanyalar()">   <img id="img_camp8" src="img/menu_icons/5_Campaign.png" width="10%"> <img/></a>
                 <a href="#istatistik" data-ajax="false" onclick="app.fnc_Istatistik()"><img src="img/menu_icons/6_Statistic.png" width="10%"> <img/></a>
 				<a href="#anket" data-ajax="false" onclick="app.fnc_Anket()"><img  id="img_inq8" src="img/menu_icons/8_anket_.png" width="10%"> <img/></a>                
+                <a href="#katalog_ms" data-ajax="false"><img src="img/menu_icons/6_Statistic.png" width="10%"> <img/></a>
                 <a href="#map_branch_page" data-ajax="false" ><img src="img/menu_icons/7_Map.png" width="10%"> <img/></a>
 
 		      </div>               
@@ -531,6 +585,7 @@ puanlarım
                 <a href="#kampanyalar" onclick="app.fnc_Kampanyalar()">   <img id="img_camp11" src="img/menu_icons/5_Campaign.png" width="10%"> <img/></a>
                 <a href="#istatistik" data-ajax="false" onclick="app.fnc_Istatistik()"><img src="img/menu_icons/6_Statistic.png" width="10%"> <img/></a>
 				<a href="#anket" data-ajax="false" onclick="app.fnc_Anket()"><img  id="img_inq11" src="img/menu_icons/8_anket_.png" width="10%"> <img/></a>                
+                <a href="#katalog_ms" data-ajax="false"><img src="img/menu_icons/6_Statistic.png" width="10%"> <img/></a>
                 <a href="#map_branch_page" data-ajax="false" ><img src="img/menu_icons/7_Map.png" width="10%"> <img/></a>
 
 		      </div>               
@@ -555,6 +610,7 @@ puanlarım
                 <a href="#kampanyalar" onclick="app.fnc_Kampanyalar()">   <img id="img_camp10" src="img/menu_icons/5_Campaign.png" width="10%"> <img/></a>
                 <a href="#istatistik" data-ajax="false" onclick="app.fnc_Istatistik()"><img src="img/menu_icons/6_Statistic.png" width="10%"> <img/></a>
 				<a href="#anket" data-ajax="false" onclick="app.fnc_Anket()"><img  id="img_inq10" src="img/menu_icons/8_anket_.png" width="10%"> <img/></a>                
+                <a href="#katalog_ms" data-ajax="false"><img src="img/menu_icons/6_Statistic.png" width="10%"> <img/></a>
                 <a href="#map_branch_page" data-ajax="false"><img src="img/menu_icons/7_Map.png" width="10%"> <img/></a>
 
 		      </div>               
@@ -579,6 +635,7 @@ puanlarım
                 <a href="#kampanyalar" onclick="app.fnc_Kampanyalar()"><img id="img_camp6" src="img/menu_icons/5_Campaign.png" width="10%"> <img/></a>
                 <a href="#istatistik" data-ajax="false" onclick="app.fnc_Istatistik()"><img src="img/menu_icons/6_Statistic.png" width="10%"> <img/></a>
 				<a href="#anket" data-ajax="false" onclick="app.fnc_Anket()"><img  id="img_inq6" src="img/menu_icons/8_anket.png" width="10%"> <img/></a>                
+                <a href="#katalog_ms" data-ajax="false"><img src="img/menu_icons/6_Statistic.png" width="10%"> <img/></a>
                 <a href="#map_branch_page" data-ajax="false" ><img src="img/menu_icons/7_Map_.png" width="10%"> <img/></a>
 
 		      </div>               
@@ -687,11 +744,9 @@ puanlarım
 </div><!-- /page -->
 
 
-
 <!--hospital part start -->
 
 <!--start new page-->
-
 <div data-role="page" id="hospital_mainpage">
     <div data-role="header" align="center">
         <br/>
@@ -706,6 +761,10 @@ puanlarım
               
     </div><!-- /header -->
     <div data-role="content">
+		<div id="div_img" align="right">
+			<img id="profil_img" src=""><img/>
+		</div>
+    	
          <div style="position: relative;">
 			Size özel üretilmiş dijital barkodunuzu hastanedeki işlemlerinizde kimlik kartı olarak kullanabilirsiniz. 
     		<br/>
@@ -721,7 +780,6 @@ puanlarım
 <!--end new page-->   
 
 <!--start new page-->
-
 <div data-role="page" id="hospital_randevu">
     <div data-role="header" align="center">
         <br/>
@@ -738,33 +796,30 @@ puanlarım
          <div style="position: relative;">
          		<center> <h2> Online Randevu Talep </h2> </center>
 				<select id="hospital_list">
-					<option val="-1">seçiniz</option>	
+					<option val="-1">Hastane Seçiniz</option>	
 				</select>
 
 				<select id="departman_list">
-					<option val="-1">seçiniz</option>	
+					<option val="-1">Bölüm Seçiniz</option>	
 				</select>			
 					
 				<select id="doktor_list">
-					<option val="-1">seçiniz</option>	
-				</select>		
+					<option val="-1">Doktor Seçiniz</option>	
+				</select>
 
 				<input type="date" name="tarih" id="tarih" value="">
 				<script type="text/javascript">
 				document.getElementById("tarih").value = new Date();
 				</script>
-
 				<select id="saatler_list">
-					<option val="-1">seçiniz</option>	
-				</select>							
+					<option val="-1">Saat Seçiniz</option>	
+				</select>
 				
 				<input type="button" name="btn_randevu" id="btn_randevu" value="Randevu Al" onclick="app.fnc_randevuAl()"/>				
          </div>
     </div>
 </div>
-<!--end new page-->   
-
-
+<!--end new page-->
 
 
 <!--start new page-->

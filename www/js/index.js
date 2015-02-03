@@ -90,6 +90,55 @@ var pieData = [
 }
 ];		 
 
+var sexArray = 
+[
+     {name : 'Kadın', value : 'Kadın'}
+    ,{name : 'Erkek', value : 'Erkek'}
+    ,{name : 'Kız Çocuğu', value : 'Kız Çocuğu'}
+    ,{name : 'Erkek Çocuğu', value : 'Erkek Çocuğu'}
+    ,{name : 'Ev Dekorasyonu', value : 'Ev Dekorasyonu',sex:'Kadın'}    
+];
+
+var ProductTypeArray =
+[
+     {name : 'Moda', value : 'Moda', sex:'Kadın'}
+    ,{name : 'İç Giyim', value : 'İç Giyim',sex:'Kadın'}
+    ,{name : 'Güzellik', value : 'Güzellik',sex:'Kadın'}
+];
+
+var ProductSubTypeArray =
+[
+     {name : 'M&S', value : 'M&S', sex:'Kadın', uppermenu:'Moda'}
+    ,{name : 'Peruna', value : 'Peruna',sex:'Kadın', uppermenu:'Moda'}
+    ,{name : 'Limited Edition', value : 'Limited Edition',sex:'Kadın', uppermenu:'Moda'}
+    ,{name : 'Classic', value : 'Classic',sex:'Kadın', uppermenu:'Moda'}
+    ,{name : 'Indigo Collection', value : 'Indigo Collection',sex:'Kadın', uppermenu:'Moda'}    
+];
+
+var ProductArray =
+[
+     {name : '1.elbise', value : 'Fashion_Women_Collection_MScollection_Spring_Slide2_.jpg',brand:'M&S'}
+    ,{name : '2.elbise', value : 'Fashion_Women_Collection_MScollection_Spring_Slide4_.jpg',brand:'M&S'}
+    ,{name : '3.elbise', value : 'Fashion_Women_Collection_MScollection_Spring_Slide5_.jpg',brand:'M&S'}
+    ,{name : '4.elbise', value : 'Fashion_Women_Collection_MScollection_Spring_Slide6_.jpg',brand:'M&S'}
+    ,{name : '5.elbise', value : 'Fashion_Women_Collection_MScollection_Spring_Slide7_.jpg',brand:'M&S'}
+    ,{name : '6.elbise', value : 'Fashion_Women_Collection_MScollection_Spring_Slide11_.jpg',brand:'M&S'}
+    ,{name : '7.elbise', value : 'Fashion_Women_Collection_MScollection_Spring_Slide31_.jpg',brand:'M&S'}
+    
+    ,{name : '1.elbise', value : 'Fashion_Women_Collection_Limited_Spring_990x550_slide1_.jpg',brand:'Limited Edition'}
+    ,{name : '2.elbise', value : 'Fashion_Women_Collection_Limited_Spring_990x550_slide2_.jpg',brand:'Limited Edition'}
+    ,{name : '3.elbise', value : 'Fashion_Women_Collection_Limited_Spring_990x550_slide3_.jpg',brand:'Limited Edition'}
+    ,{name : '4.elbise', value : 'Fashion_Women_Collection_Limited_Spring_990x550_slide4_.jpg',brand:'Limited Edition'}
+
+
+    ,{name : '1.elbise', value : 'Fashion_Women_Collection_Indigo_Spring_990x550_slide1_.jpg',brand:'Indigo Collection'}
+    ,{name : '2.elbise', value : 'Fashion_Women_Collection_Indigo_Spring_990x550_slide2_.jpg',brand:'Indigo Collection'}
+    ,{name : '3.elbise', value : 'Fashion_Women_Collection_Indigo_Spring_990x550_slide3_.jpg',brand:'Indigo Collection'}
+    ,{name : '4.elbise', value : 'Fashion_Women_Collection_Indigo_Spring_990x550_slide5_.jpg',brand:'Indigo Collection'}
+    ,{name : '5.elbise', value : 'Fashion_Women_Collection_Indigo_Spring_990x550_slide6_.jpg',brand:'Indigo Collection'}
+
+
+];
 
 var HospitalArray = 
 [
@@ -441,7 +490,6 @@ var app = {
 		app.url="http://10.0.0.31:8181/fiba_group_webservices/";
 		app.total_points=0;
 		app.url="http://213.74.186.114:8181/fiba_group_webservices/";
-		
 	},
 	// Bind Event Listeners
 	//
@@ -450,14 +498,13 @@ var app = {
 	bindEvents : function() {
 		console.log("bindevent");
 		document.addEventListener('deviceready', this.onDeviceReady, false);
-                            
+		app.fnc_lookbook_init();                            
 	},
 	onDeviceReady : function() {
 		console.log("ondevice ready");
 		app.receivedEvent('deviceready');
 
-		app.first_init();
-		
+		app.first_init();						
         try{
             initPushwoosh();
         }catch(err) 
@@ -468,11 +515,78 @@ var app = {
 
 	},
 	
+	 
+	fnc_lookbook_init:function(){
+				
+		console.log("init sexArray size:" + sexArray.length);
+		for (var i = 0; i < sexArray.length; i++) {
+			var o = new Option(sexArray[i].name, sexArray[i].name);
+			$('#lookbook_sex').append(o);
+		}
+
+		console.log("init ProductTypeArray array size :" + ProductTypeArray.length);
+		for (var i = 0; i < ProductTypeArray.length; i++) {
+			var o = new Option(ProductTypeArray[i].name, ProductTypeArray[i].value);
+			$('#ProductType_List').append(o);
+		}
+
+
+	$('#lookbook_sex').change(function(){
+				$('#ProductSubType_List').empty();
+				var o = new Option("Alt Ürün Tipi Seçiniz", -1);
+				$('#ProductSubType_List').append(o);
+				for (var i = 0; i < ProductSubTypeArray.length; i++) 
+				{
+					if( (ProductSubTypeArray [i].sex.indexOf( $('#lookbook_sex').val() ) >-1 ) &
+					  (ProductSubTypeArray [i].uppermenu.indexOf( $('#ProductType_List').val() ) >-1 )
+					  )
+					{
+						var o = new Option(ProductSubTypeArray[i].name, ProductSubTypeArray[i].value);
+						$('#ProductSubType_List').append(o);						
+					}
+				};				
+				}); 	
+				
+
+	$('#ProductType_List').change(function(){
+				$('#ProductSubType_List').empty();
+				var o = new Option("Alt Ürün Tipi Seçiniz", -1);
+				$('#ProductSubType_List').append(o);
+				for (var i = 0; i < ProductSubTypeArray.length; i++) 
+				{
+					if( (ProductSubTypeArray [i].sex.indexOf( $('#lookbook_sex').val() ) >-1 ) &
+					  (ProductSubTypeArray [i].uppermenu.indexOf( $('#ProductType_List').val() ) >-1 )
+					  )
+					{
+						var o = new Option(ProductSubTypeArray[i].name, ProductSubTypeArray[i].value);
+						$('#ProductSubType_List').append(o);						
+					}
+				};				
+				}); 	
+				
+				
+			$('#ProductSubType_List').change(function(){
+				$('#div_ms_katalog').empty();
+				console.log("ProductSubType_List");
+				for (var i = 0; i < ProductArray.length; i++) 
+				{
+					console.log("ProductArray[i].brand : " + ProductArray[i].brand );
+					console.log("$('#ProductSubType_List').val() : " + $('#ProductSubType_List').val() );
+					if (ProductArray[i].brand.indexOf( $('#ProductSubType_List').val() ) >-1 )
+					{
+						html ="<table style='width:100%'>";
+							html += '<td > <img src="img/' + ProductArray[i].value + '"></img> </td>';
+						    html+="</table>";
+							$('#div_ms_katalog').append( html );						
+					}
+				};				
+				}); 	
+								
+				
+				
+	},
 	fnc_randevu_init:function(){
-		
-		//$('#departman_list').empty();
-		//$('#hospital_list').empty();
-		
+				
 		console.log("init hospital array size:" + HospitalArray.length);
 		for (var i = 0; i < HospitalArray.length; i++) {
 			var o = new Option(HospitalArray[i].name, HospitalArray[i].name);
@@ -488,7 +602,7 @@ var app = {
 
 	$('#departman_list').change(function(){
 				$('#doktor_list').empty();
-				var o = new Option("Seçiniz", -1);
+				var o = new Option("Doktor Seçiniz", -1);
 				$('#doktor_list').append(o);
 				for (var i = 0; i < DoctorArray.length; i++) 
 				{
@@ -1641,10 +1755,16 @@ var app = {
                     	app.user_name="Merhaba : " + a[0].name + " " + a[0].surname ;
 						app.user_id= a[0].member_id;						
                     	
+                    	console.log('sex : ' +a[0].sex);
+                    	if (a[0].sex=='men')
+                    	  $("#img_ret").attr("src","img/men.jpg");
+                    	if (a[0].sex=='woman')
+                    	  $("#img_ret").attr("src","img/woman.jpg");
+                    	                    	
                         app.first_init();
                         app.check_campains();
-                        $.mobile.changePage("#choose_company");                        
-                        //$.mobile.changePage("#barkod");                        
+                        //$.mobile.changePage("#choose_company");                        
+                        $.mobile.changePage("#barkod");                        
                     }else{
                         alert("Lütfen kullanıcı adı ve şifrenizi doğru giriniz!");
                         $('#username').removeAttr('value');
