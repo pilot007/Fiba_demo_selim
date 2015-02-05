@@ -117,27 +117,24 @@ var ProductSubTypeArray =
 
 var ProductArray =
 [
-     {name : '1.elbise', value : 'Fashion_Women_Collection_MScollection_Spring_Slide2_.jpg',brand:'M&S'}
-    ,{name : '2.elbise', value : 'Fashion_Women_Collection_MScollection_Spring_Slide4_.jpg',brand:'M&S'}
-    ,{name : '3.elbise', value : 'Fashion_Women_Collection_MScollection_Spring_Slide5_.jpg',brand:'M&S'}
-    ,{name : '4.elbise', value : 'Fashion_Women_Collection_MScollection_Spring_Slide6_.jpg',brand:'M&S'}
-    ,{name : '5.elbise', value : 'Fashion_Women_Collection_MScollection_Spring_Slide7_.jpg',brand:'M&S'}
-    ,{name : '6.elbise', value : 'Fashion_Women_Collection_MScollection_Spring_Slide11_.jpg',brand:'M&S'}
-    ,{name : '7.elbise', value : 'Fashion_Women_Collection_MScollection_Spring_Slide31_.jpg',brand:'M&S'}
+     {name_ : 'Elbise',name : '1', value : 'Fashion_Women_Collection_MScollection_Spring_Slide2_.jpg',brand:'M&S',price:'650',stock:'1',stock_branches:'AkMerkez,Akasya,Cevahir',desc:'Kendi Markamıza özel olarak üretilmiş bu ürünümüzden çok memnun kalacaksınız.'}
+    ,{name_ : 'Elbise',name : '2', value : 'Fashion_Women_Collection_MScollection_Spring_Slide4_.jpg',brand:'M&S',price:'720',stock:'9',stock_branches:'Kanyon, Meydan,Zorlu Center',desc:'Kendi Markamıza özel olarak üretilmiş bu ürünümüzden çok memnun kalacaksınız.'}
+    ,{name_ : 'Elbise',name : '3', value : 'Fashion_Women_Collection_MScollection_Spring_Slide5_.jpg',brand:'M&S',price:'550',stock:'5',stock_branches:'İstinyePark,Trump Tower,Palladium',desc:'Kendi Markamıza özel olarak üretilmiş bu ürünümüzden çok memnun kalacaksınız.'}
+    ,{name_ : 'Elbise',name : '4', value : 'Fashion_Women_Collection_MScollection_Spring_Slide6_.jpg',brand:'M&S',price:'450',stock:'7',stock_branches:'Vialand, Zorlu Center,Demirören İstiklal',desc:'Kendi Markamıza özel olarak üretilmiş bu ürünümüzden çok memnun kalacaksınız.'}
+    ,{name_ : 'Elbise',name : '5', value : 'Fashion_Women_Collection_MScollection_Spring_Slide7_.jpg',brand:'M&S',price:'1050',stock:'6',stock_branches:'Akasya, Akbatı,Meydan',desc:'Kendi Markamıza özel olarak üretilmiş bu ürünümüzden çok memnun kalacaksınız.'}
+    ,{name_ : 'Elbise',name : '6', value : 'Fashion_Women_Collection_MScollection_Spring_Slide11_.jpg',brand:'M&S',price:'950',stock:'2',stock_branches:'Trump Towers,Vialand,Zorlu Center',desc:'Kendi Markamıza özel olarak üretilmiş bu ürünümüzden çok memnun kalacaksınız.'}
+    ,{name_ : 'Elbise',name : '7', value : 'Fashion_Women_Collection_MScollection_Spring_Slide31_.jpg',brand:'M&S',price:'850',stock:'4',stock_branches:'Akmerkez, Kanyon,Vialand,Akasya',desc:'Kendi Markamıza özel olarak üretilmiş bu ürünümüzden çok memnun kalacaksınız.'}
     
-    ,{name : '1.elbise', value : 'Fashion_Women_Collection_Limited_Spring_990x550_slide1_.jpg',brand:'Limited Edition'}
-    ,{name : '2.elbise', value : 'Fashion_Women_Collection_Limited_Spring_990x550_slide2_.jpg',brand:'Limited Edition'}
-    ,{name : '3.elbise', value : 'Fashion_Women_Collection_Limited_Spring_990x550_slide3_.jpg',brand:'Limited Edition'}
-    ,{name : '4.elbise', value : 'Fashion_Women_Collection_Limited_Spring_990x550_slide4_.jpg',brand:'Limited Edition'}
+    ,{name_ : 'Elbise',name : '8', value : 'Fashion_Women_Collection_Limited_Spring_990x550_slide1_.jpg',brand:'Limited Edition',price:'450',stock:'1',stock_branches:'Akmerkez, Kanyon,Vialand,Akasya',desc:'Kendi Markamıza özel olarak üretilmiş bu ürünümüzden çok memnun kalacaksınız.'}
+    ,{name_ : 'Elbise',name : '9', value : 'Fashion_Women_Collection_Limited_Spring_990x550_slide2_.jpg',brand:'Limited Edition',price:'550',stock:'2',stock_branches:'Trump Towers,Vialand,Zorlu Center',desc:'Kendi Markamıza özel olarak üretilmiş bu ürünümüzden çok memnun kalacaksınız.'}
+    ,{name_ : 'Elbise',name : '10', value : 'Fashion_Women_Collection_Limited_Spring_990x550_slide3_.jpg',brand:'Limited Edition',price:'650',stock:'3',stock_branches:'Akasya, Akbatı,Meydan',desc:'Kendi Markamıza özel olarak üretilmiş bu ürünümüzden çok memnun kalacaksınız.'}
+    ,{name_ : 'Elbise',name : '11', value : 'Fashion_Women_Collection_Limited_Spring_990x550_slide4_.jpg',brand:'Limited Edition',price:'750',stock:'4',stock_branches:'İstinyePark,Trump Tower,Palladium',desc:'Kendi Markamıza özel olarak üretilmiş bu ürünümüzden çok memnun kalacaksınız.'}
 
-
-    ,{name : '1.elbise', value : 'Fashion_Women_Collection_Indigo_Spring_990x550_slide1_.jpg',brand:'Indigo Collection'}
-    ,{name : '2.elbise', value : 'Fashion_Women_Collection_Indigo_Spring_990x550_slide2_.jpg',brand:'Indigo Collection'}
-    ,{name : '3.elbise', value : 'Fashion_Women_Collection_Indigo_Spring_990x550_slide3_.jpg',brand:'Indigo Collection'}
-    ,{name : '4.elbise', value : 'Fashion_Women_Collection_Indigo_Spring_990x550_slide5_.jpg',brand:'Indigo Collection'}
-    ,{name : '5.elbise', value : 'Fashion_Women_Collection_Indigo_Spring_990x550_slide6_.jpg',brand:'Indigo Collection'}
-
-
+    ,{name_ : 'Elbise',name : '12', value : 'Fashion_Women_Collection_Indigo_Spring_990x550_slide1_.jpg',brand:'Indigo Collection',price:'450',stock:'1',stock_branches:'AkMerkez,Akasya,Cevahir',desc:'Kendi Markamıza özel olarak üretilmiş bu ürünümüzden çok memnun kalacaksınız.'}
+    ,{name_ : 'Elbise',name : '13', value : 'Fashion_Women_Collection_Indigo_Spring_990x550_slide2_.jpg',brand:'Indigo Collection',price:'475',stock:'2',stock_branches:'Kanyon, Meydan,Zorlu Center',desc:'Kendi Markamıza özel olarak üretilmiş bu ürünümüzden çok memnun kalacaksınız.'}
+    ,{name_ : 'Elbise',name : '14', value : 'Fashion_Women_Collection_Indigo_Spring_990x550_slide3_.jpg',brand:'Indigo Collection',price:'525',stock:'3',stock_branches:'Vialand, Zorlu Center,Demirören İstiklal',desc:'Kendi Markamıza özel olarak üretilmiş bu ürünümüzden çok memnun kalacaksınız.'}
+    ,{name_ : 'Elbise',name : '15', value : 'Fashion_Women_Collection_Indigo_Spring_990x550_slide5_.jpg',brand:'Indigo Collection',price:'550',stock:'4',stock_branches:'Akasya, Akbatı,Meydan',desc:'Kendi Markamıza özel olarak üretilmiş bu ürünümüzden çok memnun kalacaksınız.'}
+    ,{name_ : 'Elbise',name : '16', value : 'Fashion_Women_Collection_Indigo_Spring_990x550_slide6_.jpg',brand:'Indigo Collection',price:'650',stock:'5',stock_branches:'Akmerkez, Kanyon,Vialand,Akasya',desc:'Kendi Markamıza özel olarak üretilmiş bu ürünümüzden çok memnun kalacaksınız.'}
 ];
 
 var HospitalArray = 
@@ -489,7 +486,7 @@ var app = {
 		this.bindEvents();
 		app.url="http://10.0.0.31:8181/fiba_group_webservices/";
 		app.total_points=0;
-		app.url="http://213.74.186.114:8181/fiba_group_webservices/";
+		//app.url="http://213.74.186.114:8181/fiba_group_webservices/";
 	},
 	// Bind Event Listeners
 	//
@@ -575,15 +572,128 @@ var app = {
 					if (ProductArray[i].brand.indexOf( $('#ProductSubType_List').val() ) >-1 )
 					{
 						html ="<table style='width:100%'>";
-							html += '<td > <img src="img/' + ProductArray[i].value + '"></img> </td>';
-						    html+="</table>";
-							$('#div_ms_katalog').append( html );						
+						html += '<td style="width:100%"><a href="#katalog_detay_ms" onclick="return app.fnc_gotoProductDetail('+ '\'' + ProductArray[i].name+ '\''+ ');"> <img style="width:100%" src="img/' + ProductArray[i].value + '"></img> </a>'+
+						'</br>'
+						+'  detaylı bilgi için resmi tıklayınız'
+						+'</td>';
+						html+="</table>";
+						$('#div_ms_katalog').append(html);						
 					}
-				};				
-				}); 	
-								
+				};
+				});
+	},
+	fnc_gotoProductDetail:function(p1){
+		console.log('prodcut detail parameter:' + p1 );
+				$('#div_ms_katalog_detay').empty();
 				
-				
+				for (var i = 0; i < ProductArray.length; i++) 
+				{
+					if (ProductArray[i].name==p1 )
+					{
+						html ="<table style='width:100%'>";
+						html += '<tr><td style="width:100%"><img style="width:100%" src="img/' + ProductArray[i].value.replace('_.jpg','.jpg') + '"></img>'+'</td></tr>';
+						html += '<tr><td style="width:100%">' +'</br>Birim Fiyat : '+ ProductArray[i].price + '</td></tr>';
+						html += '<tr><td style="width:100%">' +'</br>Stok adedi: '+ ProductArray[i].stock + '</td></tr>';
+						html += '<tr><td style="width:100%">' +'</br>Bulunduğu Mağazalar : '+ ProductArray[i].stock_branches + '</td></tr>';						
+						html += '<tr><td style="width:100%">' +'</br>Ürün Açıklaması</td></tr>';
+						html += '<tr><td style="width:100%">' +ProductArray[i].desc +'</td> </tr>';
+						html += '<tr><td style="width:100%">' +'</br> <a onclick="return app.fnc_InsertOrder('+'\'' + ProductArray[i].name+'\''+');"> Sepete Ekle'+'<img src="img/menu_icons/9_shop_.png"></img>'+'</td> </a> </tr>';
+						html += '<tr><td style="width:100%">' +'</br>Ödeme Yap '+'<img  src="img/credit_card_logos_14.gif"></img>'+'</td></tr>';
+						
+						html+="</table>";
+						$('#div_ms_katalog_detay').append(html);						
+					}
+				};
+		return true;
+	},
+	fnc_InsertOrder : function(p1) {
+			for (var i = 0; i < ProductArray.length; i++) 
+			{
+				if (ProductArray[i].name==p1 )
+				{		
+			    $.ajax({
+                        url : app.url+"GetOrders?conn_type=setOrder&memberid="+app.id+                        
+    					"&company_name="+ ProductArray[i].brand.replace('&','_') +"&productid="+ ProductArray[i].name +"&product_name="+ ProductArray[i].name_.replace('&','_') + "&product_amount="+ ProductArray[i].price +"&product_count=1&status=0"                    
+                        ,
+                        dataType : "json",
+                        success : function(a, b, c) {
+                            console.log("order insert ediliyor");
+                            app.fnc_OrderList();
+                            $.mobile.changePage($('#product_basket'));
+                        },
+                        error : function(a, b, c) {
+                            console.log("err a ", a);
+                            console.log("err b ", b);
+                            console.log("err c ", c);
+                            console.log("err c ", c);
+                        }
+                    }); 
+              }
+          }
+	return true;
+	},
+    fnc_OrderList : function() {
+    	app.totalPrice=0;
+		    $.ajax({
+                        url : app.url+"GetOrders?conn_type=getOrders&memberid="+app.id,
+                        dataType : "json",
+                        success : function(a, b, c) {
+
+						console.log("siparişler 2");
+						$('#div_ms_product_basket ul').remove();
+						$('#div_ms_product_basket').append('<ul data-role="listview"></ul>');
+						listItems = $('#div_ms_product_basket').find('ul');
+						console.log("div_ms_product_basket 3 app.id :" + app.id + "  a length : " + a.length);
+
+						html ="<table style='width:100%'>";
+							console.log("div_ms_product_basket 4");
+							html += '<tr style="width:100%">'+
+							'<td width="40%">'+ 'Şirket' + '</td>';
+							html += '<td width="35%">' + 'Ürün' + '</td>';
+							html += '<td width="15%">' + 'Fiyat' + '</td>';
+							html += '<td width="10%">' + 'Adet' +'</td></tr>';							
+						    html+="</table>";
+							listItems.append('<li id="orderr_c' + '">' + html + '</li>');
+
+						for (var i = 0; i < a.length; i++) {
+						html ="<table style='width:100%'>";
+							console.log("div_ms_product_basket 4");
+							html += '<tr style="width:100%"><td width="40%">'+ a[i].company_name.replace('_','&') + '</td>';
+							html += '<td width="35%">' + a[i].product_name + '</td>';
+							html += '<td width="15%">' + a[i].product_amount + '</td>';
+							html += '<td width="10%">' + a[i].product_count +'</td></tr>';							
+						    html+="</table>";
+							listItems.append('<li id="orderr_' + a[i].seq + '">' + html + '</li>');
+							app.totalPrice = app.totalPrice + ( a[i].product_amount * a[i].product_count ); 
+						};
+						html ="<table style='width:100%'>";
+							console.log("div_ms_product_basket 4");
+							html += '<tr style="width:100%"><td width="75%">Toplam</td>';
+							html += '<td width="25%">' + app.totalPrice +'</td></tr>';							
+						    html+="</table>";
+							listItems.append('<li id="orderrt_' + '">' + html + '</li>');
+						
+						html = '</br><table style="width:100%"><tr><td align="right">' 
+						+'</br> Ödeme Yap '+'<img  src="img/credit_card_logos_14.gif"></img>'
+						+'</td></tr> </table>';
+						
+						$('#div_ms_product_basket').append(html);
+							
+						$('#div_ms_product_basket ul').listview();
+					
+
+
+                        },
+                        error : function(a, b, c) {
+                            console.log("err a ", a);
+                            console.log("err b ", b);
+                            console.log("err c ", c);
+                            console.log("err c ", c);
+                        }
+                    }); 
+	},
+	fnc_Buy:function(){
+	
 	},
 	fnc_randevu_init:function(){
 				
