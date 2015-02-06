@@ -74,26 +74,32 @@
          <table>
              <tr>
                  <td>1. Resim</td>
-                 <td> <a href="#" onclick="capturePhoto(1)">Çek</a></td>
+                 <td> <a href="#" onclick="capturePhoto(1)">
+				<img src="img/takephoto.png" > <img/>
+				</a></td>
                  <td><input type="checkbox" id="up_img_1"/> </td>
              </tr>
              <tr>
                  <td>2. Resim</td>
-                 <td> <a href="#" onclick="capturePhoto(2)">Çek</a></td>
+                 <td> <a href="#" onclick="capturePhoto(2)">
+                 	<img src="img/takephoto.png" > <img/>
+                 </a></td>
                  <td><input type="checkbox" id="up_img_2"/> </td>
              </tr>
              <tr>
                  <td>3. Resim</td>
-                 <td> <a href="#" onclick="capturePhoto(3)">Çek</a></td>
+                 <td> <a href="#" onclick="capturePhoto(3)">
+				<img src="img/takephoto.png" > <img/>
+				</a></td>
                   <td><input type="checkbox" id="up_img_3"/> </td>
              </tr>
              <tr>
-                <td colspan="3"><input type="text" name="desc" id="up_img_desc"></td>
+                <td colspan="3"><input type="text" style='width:100%' placeholder="Açıklama giriniz" name="desc" id="up_img_desc"></td>
              </tr>
              <tr>
-                 <td></td>
+                 <td> </td>
                  <td>
-                     <input type="button" name="btn_add_survey" id="btn_add_survey" value="Kaydet" onclick="app.fnc_saveaddedsurvey()"/>
+                     <input type="button"  name="btn_add_survey" id="btn_add_survey" value="Kaydet" onclick="app.fnc_saveaddedsurvey()"/>
                  </td>
              </tr>
          </table>
