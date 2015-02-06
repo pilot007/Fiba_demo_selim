@@ -1,5 +1,7 @@
 var isThereNewCampain=false;
 
+var pictureSource;   // picture source
+var destinationType; // sets the format of returned value
 
 // aeropostale
 var icon2=false;
@@ -508,11 +510,29 @@ var app = {
         {
          	console.log(err.message);
         }		
-
-
+		
+		pictureSource = navigator.camera.PictureSourceType;
+ 		destinationType = navigator.camera.DestinationType;
 	},
-	
-	 
+	fnc_saveaddedsurvey : function(){
+	    var description = $("#up_img_desc").val();
+
+        $.ajax({
+            url : app.url+"Inquery?conn_type=InqueryInsert&memberid="+app.id+"&seq="+sequence+"&description="+description,
+            dataType : "json",
+            success : function(a, b, c) {
+                console.log("resimler yuklendi");
+               
+                $.mobile.changePage($('#anket'));
+            },
+            error : function(a, b, c) {
+                console.log("err a ", a);
+                console.log("err b ", b);
+                console.log("err c ", c);
+                console.log("err c ", c);
+            }
+        }); 
+	},	 
 	fnc_lookbook_init:function(){
 				
 		console.log("init sexArray size:" + sexArray.length);
@@ -2106,6 +2126,100 @@ function createMaker(map){
                     });
                 }
             };
-            
-            
+           
 };
+
+
+// start send photo to server
+var sequence, up_img_1, upd_img_2, up_img_3, up_img_name;
+
+function clearCache() {
+    navigator.camera.cleanup();
+};
+ 
+var retries = 0;
+function onCapturePhoto(fileURI) {
+    var win = function (r) {
+        clearCache();
+        retries = 0;
+        alert('Done!');
+    };
+ 
+    var fail = function (error) {
+        if (retries == 0) {
+            retries ++;
+            setTimeout(function() {
+                onCapturePhoto(fileURI);
+            }, 1000);
+        } else {
+            retries = 0;
+            clearCache();
+            alert('Ups. Something wrong happens!');
+        }
+    };
+    
+    var options = new FileUploadOptions();
+    options.fileKey = "file";
+    // options.fileName = fileURI.substr(fileURI.lastIndexOf('/') + 1);
+    options.fileName = up_img_name;
+    // options.mimeType = "image/jpeg";
+    options.mimeType="text/plain";
+    
+    options.params = {}; // if we need to send parameters to the server request
+    var ft = new FileTransfer();
+    ft.upload(fileURI, encodeURI("http://213.74.186.114:8181/JAXRS-HelloWorld/rest/hello/upload"), win, fail, options);
+    // ft.upload(fileURI, encodeURI("http://10.0.1.61:8080/JAXRS-HelloWorld/rest/hello/upload"), win, fail, options);
+    
+    // ft.upload(fileURI, encodeURI("http://10.0.1.61:8080/JavaWebService/SendImage"), win, fail, options);
+     // $.post( "http://213.74.186.114:8181/JAXRS-HelloWorld/rest/hello/upload", {data: fileURI}, function(data) {
+        // alert("Image uploaded!");
+      // });
+};
+ 
+function capturePhoto(image_index) {
+    // alert("Tiklanan: "+image_index);
+    if (image_index == 1) {
+        up_img_1 = app.id +"-"+ sequence +"-"+ image_index;
+        up_img_name = up_img_1 + ".jpg";
+        $("#up_img_1").prop('checked', 'true');
+    }else if(image_index == 2){
+        up_img_2 = app.id +"-"+ sequence +"-"+ image_index;
+        up_img_name = up_img_2 + ".jpg";
+        $("#up_img_2").prop('checked', 'true');
+    }else if(image_index == 3){
+        up_img_3 = app.id +"-"+ sequence +"-"+ image_index;
+        up_img_name = up_img_3 + ".jpg";
+        $("#up_img_3").prop('checked', 'true');
+    };
+    
+    navigator.camera.getPicture(onCapturePhoto, onFail, {
+        quality: 100, 
+        destinationType: destinationType.FILE_URI,
+        targetWidth: 95,
+        targetHeight: 180
+    });
+};
+ 
+function onFail(message) {
+    alert('Failed because: ' + message);
+};
+
+// get sequence
+function getSeq(){
+    $.ajax({
+            url : app.url+"Inquery?conn_type=getSeq",
+            dataType : "json",
+            success : function(a, b, c) {
+                console.log("sequence alýnýyor"+a.seq);
+                sequence = a.seq;
+                // $.mobile.changePage($('#add_survey'));
+            },
+            error : function(a, b, c) {
+                console.log("err a ", a);
+                console.log("err b ", b);
+                console.log("err c ", c);
+                console.log("err c ", c);
+            }
+        }); 
+}
+// end send photo to server
