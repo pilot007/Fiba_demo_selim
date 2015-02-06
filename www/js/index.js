@@ -486,7 +486,7 @@ var app = {
 		this.bindEvents();
 		app.url="http://10.0.0.31:8181/fiba_group_webservices/";
 		app.total_points=0;
-		app.url="http://213.74.186.114:8181/fiba_group_webservices/";
+		//app.url="http://213.74.186.114:8181/fiba_group_webservices/";
 	},
 	// Bind Event Listeners
 	//
