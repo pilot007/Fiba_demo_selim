@@ -1342,7 +1342,7 @@ var app = {
                     listItems.append('<li id="prj_header_z">' + html + '</li>');
 
                     html ="<table style='width:100%'>";
-                    html += '<tr><td width="33%">'+ 'Selma Balcı'+ '</td>';
+                    html += '<tr><td width="33%">'+ 'Mine Taşkaya'+ '</td>';
                     html += '<td width="33%">' + 'elbise oylaması' + '</td>';
                     html += '<td width="33%">' + 'GAP Kadıköy' + '</td>';
                     
@@ -1552,7 +1552,7 @@ var app = {
 		app.uuid = gtech_token; //app.isnull(device.uuid);
 		//if (app.uuid==".")
 		//app.uuid="586BC0F6-09DC-44FB-8F1D-A3ABCB8E0C80";
-		//app.user_name="Merhaba : Selma Balcı";
+		//app.user_name="Merhaba : Mine Taşkaya";
 		//app.user_id="90910000001";
 		//app.id="123456789";
 
