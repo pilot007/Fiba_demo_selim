@@ -486,7 +486,7 @@ var app = {
 		this.bindEvents();
 		app.url="http://10.0.0.31:8181/fiba_group_webservices/";
 		app.total_points=0;
-		//app.url="http://213.74.186.114:8181/fiba_group_webservices/";
+		app.url="http://213.74.186.114:8181/fiba_group_webservices/";
 	},
 	// Bind Event Listeners
 	//
@@ -598,7 +598,7 @@ var app = {
 						html += '<tr><td style="width:100%">' +'</br>Ürün Açıklaması</td></tr>';
 						html += '<tr><td style="width:100%">' +ProductArray[i].desc +'</td> </tr>';
 						html += '<tr><td style="width:100%">' +'</br> <a onclick="return app.fnc_InsertOrder('+'\'' + ProductArray[i].name+'\''+');"> Sepete Ekle'+'<img src="img/menu_icons/9_shop_.png"></img>'+'</td> </a> </tr>';
-						html += '<tr><td style="width:100%">' +'</br>Ödeme Yap '+'<img  src="img/credit_card_logos_14.gif"></img>'+'</td></tr>';
+						html += '<tr><td style="width:100%">' +'</br><a href="#product_basket_approval"> Ödeme Yap '+'<img  src="img/credit_card_logos_14.gif"></img> </a>'+'</td></tr>';
 						
 						html+="</table>";
 						$('#div_ms_katalog_detay').append(html);						
@@ -635,7 +635,7 @@ var app = {
     fnc_OrderList : function() {
     	app.totalPrice=0;
 		    $.ajax({
-                        url : app.url+"GetOrders?conn_type=getOrders&memberid="+app.id,
+                        url : app.url+"GetOrders?conn_type=getWaitingOrders&memberid="+app.id,
                         dataType : "json",
                         success : function(a, b, c) {
 
@@ -644,8 +644,8 @@ var app = {
 						$('#div_ms_product_basket').append('<ul data-role="listview"></ul>');
 						listItems = $('#div_ms_product_basket').find('ul');
 						console.log("div_ms_product_basket 3 app.id :" + app.id + "  a length : " + a.length);
-
-						html ="<table style='width:100%'>";
+						
+						html ="<center>Sepetiniz </center></br> <table style='width:100%'>";
 							console.log("div_ms_product_basket 4");
 							html += '<tr style="width:100%">'+
 							'<td width="40%">'+ 'Şirket' + '</td>';
@@ -658,7 +658,7 @@ var app = {
 						for (var i = 0; i < a.length; i++) {
 						html ="<table style='width:100%'>";
 							console.log("div_ms_product_basket 4");
-							html += '<tr style="width:100%"><td width="40%">'+ a[i].company_name.replace('_','&') + '</td>';
+							html += '<tr style="width:100%"><td width="40%">M&S'; + /*a[i].company_name.replace('_','&') + */ '</td>';
 							html += '<td width="35%">' + a[i].product_name + '</td>';
 							html += '<td width="15%">' + a[i].product_amount + '</td>';
 							html += '<td width="10%">' + a[i].product_count +'</td></tr>';							
@@ -672,14 +672,74 @@ var app = {
 							html += '<td width="25%">' + app.totalPrice +'</td></tr>';							
 						    html+="</table>";
 							listItems.append('<li id="orderrt_' + '">' + html + '</li>');
-						
-						html = '</br><table style="width:100%"><tr><td align="right">' 
+						/*
+						html = '</br><table style="width:100%"><tr><td align="right">'
+						+'<a href="#product_basket_approval">' 
 						+'</br> Ödeme Yap '+'<img  src="img/credit_card_logos_14.gif"></img>'
+						+'<a>'
 						+'</td></tr> </table>';
 						
 						$('#div_ms_product_basket').append(html);
-							
+						*/	
 						$('#div_ms_product_basket ul').listview();
+					
+
+
+                        },
+                        error : function(a, b, c) {
+                            console.log("err a ", a);
+                            console.log("err b ", b);
+                            console.log("err c ", c);
+                            console.log("err c ", c);
+                        }
+                    }); 
+	},	
+	    fnc_OldOrderList : function() {
+    	app.totalPrice=0;
+		    $.ajax({
+                        url : app.url+"GetOrders?conn_type=getOrders&memberid="+app.id,
+                        dataType : "json",
+                        success : function(a, b, c) {
+
+						console.log("siparişler 2");
+						$('#div_ms_product_basket_detail ul').remove();
+						$('#div_ms_product_basket_detail').append('<ul data-role="listview"></ul>');
+						listItems = $('#div_ms_product_basket_detail').find('ul');
+						console.log("div_ms_product_basket_detail 3 app.id :" + app.id + "  a length : " + a.length);
+
+						html ="<center>Önceki Siparişleriniz </center></br> <table style='width:100%'>";
+							console.log("div_ms_product_basket_detail 4");
+							html += '<tr style="width:100%">'+ '<td width="35%">' + 'TakipNo' + '</td>';
+							html += '<td width="20%">'+ 'Mağaza' + '</td>';
+							html += '<td width="25%">' + 'Tarih' + '</td>';
+							html += '<td width="10%" align="left">' + ' Fiyat&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' +'</td>';							
+							html += '<td width="10%">' + ' Durumu' +'</td></tr>';
+						    html+="</table>";
+							listItems.append('<li id="orderr_c' + '">' + html + '</li>');
+
+						for (var i = 0; i < a.length; i++) {
+						html ="<table style='width:100%'>";
+							console.log("div_ms_product_basket 4");
+							html += '<tr style="width:100%"> <td width="35%">' + a[i].order_id + '</td>';
+							html += '<td width="20%">'+ a[i].company_name.replace('_','&') + '</td>';
+							html += '<td width="25%" align="left">' + a[i].insert_date + '</td>';
+							html += '<td width="10%" align="left">' + a[i].order_total+'</td>';							
+							html += '<td width="10%">' + a[i].status.replace('1','&nbsp;Hazırlanıyor').replace('2','&nbsp;Kargoda&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;').replace('3','&nbsp;Teslim&nbsp;Edildi').replace('4','&nbsp;İptal&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;')+'</td></tr>';
+						    html+="</table>";
+							listItems.append('<li id="orderr_345345">' + html + '</li>');	 
+						};
+						
+						
+						/*
+						html = '</br><table style="width:100%"><tr><td align="right">'
+						+'<a href="#product_basket_approval">' 
+						+'</br> Ödeme Yap '+'<img  src="img/credit_card_logos_14.gif"></img>'
+						+'<a>'
+						+'</td></tr> </table>';
+						
+						$('#div_ms_product_basket').append(html);
+						*/	
+						$('#div_ms_product_basket_detail ul').listview();
 					
 
 
@@ -693,7 +753,22 @@ var app = {
                     }); 
 	},
 	fnc_Buy:function(){
-	
+		
+					    $.ajax({
+                        url : app.url+"GetOrders?conn_type=updateAllOrderAsPaid&memberid="+app.id,
+                        dataType : "json",
+                        success : function(a, b, c) {
+                            console.log("order status as paid olarak update ediliyor");
+                        },
+                        error : function(a, b, c) {
+                            console.log("err a ", a);
+                            console.log("err b ", b);
+                            console.log("err c ", c);
+                            console.log("err c ", c);
+                        }
+                    }); 
+		
+		$.mobile.changePage($('#product_basket_approval_finish'));
 	},
 	fnc_randevu_init:function(){
 				
@@ -963,6 +1038,9 @@ var app = {
 	fnc_Barkod : function() {
 				$("#un_barkod").empty();
 		        $("#un_barkod").append(app.user_name + "("+app.total_points+")");
+		        $("#card_name").empty();
+		        $("#card_name").append(app.user_name.replace("Merhaba : ",""));
+		        
 		        app.check_campains();
 	},	
 	fnc_Puanlarim : function() {
@@ -1873,6 +1951,7 @@ var app = {
                     	                    	
                         app.first_init();
                         app.check_campains();
+                        app.fnc_Barkod();
                         //$.mobile.changePage("#choose_company");                        
                         $.mobile.changePage("#barkod");                        
                     }else{

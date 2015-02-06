@@ -104,8 +104,9 @@
     </div><!-- /header -->
     <div data-role="content">
          <div style="position: relative;">
-         		<center> <h2> Lookbook </h2> </center>
          		<a href="#product_basket" onclick="app.fnc_OrderList()" data-ajax="false" ><img src="img/orders.png" > <img/></a>
+         		<a href="#product_basket_details" onclick="app.fnc_OldOrderList()" data-ajax="false" ><img src="img/Payment.png" > <img/></a>
+         		<center> <h2> LOOKBOOK </h2> </center>
 				<select id="lookbook_sex">
 					<option val="-1">Seçiniz</option>	
 				</select>
@@ -169,10 +170,39 @@
     <div data-role="content">
          <div id="div_ms_product_basket">
          </div>
+         <table style="width:100%"><tr><td align="right">
+				<a href="#product_basket_approval"> 
+				</br> Ödeme Yap <img  src="img/credit_card_logos_14.gif"></img>
+				<a>
+			</td></tr> 
+		 </table>
+						
     </div>
 </div>
 <!--end new page--> 
 
+<!--start new page-->
+<div data-role="page" id="product_basket_details">
+    <div data-role="header" align="center">
+        <br/>
+              <div >
+                <a href="#barkod" data-ajax="false" onclick="app.fnc_Barkod()"><img src="img/menu_icons/1_Home.png" width="8%"> <img/></a>
+                <a href="#puanlarim" data-ajax="false"  onclick="app.fnc_Puanlarim()"><img src="img/menu_icons/2_Score.png" width="8%"> <img/></a>
+                <a href="#mesajlar"  onclick="app.fnc_Mesajlar()">        <img id="img_msg9" src="img/menu_icons/3_Message.png" width="8%"> <img/> </a>
+                <a href="#profil" data-ajax="false" onclick="app.fnc_Profil()"><img src="img/menu_icons/4_Profile.png" width="8%"> <img/></a>
+                <a href="#kampanyalar" onclick="app.fnc_Kampanyalar()">   <img id="img_camp9" src="img/menu_icons/5_Campaign.png" width="8%"> <img/></a>
+                <a href="#istatistik" data-ajax="false" onclick="app.fnc_Istatistik()"><img src="img/menu_icons/6_Statistic.png" width="8%"> <img/></a>
+				<a href="#anket" data-ajax="false" onclick="app.fnc_Anket()"><img id="img_inq9" src="img/menu_icons/8_anket.png" width="8%"> <img/></a>                
+				<a href="#katalog_ms" data-ajax="false"><img src="img/menu_icons/9_shop_.png" width="8%"> <img/></a>				
+                <a href="#map_branch_page" data-ajax="false" ><img src="img/menu_icons/7_Map.png" width="8%"> <img/></a>
+              </div>        
+    </div><!-- /header -->
+    <div data-role="content">
+         <div id="div_ms_product_basket_detail">
+         </div>
+    </div>
+</div>
+<!--end new page--> 
 
 <!--start new page-->
 <div data-role="page" id="product_basket_approval">
@@ -246,7 +276,7 @@
     </div><!-- /header -->
     <div data-role="content">
          <div id="div_ms_product_basket_approval_finish">
-           <h2>Satın Alma İşleminiz Başarıyla Tamamlanmıştır.</br>Siparişiniz Kargoya verildiği Zaman Sizi Bilgilendirme Yapılacaktır.</h2>
+           <h2>Satın Alma İşleminiz Başarıyla Tamamlanmıştır.</br></br>Siparişiniz Kargoya verildiği Zaman Sizi Bilgilendirme Yapılacaktır.</h2>
          </div>
     </div>
 </div>
@@ -408,13 +438,19 @@
     		<div id="un_barkod2"> </div>
     		<br/>
     		Size özel üretilmiş dijital barkodunuzu alış verişlerinizde okutarak indirim ve puan kazabilirisiniz. 
-    		<br/>
-            <h2>
+    	    <h2>
             <div id="barkod_id" align="center">123456789</div>
             </h2>
-            
-    		<img src="img/qr_code.gif"><img/>
+        	<img src="img/qr_code.gif"><img/>
 		</div>
+			<br/>
+            Kartınız 
+            <div style="background-image: url(img/visa_gold.gif); height: 175px; width: 276px;" align="center">
+            </br>
+            <center><h2> <div id="card_name"></div></h2></center>
+			</div>
+
+
 </div>
 	
 </div><!-- /page -->
@@ -612,7 +648,7 @@ puanlarım
                     <td><a href="#mesajlar"  onclick="app.fnc_Mesajlar()"><img id="icon27" src="img/company_icons/27.jpg" width="90%" alt="Fiba Gönüllüleri" /></a></td>
                     </tr>
                     <tr valign="center">  
-                    <td><a href="#mesajlar"  onclick="app.fnc_Mesajlar()"><img id="icon17" src="img/company_icons/17.jpg" width="90%" alt="Florence Nightingale İstanbul" /></a></td>
+                    <td><a href="#hospital_mainpage" ><img id="icon17" src="img/company_icons/17.jpg" width="90%" alt="Florence Nightingale İstanbul" /></a></td>
                     <td><a href="#mesajlar"  onclick="app.fnc_Mesajlar()"><img id="icon14" src="img/company_icons/14.jpg" width="90%" alt="Fibabanka" /></a></td>
                     </tr>
                     <tr valign="center">
@@ -688,8 +724,7 @@ puanlarım
                 <a href="#istatistik" data-ajax="false" onclick="app.fnc_Istatistik()"><img src="img/menu_icons/6_Statistic.png" width="8%"> <img/></a>
 				<a href="#anket" data-ajax="false" onclick="app.fnc_Anket()"><img  id="img_inq8" src="img/menu_icons/8_anket_.png" width="8%"> <img/></a>                
                 <a href="#katalog_ms" data-ajax="false"><img src="img/menu_icons/9_shop.png" width="8%"> <img/></a>
-                <a href="#map_branch_page" data-ajax="false" ><img src="img/menu_icons/7_Map.png" width="8%"> <img/></a>
-
+                <a href="#map_branch_page" data-ajax="false"><img src="img/menu_icons/7_Map.png" width="8%"> <img/></a>
 		      </div>               
     </div><!-- /header -->
     <div data-role="content">
@@ -878,7 +913,7 @@ puanlarım
     <div data-role="header" align="center">
         <br/>
               <div >
-                <a href="#hospital_mainpage" data-ajax="false"><img src="img/menu_icons/1_Home.png" width="11%"> <img/></a>
+                <a href="#barkod" data-ajax="false"><img src="img/menu_icons/1_Home.png" width="11%"> <img/></a>
                 <a href="#hospital_randevu" data-ajax="false" onclick="app.fnc_randevu_init()"><img src="img/menu_icons/2_Score.png" width="10%"> <img/></a>
                 <a href="#hospital_randevular"  onclick="app.fnc_randevuList()">        <img id="img_msg_map_section15" src="img/menu_icons/3_Message.png" width="11%"> <img/> </a>
                 <a href="#hospital_tetkik_sonuclarim" data-ajax="false" onclick="app.fnc_Profil()"><img src="img/menu_icons/4_Profile.png" width="11%"> <img/></a>
@@ -888,6 +923,9 @@ puanlarım
               
     </div><!-- /header -->
     <div data-role="content">
+		<div align="center">
+			<img  src="img/company_icons/17.jpg"><img/>
+		</div>
 		<div id="div_img" align="right">
 			<img id="profil_img" src=""><img/>
 		</div>
@@ -911,7 +949,7 @@ puanlarım
     <div data-role="header" align="center">
         <br/>
               <div >
-                <a href="#hospital_mainpage" data-ajax="false"><img src="img/menu_icons/1_Home.png" width="11%"> <img/></a>
+                <a href="#barkod" data-ajax="false"><img src="img/menu_icons/1_Home.png" width="11%"> <img/></a>
                 <a href="#hospital_randevu" data-ajax="false"  ><img src="img/menu_icons/2_Score.png" width="10%"> <img/></a>
                 <a href="#hospital_randevular"  onclick="app.fnc_randevuList()">        <img id="img_msg_map_section15" src="img/menu_icons/3_Message.png" width="11%"> <img/> </a>
                 <a href="#hospital_tetkik_sonuclarim" data-ajax="false" onclick="app.fnc_Profil()"><img src="img/menu_icons/4_Profile.png" width="11%"> <img/></a>
@@ -954,7 +992,7 @@ puanlarım
     <div data-role="header" align="center">
         <br/>
               <div >
-                <a href="#hospital_mainpage" data-ajax="false"><img src="img/menu_icons/1_Home.png" width="11%"> <img/></a>
+                <a href="#barkod" data-ajax="false"><img src="img/menu_icons/1_Home.png" width="11%"> <img/></a>
                 <a href="#hospital_randevu" data-ajax="false"  ><img src="img/menu_icons/2_Score.png" width="10%"> <img/></a>
                 <a href="#hospital_randevular"  onclick="app.fnc_randevuList()">        <img id="img_msg_map_section16" src="img/menu_icons/3_Message.png" width="11%"> <img/> </a>
                 <a href="#hospital_tetkik_sonuclarim" data-ajax="false" onclick="app.fnc_Profil()"><img src="img/menu_icons/4_Profile_.png" width="11%"> <img/></a>
@@ -977,7 +1015,7 @@ puanlarım
     <div data-role="header" align="center">
         <br/>
               <div >
-                <a href="#hospital_mainpage" data-ajax="false"><img src="img/menu_icons/1_Home.png" width="11%"> <img/></a>
+                <a href="#barkod" data-ajax="false"><img src="img/menu_icons/1_Home.png" width="11%"> <img/></a>
                 <a href="#hospital_randevu" data-ajax="false"  ><img src="img/menu_icons/2_Score.png" width="10%"> <img/></a>
                 <a href="#hospital_randevular"  onclick="app.fnc_randevuList()">        <img id="img_msg_map_section17" src="img/menu_icons/3_Message.png" width="11%"> <img/> </a>
                 <a href="#hospital_tetkik_sonuclarim" data-ajax="false" onclick="app.fnc_Profil()"><img src="img/menu_icons/4_Profile_.png" width="11%"> <img/></a>
@@ -1000,7 +1038,7 @@ puanlarım
     <div data-role="header" align="center">
         <br/>
               <div >
-                <a href="#hospital_mainpage" data-ajax="false"><img src="img/menu_icons/1_Home.png" width="11%"> <img/></a>
+                <a href="#barkod" data-ajax="false"><img src="img/menu_icons/1_Home.png" width="11%"> <img/></a>
                 <a href="#hospital_randevu" data-ajax="false"  ><img src="img/menu_icons/2_Score.png" width="10%"> <img/></a>
                 <a href="#hospital_randevular"  onclick="app.fnc_randevuList()">        <img id="img_msg_map_section18" src="img/menu_icons/3_Message.png" width="11%"> <img/> </a>
                 <a href="#hospital_tetkik_sonuclarim" data-ajax="false" onclick="app.fnc_Profil()"><img src="img/menu_icons/4_Profile.png" width="11%"> <img/></a>
@@ -1023,7 +1061,7 @@ puanlarım
     <div data-role="header" align="center">
         <br/>
               <div >
-                <a href="#hospital_mainpage" data-ajax="false"><img src="img/menu_icons/1_Home.png" width="11%"> <img/></a>
+                <a href="#barkod" data-ajax="false"><img src="img/menu_icons/1_Home.png" width="11%"> <img/></a>
                 <a href="#hospital_randevu" data-ajax="false"  ><img src="img/menu_icons/2_Score.png" width="10%"> <img/></a>
                 <a href="#hospital_randevular"  onclick="app.fnc_randevuList()">        <img  src="img/menu_icons/3_Message.png" width="11%"> <img/> </a>
                 <a href="#hospital_tetkik_sonuclarim" data-ajax="false" onclick="app.fnc_Profil()"><img src="img/menu_icons/4_Profile.png" width="11%"> <img/></a>
@@ -1057,7 +1095,7 @@ puanlarım
     	<br/>
         FİBA GRUP<div id="un_enyakin"> </div><div id="point_enyakin"> </div>
 		      <div >
-                <a href="#hospital_mainpage" data-ajax="false"><img src="img/menu_icons/1_Home.png" width="11%"> <img/></a>
+                <a href="#barkod" data-ajax="false"><img src="img/menu_icons/1_Home.png" width="11%"> <img/></a>
                 <a href="#hospital_randevu" data-ajax="false"  ><img src="img/menu_icons/2_Score.png" width="10%"> <img/></a>
                 <a href="#hospital_randevular"  onclick="app.fnc_randevuList()">        <img  src="img/menu_icons/3_Message.png" width="11%"> <img/> </a>
                 <a href="#hospital_tetkik_sonuclarim" data-ajax="false" onclick="app.fnc_Profil()"><img src="img/menu_icons/4_Profile.png" width="11%"> <img/></a>
@@ -1076,7 +1114,7 @@ puanlarım
     <div data-role="header" align="center">
         <br/>
               <div >
-                <a href="#hospital_mainpage" data-ajax="false"><img src="img/menu_icons/1_Home.png" width="11%"> <img/></a>
+                <a href="#barkod" data-ajax="false"><img src="img/menu_icons/1_Home.png" width="11%"> <img/></a>
                 <a href="#hospital_randevu" data-ajax="false"  ><img src="img/menu_icons/2_Score.png" width="10%"> <img/></a>
                 <a href="#hospital_randevular"  onclick="app.fnc_randevuList()">        <img  src="img/menu_icons/3_Message.png" width="11%"> <img/> </a>
                 <a href="#hospital_tetkik_sonuclarim" data-ajax="false" onclick="app.fnc_Profil()"><img src="img/menu_icons/4_Profile.png" width="11%"> <img/></a>
@@ -1095,7 +1133,7 @@ puanlarım
     <div data-role="header" align="center">
         <br/>
               <div >
-                <a href="#hospital_mainpage" data-ajax="false"><img src="img/menu_icons/1_Home.png" width="11%"> <img/></a>
+                <a href="#barkod" data-ajax="false"><img src="img/menu_icons/1_Home.png" width="11%"> <img/></a>
                 <a href="#hospital_randevu" data-ajax="false"  ><img src="img/menu_icons/2_Score.png" width="10%"> <img/></a>
                 <a href="#hospital_randevular"  onclick="app.fnc_randevuList()">        <img  src="img/menu_icons/3_Message.png" width="11%"> <img/> </a>
                 <a href="#hospital_tetkik_sonuclarim" data-ajax="false" onclick="app.fnc_Profil()"><img src="img/menu_icons/4_Profile.png" width="11%"> <img/></a>
