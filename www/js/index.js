@@ -2311,7 +2311,7 @@ function capturePhoto(image_index) {
         targetHeight: 380
     });
 };
-/*
+
 function capturePhotoHospital(image_index) {
     // alert("Tiklanan: "+image_index);
     if (image_index == 1) {
@@ -2335,7 +2335,7 @@ function capturePhotoHospital(image_index) {
         targetHeight: 380
     });
 };
- */
+
 function onFail(message) {
    console.log("failed "+ message);
    
