@@ -21,6 +21,9 @@
             <div data-role="header" align="center">
                 <h1>Login Ekranı</h1>
             </div>
+            <br/>
+            <br/>
+            <br/>
             <div data-role="main" class="ui-content" align="center">
              <table border="0">
                 <tr> 
@@ -32,8 +35,12 @@
                 <td><input type="password" id="password" placeholder="password"/> </td>
                 </tr>
                 <tr>
-                    <td> </td>
-                    <td><input type="button" name="btn_login" id="btn_login" value="Giriş" onclick="app.loginfnc()"/></td>
+                    <td>
+                        <input type="checkbox" name="remember_me" id="remember_me" class="custom check" /> 
+                    </td>
+                    <td>
+                    	<input type="button" name="btn_login" id="btn_login" value="Giriş" onclick="app.loginfnc()"/>
+                    </td>
                 </tr>                
             </table>
             <br />
@@ -51,8 +58,7 @@
             </div>
         </div> 
         <!--end login page-->
-        
-        
+
 <!--start add  survey page-->
 <div data-role="page" id="add_survey">
     <div data-role="header" align="center">
@@ -974,8 +980,8 @@ puanlarım
                 <a href="#barkod" data-ajax="false"><img src="img/menu_icons/1_Home.png" width="11%"> <img/></a>
                 <a href="#hospital_randevu" data-ajax="false" onclick="app.fnc_randevu_init()"><img src="img/menu_icons/2_Score.png" width="10%"> <img/></a>
                 <a href="#hospital_randevular"  onclick="app.fnc_randevuList()">        <img id="img_msg_map_section15" src="img/menu_icons/3_Message.png" width="11%"> <img/> </a>
-                <a href="#hospital_tetkik_sonuclarim" data-ajax="false" onclick="app.fnc_Profil()"><img src="img/menu_icons/4_Profile.png" width="11%"> <img/></a>
-                <a href="#hospital_ask_doctor">   <img id="img_camp_map_sectiony" src="img/menu_icons/5_Campaign.png" width="11%""> <img/></a>
+                <a href="#hospital_tetkik_sonuclarim" data-ajax="false" onclick="app.fnc_tetkikList()"><img src="img/menu_icons/tetkik.png" width="11%"> <img/></a>
+                <a href="#hospital_ask_doctor">   <img id="img_camp_map_sectiony" src="img/menu_icons/ask_doctor.png" width="11%""> <img/></a>
                 <a href="#map_branch_page_hospital" data-ajax="false"> <img src="img/menu_icons/7_Map.png" width="11%"> <img/></a>
               </div>        
               
@@ -988,7 +994,7 @@ puanlarım
 			<img id="profil_img" src=""><img/>
 		</div>
     	
-         <div style="position: relative;">
+         <div style="position: relative;"  align="center">
 			Size özel üretilmiş dijital barkodunuzu hastanedeki işlemlerinizde kimlik kartı olarak kullanabilirsiniz. 
     		<br/>
     		<br/>    		
@@ -1010,8 +1016,8 @@ puanlarım
                 <a href="#barkod" data-ajax="false"><img src="img/menu_icons/1_Home.png" width="11%"> <img/></a>
                 <a href="#hospital_randevu" data-ajax="false"  ><img src="img/menu_icons/2_Score.png" width="10%"> <img/></a>
                 <a href="#hospital_randevular"  onclick="app.fnc_randevuList()">        <img id="img_msg_map_section15" src="img/menu_icons/3_Message.png" width="11%"> <img/> </a>
-                <a href="#hospital_tetkik_sonuclarim" data-ajax="false" onclick="app.fnc_Profil()"><img src="img/menu_icons/4_Profile.png" width="11%"> <img/></a>
-                <a href="#hospital_ask_doctor">   <img id="img_camp_map_sectiont" src="img/menu_icons/5_Campaign.png" width="11%"> <img/></a>
+                <a href="#hospital_tetkik_sonuclarim" data-ajax="false" onclick="app.fnc_tetkikList()"><img src="img/menu_icons/tetkik.png" width="11%"> <img/></a>
+                <a href="#hospital_ask_doctor">   <img id="img_camp_map_sectiont" src="img/menu_icons/ask_doctor.png" width="11%"> <img/></a>
                 <a href="#map_branch_page_hospital" data-ajax="false"> <img src="img/menu_icons/7_Map.png" width="11%"> <img/></a>
               </div>        
     </div><!-- /header -->
@@ -1052,9 +1058,9 @@ puanlarım
               <div >
                 <a href="#barkod" data-ajax="false"><img src="img/menu_icons/1_Home.png" width="11%"> <img/></a>
                 <a href="#hospital_randevu" data-ajax="false"  ><img src="img/menu_icons/2_Score.png" width="10%"> <img/></a>
-                <a href="#hospital_randevular"  onclick="app.fnc_randevuList()">        <img id="img_msg_map_section16" src="img/menu_icons/3_Message.png" width="11%"> <img/> </a>
-                <a href="#hospital_tetkik_sonuclarim" data-ajax="false" onclick="app.fnc_Profil()"><img src="img/menu_icons/4_Profile_.png" width="11%"> <img/></a>
-                <a href="#hospital_ask_doctor">   <img id="img_camp_map_section16" src="img/menu_icons/5_Campaign.png" width="11%"> <img/></a>
+                <a href="#hospital_randevular"  onclick="app.fnc_randevuList()">        <img id="img_msg_map_section16" src="img/menu_icons/3_Message_.png" width="11%"> <img/> </a>
+                <a href="#hospital_tetkik_sonuclarim" data-ajax="false" onclick="app.fnc_tetkikList()"><img src="img/menu_icons/tetkik.png" width="11%"> <img/></a>
+                <a href="#hospital_ask_doctor">   <img id="img_camp_map_section16" src="img/menu_icons/ask_doctor.png" width="11%"> <img/></a>
                 <a href="#map_branch_page_hospital" data-ajax="false"> <img src="img/menu_icons/7_Map.png" width="11%"> <img/></a>
               </div>        
     </div><!-- /header -->
@@ -1076,16 +1082,57 @@ puanlarım
                 <a href="#barkod" data-ajax="false"><img src="img/menu_icons/1_Home.png" width="11%"> <img/></a>
                 <a href="#hospital_randevu" data-ajax="false"  ><img src="img/menu_icons/2_Score.png" width="10%"> <img/></a>
                 <a href="#hospital_randevular"  onclick="app.fnc_randevuList()">        <img id="img_msg_map_section17" src="img/menu_icons/3_Message.png" width="11%"> <img/> </a>
-                <a href="#hospital_tetkik_sonuclarim" data-ajax="false" onclick="app.fnc_Profil()"><img src="img/menu_icons/4_Profile_.png" width="11%"> <img/></a>
-                <a href="#hospital_ask_doctor">   <img id="img_camp_map_section17" src="img/menu_icons/5_Campaign.png" width="11%"> <img/></a>
+                <a href="#hospital_tetkik_sonuclarim" data-ajax="false" onclick="app.fnc_tetkikList()"><img src="img/menu_icons/tetkik_.png" width="11%"> <img/></a>
+                <a href="#hospital_ask_doctor">   <img id="img_camp_map_section17" src="img/menu_icons/ask_doctor.png" width="11%"> <img/></a>
                 <a href="#map_branch_page_hospital" data-ajax="false"> <img src="img/menu_icons/7_Map.png" width="11%"> <img/></a>
               </div>        
     </div><!-- /header -->
     <div data-role="content">
 		<center> <h2> Tetkik Sonuçlarım </h2> </center>
-		<div id="div_randevular">
-		                
+		<div id="div_tetkik">
+
+
 		</div>
+    </div>
+</div>
+<!--end new page-->
+
+<!--start new page-->
+<div data-role="page" id="kan_tetkik_sonuc">
+    <div data-role="header" align="center">
+        <br/>
+              <div >
+                <a href="#barkod" data-ajax="false"><img src="img/menu_icons/1_Home.png" width="11%"> <img/></a>
+                <a href="#hospital_randevu" data-ajax="false"  ><img src="img/menu_icons/2_Score.png" width="10%"> <img/></a>
+                <a href="#hospital_randevular"  onclick="app.fnc_randevuList()">        <img src="img/menu_icons/3_Message.png" width="11%"> <img/> </a>
+                <a href="#hospital_tetkik_sonuclarim" data-ajax="false" onclick="app.fnc_tetkikList()"><img src="img/menu_icons/tetkik_.png" width="11%"> <img/></a>
+                <a href="#hospital_ask_doctor">   <img src="img/menu_icons/ask_doctor.png" width="11%"> <img/></a>
+                <a href="#map_branch_page_hospital" data-ajax="false"> <img src="img/menu_icons/7_Map.png" width="11%"> <img/></a>
+              </div>        
+    </div><!-- /header -->
+    <div data-role="content">
+		<center> <h2> Kan Tetkik Sonuçu </h2> </center>
+		<img src="img/kan_testi.png" style='width:100%'/>
+    </div>
+</div>
+<!--end new page-->  
+
+<!--start new page-->
+<div data-role="page" id="idrar_tetkik_sonuc">
+    <div data-role="header" align="center">
+        <br/>
+              <div >
+                <a href="#barkod" data-ajax="false"><img src="img/menu_icons/1_Home.png" width="11%"> <img/></a>
+                <a href="#hospital_randevu" data-ajax="false"  ><img src="img/menu_icons/2_Score.png" width="10%"> <img/></a>
+                <a href="#hospital_randevular"  onclick="app.fnc_randevuList()">        <img src="img/menu_icons/3_Message.png" width="11%"> <img/> </a>
+                <a href="#hospital_tetkik_sonuclarim" data-ajax="false" onclick="app.fnc_tetkikList()"><img src="img/menu_icons/tetkik_.png" width="11%"> <img/></a>
+                <a href="#hospital_ask_doctor">   <img src="img/menu_icons/ask_doctor.png" width="11%"> <img/></a>
+                <a href="#map_branch_page_hospital" data-ajax="false"> <img src="img/menu_icons/7_Map.png" width="11%"> <img/></a>
+              </div>        
+    </div><!-- /header -->
+    <div data-role="content">
+		<center> <h2> İdrar Tetkik Sonuçu </h2> </center>
+		<img src="img/idrar_testi.png" style='width:100%'/>
     </div>
 </div>
 <!--end new page-->  
@@ -1099,14 +1146,63 @@ puanlarım
                 <a href="#barkod" data-ajax="false"><img src="img/menu_icons/1_Home.png" width="11%"> <img/></a>
                 <a href="#hospital_randevu" data-ajax="false"  ><img src="img/menu_icons/2_Score.png" width="10%"> <img/></a>
                 <a href="#hospital_randevular"  onclick="app.fnc_randevuList()">        <img id="img_msg_map_section18" src="img/menu_icons/3_Message.png" width="11%"> <img/> </a>
-                <a href="#hospital_tetkik_sonuclarim" data-ajax="false" onclick="app.fnc_Profil()"><img src="img/menu_icons/4_Profile.png" width="11%"> <img/></a>
-                <a href="#hospital_ask_doctor" >   <img id="img_camp_map_section18" src="img/menu_icons/5_Campaign_.png" width="11%"> <img/></a>
+                <a href="#hospital_tetkik_sonuclarim" data-ajax="false" onclick="app.fnc_tetkikList()"><img src="img/menu_icons/tetkik.png" width="11%"> <img/></a>
+                <a href="#hospital_ask_doctor" >   <img id="img_camp_map_section18" src="img/menu_icons/ask_doctor_.png" width="11%"> <img/></a>
                 <a href="#map_branch_page_hospital" data-ajax="false"> <img src="img/menu_icons/7_Map.png" width="11%"> <img/></a>
               </div>        
     </div><!-- /header -->
     <div data-role="content">
-		<center> <h2> Doktora Sor </h2> </center>
-		<div id="div_randevular">
+		<center> <h2> Doktorunuza Sorun </h2> </center>
+		<div id="div_ask_doctor">
+
+         <table>
+             <tr>
+                <td colspan="3">
+                Doktora sormak istediğiniz konuyu giriniz.
+                <textarea placeholder="Sorunuzu Giriniz" id="ask_doctor_desc"> </textarea>
+             </td >             	
+             </tr>
+             <tr>
+                <td colspan="3">
+             	<select id="doktor_list_ask">
+					<option val="-1">Doktor Seçiniz</option>	
+				</select>
+             </td >             	
+             </tr>
+				
+             <tr>
+                <td colspan="3">
+                	Eğer sorunuzla ilgili doktora resim yollamak istiyorsanız aşağıdaki butonlara tıklayarak 3 adet resim paylaşabilirsiniz
+             </tr>
+             <tr>
+                 <td>1. Resim</td>
+                 <td> <a href="#" onclick="capturePhotoHospital(1)">
+				<img src="img/takephoto.png" > <img/>
+				</a></td>
+                 <td><input type="checkbox" id="up_img_1Hospital"/> </td>
+             </tr>
+             <tr>
+                 <td>2. Resim</td>
+                 <td> <a href="#" onclick="capturePhotoHospital(2)">
+                 	<img src="img/takephoto.png" > <img/>
+                 </a></td>
+                 <td><input type="checkbox" id="up_img_2Hospital"/> </td>
+             </tr>
+             <tr>
+                 <td>3. Resim</td>
+                 <td> <a href="#" onclick="capturePhotoHospital(3)">
+				<img src="img/takephoto.png" > <img/>
+				</a></td>
+                  <td><input type="checkbox" id="up_img_3Hospital"/> </td>
+             </tr>
+             <tr>
+                 <td> </td>
+                 <td>
+                     <input type="button"  name="btn_add_doc" id="btn_add_doc" value="Kaydet" onclick="app.fnc_insertDoctor_ask()"/>
+                 </td>
+                 <td> </td>
+             </tr>
+         </table>
 		                
 		</div>
     </div>
@@ -1122,8 +1218,8 @@ puanlarım
                 <a href="#barkod" data-ajax="false"><img src="img/menu_icons/1_Home.png" width="11%"> <img/></a>
                 <a href="#hospital_randevu" data-ajax="false"  ><img src="img/menu_icons/2_Score.png" width="10%"> <img/></a>
                 <a href="#hospital_randevular"  onclick="app.fnc_randevuList()">        <img  src="img/menu_icons/3_Message.png" width="11%"> <img/> </a>
-                <a href="#hospital_tetkik_sonuclarim" data-ajax="false" onclick="app.fnc_Profil()"><img src="img/menu_icons/4_Profile.png" width="11%"> <img/></a>
-                <a href="#hospital_ask_doctor" >   <img src="img/menu_icons/5_Campaign.png" width="11%"> <img/></a>
+                <a href="#hospital_tetkik_sonuclarim" data-ajax="false" onclick="app.fnc_tetkikList()"><img src="img/menu_icons/tetkik.png" width="11%"> <img/></a>
+                <a href="#hospital_ask_doctor" >   <img src="img/menu_icons/ask_doctor.png" width="11%"> <img/></a>
                 <a href="#map_branch_page_hospital" data-ajax="false"> <img src="img/menu_icons/7_Map_.png" width="11%"> <img/></a>
               </div>        
     </div><!-- /header -->
@@ -1156,8 +1252,8 @@ puanlarım
                 <a href="#barkod" data-ajax="false"><img src="img/menu_icons/1_Home.png" width="11%"> <img/></a>
                 <a href="#hospital_randevu" data-ajax="false"  ><img src="img/menu_icons/2_Score.png" width="10%"> <img/></a>
                 <a href="#hospital_randevular"  onclick="app.fnc_randevuList()">        <img  src="img/menu_icons/3_Message.png" width="11%"> <img/> </a>
-                <a href="#hospital_tetkik_sonuclarim" data-ajax="false" onclick="app.fnc_Profil()"><img src="img/menu_icons/4_Profile.png" width="11%"> <img/></a>
-                <a href="#hospital_ask_doctor" >   <img src="img/menu_icons/5_Campaign.png" width="11%"> <img/></a>
+                <a href="#hospital_tetkik_sonuclarim" data-ajax="false" onclick="app.fnc_tetkikList()"><img src="img/menu_icons/tetkik.png" width="11%"> <img/></a>
+                <a href="#hospital_ask_doctor" >   <img src="img/menu_icons/ask_doctor.png" width="11%"> <img/></a>
                 <a href="#map_branch_page_hospital" data-ajax="false"> <img src="img/menu_icons/7_Map_.png" width="11%"> <img/></a>		      </div>               
     </div><!-- /header -->
     <div data-role="content" id="mapContent" style="padding:0;position:absolute;top:90px;right:0px;bottom:0px;left:0px;">
@@ -1175,8 +1271,8 @@ puanlarım
                 <a href="#barkod" data-ajax="false"><img src="img/menu_icons/1_Home.png" width="11%"> <img/></a>
                 <a href="#hospital_randevu" data-ajax="false"  ><img src="img/menu_icons/2_Score.png" width="10%"> <img/></a>
                 <a href="#hospital_randevular"  onclick="app.fnc_randevuList()">        <img  src="img/menu_icons/3_Message.png" width="11%"> <img/> </a>
-                <a href="#hospital_tetkik_sonuclarim" data-ajax="false" onclick="app.fnc_Profil()"><img src="img/menu_icons/4_Profile.png" width="11%"> <img/></a>
-                <a href="#hospital_ask_doctor" >   <img src="img/menu_icons/5_Campaign.png" width="11%"> <img/></a>
+                <a href="#hospital_tetkik_sonuclarim" data-ajax="false" onclick="app.fnc_tetkikList()"><img src="img/menu_icons/tetkik.png" width="11%"> <img/></a>
+                <a href="#hospital_ask_doctor" >   <img src="img/menu_icons/ask_doctor.png" width="11%"> <img/></a>
                 <a href="#map_branch_page_hospital" data-ajax="false"> <img src="img/menu_icons/7_Map_.png" width="11%"> <img/></a>		      </div>               
     </div><!-- /header -->
     <div data-role="content">
@@ -1194,8 +1290,8 @@ puanlarım
                 <a href="#barkod" data-ajax="false"><img src="img/menu_icons/1_Home.png" width="11%"> <img/></a>
                 <a href="#hospital_randevu" data-ajax="false"  ><img src="img/menu_icons/2_Score.png" width="10%"> <img/></a>
                 <a href="#hospital_randevular"  onclick="app.fnc_randevuList()">        <img  src="img/menu_icons/3_Message.png" width="11%"> <img/> </a>
-                <a href="#hospital_tetkik_sonuclarim" data-ajax="false" onclick="app.fnc_Profil()"><img src="img/menu_icons/4_Profile.png" width="11%"> <img/></a>
-                <a href="#hospital_ask_doctor" >   <img src="img/menu_icons/5_Campaign.png" width="11%"> <img/></a>
+                <a href="#hospital_tetkik_sonuclarim" data-ajax="false" onclick="app.fnc_tetkikList()"><img src="img/menu_icons/tetkik.png" width="11%"> <img/></a>
+                <a href="#hospital_ask_doctor" >   <img src="img/menu_icons/ask_doctor.png" width="11%"> <img/></a>
                 <a href="#map_branch_page_hospital" data-ajax="false"> <img src="img/menu_icons/7_Map_.png" width="11%"> <img/></a>		      </div>               
     </div><!-- /header -->
     <div data-role="content" id="map_cont" style="padding:0;position:absolute;top:90px;right:0px;bottom:0px;left:0px;">

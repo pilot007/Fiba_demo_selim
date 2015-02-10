@@ -500,6 +500,19 @@ var app = {
 		app.fnc_lookbook_init();                            
 	},
 	onDeviceReady : function() {
+	
+	app.fnc_setdoktor_list_ask();
+    if(window.localStorage["username_rem"] != undefined && window.localStorage["password_rem"] != undefined) 
+    {
+    	
+        if(window.localStorage["username_rem"] != "" && window.localStorage["password_rem"] != ""){                 
+          $('#username').val(window.localStorage["username_rem"]);
+          $('#password').val(window.localStorage["password_rem"]);
+          $("#remember_me").attr('checked', true).checkboxradio("refresh");
+          
+       }
+    }
+
 		console.log("ondevice ready");
 		app.receivedEvent('deviceready');
 
@@ -533,6 +546,25 @@ var app = {
             }
         }); 
 	},	 
+	fnc_saveDoctoraddedsurvey : function(){
+	    var description = $("#up_img_desc").val();
+
+        $.ajax({
+            url : app.url+"Inquery?conn_type=InqueryInsert&memberid="+app.id+"&seq="+sequence+"&description="+description,
+            dataType : "json",
+            success : function(a, b, c) {
+                console.log("resimler yuklendi");
+               
+                $.mobile.changePage($('#anket'));
+            },
+            error : function(a, b, c) {
+                console.log("err a ", a);
+                console.log("err b ", b);
+                console.log("err c ", c);
+                console.log("err c ", c);
+            }
+        }); 
+	},	 	
 	fnc_lookbook_init:function(){
 				
 		console.log("init sexArray size:" + sexArray.length);
@@ -843,6 +875,36 @@ var app = {
 				console.log("$('#tarih').val() : " +$('#tarih').val());
 				
 	},	
+	fnc_setdoktor_list_ask : function(){
+				for (var i = 0; i < DoctorArray.length; i++) 
+				{
+						var o = new Option(DoctorArray[i].name , DoctorArray[i].name);
+						$('#doktor_list_ask').append(o);						
+				};				
+	},
+	fnc_insertDoctor_ask : function(){
+		    $.ajax({
+                        url : app.url+
+                        	"GetMember?conn_type=insertAsk_Doctor&member_id="+app.id+"&description="+$('#ask_doctor_desc').val() +
+							"&doctor_name="+$('#doktor_list_ask').val() +
+							"&member_name=member_name&member_phone=member_phone&picture_1=" +up_img_1+".jpg"+"&picture_2=" +up_img_2+".jpg"+"&picture_3=" +up_img_3+".jpg",
+                        dataType : "json",
+                        success : function(a, b, c) {
+                            $.mobile.changePage($('#hospital_mainpage'));
+                        },
+                        error : function(a, b, c) {
+                            console.log("err a ", a);
+                            console.log("err b ", b);
+                            console.log("err c ", c);
+                            console.log("err c ", c);
+                        }
+                    }); 
+
+
+
+
+	},
+	
     fnc_randevuAl : function() {
 		    $.ajax({
                         url : app.url+"GetAppointment?conn_type=setAppointment&departman="+$('#departman_list').val()+"&memberid="+app.id+
@@ -900,6 +962,36 @@ var app = {
                     }); 
 	},
 
+	fnc_tetkikSonuc : function(p1) {
+		//$("#img_tetkik_sonuc").Attr("src","\""+p1 +"\"");
+	},
+	
+    fnc_tetkikList : function() {
+						
+						a = [
+					    { seq: 1,  name:"İdrar Testi",   date: "11.02.2015",  doctor: "Dahiliye Ayşe Balcı",  file: "idrar_tetkik_sonuc" },
+					    { seq: 1,  name:"Kan Testi", date: "05.02.2015",  doctor: "KKB Ahmet Keskin", file: "kan_tetkik_sonuc" }  
+					    ];
+
+						console.log("div_tetkik 1");
+						$('#div_tetkik ul').remove();
+						$('#div_tetkik').append('<ul data-role="listview"></ul>');
+						listItems = $('#div_tetkik').find('ul');
+						console.log("div_tetkik 2");
+						
+						for (var i = 0; i < a.length; i++) {
+						html ="<table style='width:100%'>";
+							html += '<tr style="width:100%"><td width="25%">'+ a[i].name + '</td>';
+							html += '<td width="25%">' + a[i].date + '</td>';
+							html += '<td width="25%">' + a[i].doctor + '</td>';
+							html += '<td width="25%" align="right"> <a href="#'+a[i].file+'" onclick="app.fnc_tetkikSonuc(' + '\''+ a[i].file +'\''+')">Sonuç</a> </td></tr>';							
+						    html+="</table>";
+							listItems.append('<li id="prjss_' + a[i].seq + '">' + html + '</li>');
+						}
+						
+						$('#div_tetkik ul').listview();
+						console.log("div_tetkik 5");                   
+	},
     fnc_location_list : function() {
 
          $("#div_loc_list ul").page('destroy').page();
@@ -1952,6 +2044,17 @@ var app = {
         console.log("login form");
         var username = $("#username").val();
         var password = $("#password").val();
+        
+    if($("#remember_me").is(':checked')){
+      window.localStorage["username_rem"] = username;
+      window.localStorage["password_rem"] = password;
+    }else{
+      window.localStorage["username_rem"] = "";
+      window.localStorage["password_rem"] = "";
+    }    
+
+        console.log("login form : " + app.url+"GetMember?username="+username+"&password="+password+ "&deviceid="+gtech_token);
+        
         $.ajax({            
             url : app.url+"GetMember?username="+username+"&password="+password+ "&deviceid="+gtech_token,
             dataType : "json",
@@ -1959,6 +2062,7 @@ var app = {
            // $.mobile.changePage("#login");
                 if (a != null && a.length > 0) {
                     if (a[0].status == 'ok') {                    	
+                    	console.log("a[0].member_id : " + a[0].member_id );
                     	app.id = a[0].member_id;                    	
                     	app.user_name="Merhaba : " + a[0].name + " " + a[0].surname ;
 						app.user_id= a[0].member_id;						
@@ -1975,17 +2079,20 @@ var app = {
                         //$.mobile.changePage("#choose_company");                        
                         $.mobile.changePage("#barkod");                        
                     }else{
+        				console.log("login form : " + "Lütfen kullanıcı adı ve şifrenizi doğru giriniz!");
                         alert("Lütfen kullanıcı adı ve şifrenizi doğru giriniz!");
                         $('#username').removeAttr('value');
                         $('#password').removeAttr('value'); 
                     }
                }else{
+               		console.log("login form : " + "kullanıcı bulunamadı!");
                     alert("Kullanıcı adı bulunamadı!");
                     $('#username').removeAttr('value');
                     $('#password').removeAttr('value'); 
                }
             },
             error : function(a, b, c) {
+            	console.log("login form : " + "error!");
                 console.log("err a ", a);
                 console.log("err b ", b);
                 console.log("err c ", c);
@@ -2135,10 +2242,13 @@ var sequence, up_img_1, upd_img_2, up_img_3, up_img_name;
 
 function clearCache() {
     navigator.camera.cleanup();
+	console.log("clearCache: ");
 };
  
 var retries = 0;
 function onCapturePhoto(fileURI) {
+	console.log("onCapturePhoto fileURI: "+fileURI);
+
     var win = function (r) {
         clearCache();
         retries = 0;
@@ -2175,8 +2285,10 @@ function onCapturePhoto(fileURI) {
         // alert("Image uploaded!");
       // });
 };
- 
+
 function capturePhoto(image_index) {
+	console.log("capturePhoto image_index: "+image_index);
+   
     // alert("Tiklanan: "+image_index);
     if (image_index == 1) {
         up_img_1 = app.id +"-"+ sequence +"-"+ image_index;
@@ -2195,12 +2307,38 @@ function capturePhoto(image_index) {
     navigator.camera.getPicture(onCapturePhoto, onFail, {
         quality: 100, 
         destinationType: destinationType.FILE_URI,
-        targetWidth: 95,
-        targetHeight: 180
+        targetWidth: 190,
+        targetHeight: 380
     });
 };
- 
+/*
+function capturePhotoHospital(image_index) {
+    // alert("Tiklanan: "+image_index);
+    if (image_index == 1) {
+        up_img_1 = app.id +"-"+ sequence +"-"+ image_index;
+        up_img_name = up_img_1 + ".jpg";
+        $("#up_img_1Hospital").prop('checked', 'true');
+    }else if(image_index == 2){
+        up_img_2 = app.id +"-"+ sequence +"-"+ image_index;
+        up_img_name = up_img_2 + ".jpg";
+        $("#up_img_2Hospital").prop('checked', 'true');
+    }else if(image_index == 3){
+        up_img_3 = app.id +"-"+ sequence +"-"+ image_index;
+        up_img_name = up_img_3 + ".jpg";
+        $("#up_img_3Hospital").prop('checked', 'true');
+    };
+    
+    navigator.camera.getPicture(onCapturePhoto, onFail, {
+        quality: 100, 
+        destinationType: destinationType.FILE_URI,
+        targetWidth: 190,
+        targetHeight: 380
+    });
+};
+ */
 function onFail(message) {
+   console.log("failed "+ message);
+   
     alert('Failed because: ' + message);
 };
 
@@ -2210,7 +2348,7 @@ function getSeq(){
             url : app.url+"Inquery?conn_type=getSeq",
             dataType : "json",
             success : function(a, b, c) {
-                console.log("sequence alýnýyor"+a.seq);
+                console.log("sequence aliniyor"+a.seq);
                 sequence = a.seq;
                 // $.mobile.changePage($('#add_survey'));
             },
