@@ -2344,6 +2344,9 @@ function onFail(message) {
 
 // get sequence
 function getSeq(){
+	up_img_1="";
+	up_img_2="";
+	up_img_3="";
     $.ajax({
             url : app.url+"Inquery?conn_type=getSeq",
             dataType : "json",
