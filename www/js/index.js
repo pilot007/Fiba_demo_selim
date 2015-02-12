@@ -487,8 +487,10 @@ var app = {
 		console.log("init");
 		this.bindEvents();
 		app.url="http://10.0.0.31:8181/fiba_group_webservices/";
+		app.fileupload="http://10.0.0.31:8181/JAXRS-HelloWorld/uploaded/";
 		app.total_points=0;
-		app.url="http://213.74.186.114:8181/fiba_group_webservices/";
+		//app.url="http://213.74.186.114:8181/fiba_group_webservices/";
+		//app.fileupload="http://213.74.186.114:8181/JAXRS-HelloWorld/uploaded/";
 	},
 	// Bind Event Listeners
 	//
@@ -595,7 +597,6 @@ var app = {
 					}
 				};				
 				}); 	
-				
 
 	$('#ProductType_List').change(function(){
 				$('#ProductSubType_List').empty();
@@ -746,6 +747,101 @@ var app = {
                         }
                     }); 
 	},	
+
+    fnc_getAskDoctorDoctor : function() {
+    	
+		//GetMember?conn_type=getAsk_Doctor&doctor_name=Prof.Dr.Abdullah%20G%C3%96%C4%9E%C3%9C%C5%9E
+		    $.ajax({
+                        url : app.url+"GetMember?conn_type=getAsk_Doctor&doctor_name="+app.member_name + app.surname_name,
+                        dataType : "json",
+                        success : function(a, b, c) {
+						app.askdoctor=a;
+						console.log("div_ask_doctor_doctorpage 2");
+						$('#div_ask_doctor_doctorpage ul').remove();
+						$('#div_ask_doctor_doctorpage').append('<ul data-role="listview"></ul>');
+						listItems = $('#div_ask_doctor_doctorpage').find('ul');
+						
+						html ="<center>Sepetiniz </center></br> <table style='width:100%'>";
+							console.log("div_ask_doctor_doctorpage 4");
+							html += '<tr style="width:100%">';
+							html += '<td width="30%">' + 'Kimden' + '</td>';
+							html += '<td width="15%">' + 'Telefon' + '</td>';
+							html += '<td width="55%">' + '&nbsp;&nbsp;Açıklama' + '</td>';
+							html += '</tr>';							
+						    html+="</table>";
+							listItems.append('<li id="orderr_c' + '">' + html + '</li>');
+
+						for (var i = 0; i < a.length; i++) {
+						html ="<table style='width:100%'>";
+							console.log("div_ask_doctor_doctorpage 5");
+							html += '<tr style="width:100%">';
+							html += '<td width="30%">' + a[i].member_name + '</td>';
+							html += '<td width="15%">' + a[i].member_phone + '</td>';
+							html += '<td width="55%">&nbsp;&nbsp;' + a[i].description + '</td>';
+							html += '</tr>';							
+						    html+="</table>";
+							listItems.append('<li id="orderrtt_' + a[i].seq + '">' + html + '</li>');
+							 
+						};
+						$('#div_ask_doctor_doctorpage ul').listview();						
+						
+						
+						for (var i = 0; i < a.length; i++) {
+	                    console.log("div_mesajlar 6");
+	                    $('#orderrtt_' + a[i].seq).bind('tap',
+	                    function(event, ui) 
+	                    {
+	                    	console.log("on tap");
+							//$.mobile.changePage($('#hospital_ask_doctor_detailpage'));
+							console.log("on tap 2");
+	                    	//$('#div_ask_doctor_detail').remove();
+	                    	var aa;
+	                    	var strID = $(this).attr('id').replace('orderrtt_','');
+	                    	for (var i = 0; i < app.askdoctor.length; i++) {
+	                    		if (app.askdoctor[i].seq=strID)
+	                    		aa=app.askdoctor[i];
+	                    	}
+	                    	listDetailItems = $('#div_ask_doctor_detail').find('ul');
+						    console.log("on tap a:" + a);
+                            html = '<table>';
+                            html += '<tr style="width:100%">';
+							html += '<td width="30%">Hasta Adı ve Soyadı</td>';
+							html += '<td width="70%">' + aa.member_name + '</td> </tr>';
+							html += '<tr> <td >İletişim Bilgisi</td>';
+							html += '<td>' + aa.member_phone + '</td></tr>';
+							html += '<tr> <td >Hastanın sorusu</td>';
+							html += '<td>' + aa.description + '</td></tr>';
+
+							html += '<tr> <td >1. Resim</td>';
+							html += '<td>' + aa.picture_1 + '</td></tr>';
+
+							html += '<tr> <td >2. Resim</td>';
+							html += '<td>' + aa.picture_2 + '</td></tr>';
+
+							html += '<tr> <td >3. Resim</td>';
+							html += '<td>' + aa.picture_3 + '</td></tr>';
+
+						    html+="</table>";
+						    listItems.append('<li id="orderrtty_34434">' + html + '</li>');
+						    //$('#div_ask_doctor_detail').append(html);
+						    $('#div_ask_doctor_detail ul').listview();
+						    $.mobile.changePage($('#hospital_ask_doctor_detailpagex'));
+						});
+						}
+						
+						console.log("div_ask_doctor_doctorpage 6");
+
+
+                        },
+                        error : function(a, b, c) {
+                            console.log("err a ", a);
+                            console.log("err b ", b);
+                            console.log("err c ", c);
+                            console.log("err c ", c);
+                        }
+                    }); 
+	},	
+
 	    fnc_OldOrderList : function() {
     	app.totalPrice=0;
 		    $.ajax({
@@ -898,7 +994,7 @@ var app = {
                             console.log("err c ", c);
                             console.log("err c ", c);
                         }
-                    }); 
+                    });
 
 
 
@@ -1248,7 +1344,7 @@ var app = {
                     console.log("div_mesajlar 6");
                     $('#camp_' + a[i].campain_id).bind('tap',
                     function(event, ui) {
-        
+        			
                     $.ajax({
                         url : app.url+"GetCampains?conn_type=setread_campain_all&member_id="+app.id,
                         dataType : "json",
@@ -2065,12 +2161,19 @@ var app = {
                     	console.log("a[0].member_id : " + a[0].member_id );
                     	app.id = a[0].member_id;                    	
                     	app.user_name="Merhaba : " + a[0].name + " " + a[0].surname ;
+                    	app.member_name =a[0].name;
+                    	app.surname_name=a[0].surname;
 						app.user_id= a[0].member_id;						
+                    	app.sex=a[0].sex;
                     	
                     	console.log('sex : ' +a[0].sex);
                     	if (a[0].sex=='men')
                     	  $("#img_ret").attr("src","img/men.jpg");
-                    	if (a[0].sex=='woman')
+                    	else if (a[0].sex=='doctor_men')
+                    	  $("#img_ret").attr("src","img/men.jpg");
+                    	else if (a[0].sex=='woman')
+                    	  $("#img_ret").attr("src","img/woman.jpg");
+                    	else if (a[0].sex=='doctor_woman')
                     	  $("#img_ret").attr("src","img/woman.jpg");
                     	                    	
                         app.first_init();
@@ -2363,4 +2466,38 @@ function getSeq(){
             }
         }); 
 }
+
+// get sequence
+function getSeqAskDoctor(){
+	up_img_1="";
+	up_img_2="";
+	up_img_3="";
+    $.ajax({
+            url : app.url+"Inquery?conn_type=getSeq",
+            dataType : "json",
+            success : function(a, b, c) {
+                console.log("sequence aliniyor"+a.seq);
+                sequence = a.seq;
+                //$.mobile.changePage($('#add_survey'));
+            },
+            error : function(a, b, c) {
+                console.log("err a ", a);
+                console.log("err b ", b);
+                console.log("err c ", c);
+                console.log("err c ", c);
+            }
+        }); 
+        console.log("app.sex : " + app.sex);
+	if (app.sex=="doctor_men")  
+	{
+          console.log("app.sex 2: " + app.sex);
+	      app.fnc_getAskDoctorDoctor();
+          console.log("app.sex 3: " + app.sex);
+	      $.mobile.changePage($('#hospital_ask_doctor_doctorpage'));	      	      	      
+	}else
+	{
+		$.mobile.changePage($('#hospital_ask_doctor'));
+	}
+}
+
 // end send photo to server
