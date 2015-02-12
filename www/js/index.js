@@ -489,8 +489,8 @@ var app = {
 		app.url="http://10.0.0.31:8181/fiba_group_webservices/";
 		app.fileupload="http://10.0.0.31:8181/JAXRS-HelloWorld/uploaded/";
 		app.total_points=0;
-		//app.url="http://213.74.186.114:8181/fiba_group_webservices/";
-		//app.fileupload="http://213.74.186.114:8181/JAXRS-HelloWorld/uploaded/";
+		app.url="http://213.74.186.114:8181/fiba_group_webservices/";
+		app.fileupload="http://213.74.186.114:8181/JAXRS-HelloWorld/uploaded/";
 	},
 	// Bind Event Listeners
 	//
@@ -761,7 +761,7 @@ var app = {
 						$('#div_ask_doctor_doctorpage').append('<ul data-role="listview"></ul>');
 						listItems = $('#div_ask_doctor_doctorpage').find('ul');
 						
-						html ="<center>Sepetiniz </center></br> <table style='width:100%'>";
+						html ="<table style='width:100%'>";
 							console.log("div_ask_doctor_doctorpage 4");
 							html += '<tr style="width:100%">';
 							html += '<td width="30%">' + 'Kimden' + '</td>';
@@ -791,19 +791,19 @@ var app = {
 	                    $('#orderrtt_' + a[i].seq).bind('tap',
 	                    function(event, ui) 
 	                    {
-	                    	console.log("on tap");
-							//$.mobile.changePage($('#hospital_ask_doctor_detailpage'));
-							console.log("on tap 2");
 	                    	//$('#div_ask_doctor_detail').remove();
+	                    	$('#div_ask_doctor_detail').empty();
+	                    	
+							$.mobile.changePage($('#hospital_ask_doctor_detailpagex'));
+							
 	                    	var aa;
 	                    	var strID = $(this).attr('id').replace('orderrtt_','');
 	                    	for (var i = 0; i < app.askdoctor.length; i++) {
-	                    		if (app.askdoctor[i].seq=strID)
+	                    		if (app.askdoctor[i].seq==strID)
 	                    		aa=app.askdoctor[i];
 	                    	}
 	                    	listDetailItems = $('#div_ask_doctor_detail').find('ul');
-						    console.log("on tap a:" + a);
-                            html = '<table>';
+						    html = '<table>';
                             html += '<tr style="width:100%">';
 							html += '<td width="30%">Hasta Adı ve Soyadı</td>';
 							html += '<td width="70%">' + aa.member_name + '</td> </tr>';
@@ -813,18 +813,19 @@ var app = {
 							html += '<td>' + aa.description + '</td></tr>';
 
 							html += '<tr> <td >1. Resim</td>';
-							html += '<td>' + aa.picture_1 + '</td></tr>';
+							html += '<td><img src="' + app.fileupload + aa.picture_1 + '"> </img></td></tr>';
 
 							html += '<tr> <td >2. Resim</td>';
-							html += '<td>' + aa.picture_2 + '</td></tr>';
+							html += '<td><img src="' + app.fileupload + aa.picture_2 + '"> </img></td></tr>';
 
 							html += '<tr> <td >3. Resim</td>';
-							html += '<td>' + aa.picture_3 + '</td></tr>';
+							html += '<td><img src="'+ app.fileupload+ aa.picture_3 + '"> </img> </td></tr>';
 
 						    html+="</table>";
-						    listItems.append('<li id="orderrtty_34434">' + html + '</li>');
-						    //$('#div_ask_doctor_detail').append(html);
+						    listDetailItems.append('<li id="orderrtty_34434">' + html + '</li>');
+						    $('#div_ask_doctor_detail').append(html);
 						    $('#div_ask_doctor_detail ul').listview();
+						    console.log("div_mesajlar html : " + html);
 						    $.mobile.changePage($('#hospital_ask_doctor_detailpagex'));
 						});
 						}
